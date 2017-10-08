@@ -6,6 +6,12 @@ html,body{
 
 
 .alpha{
-    background: url("images/banjo.jpg") left center fixed ;
+    background: url("images/banjo.jpg") left center ;
     color: white;
+}
+
+.alpha1{
+    background: url("images/woodTree.jpg");
+    background-attachment: scroll;
+    background-size: 100%;
 }
