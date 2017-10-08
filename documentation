@@ -1,0 +1,49 @@
+LETS CHANGE OUR MOTIVE TO MAKING AN ASSISTANT RATHER THAN ONLY A BOOKMARKS MANAGER
+
+
+//Manage all your bookmarks under one place
+
+// Add a new category ==== display in form of cards == clicking it will open a modal (checkout bootstrap) to display the category wise bookmarks
+
+
+// mongo bhai will have an essential role to play in this .... a relational schema to maintain 2 databases linked by category id maybe ... a single bookmark may go in more than one category.
+
+
+//  u can add your own bookmarks
+ give priority to categories
+
+// store list of your fav youtube videos .. though  it can just be one category of bookmarks
+
+ :- Under each category:-
+    add/remove a bookmark
+    give them priorities
+    maintain a db
+    a seperate list of favourites  :)
+
+
+// back in time i had learnt about drag and drop so we can implement that while adding links
+
+// also include a slideshow of quotes
+
+//an embedded todolist to make the work more productive
+
+//a break reminder to make your web experience a bit less stressful (we can also give links to a few stress relieving games) and also an explicit button for such games.
+
+
+//if we become proficient
+
+        enough we can implement search options
+
+        also we can create folder of folders and so on
+
+        make an email notifs bar
+
+
+
+******************************************************************************
+******************************************************************************
+********************************************************************************
+<h1> please add more features u can think of to make our web experience more productive </h1>
+
+**********************************************************************************
+*********************************************************************************
