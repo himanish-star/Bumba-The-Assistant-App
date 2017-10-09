@@ -11,10 +11,10 @@
 <div class="container-fluid bg-secondary p-3" align="center">
     <div class="row justify-content-between">
         <div class="col-1">
-            <i class="fa fa-home btn btn-dark"> HOME</i>
+            <i class="fa fa-home btn btn-warning"> </i>
         </div>
         <div class="col-11 justify-content-end row align-self-center">
-            <span class="form-inline">
+            <!--<span class="form-inline">
                 <label class="ml-2 badge badge-dark" for="email">email-id </label>
                 <input id="email" class="ml-2 form-control" type="email" placeholder="email-id">
             </span>
@@ -22,11 +22,61 @@
                 <label class="ml-2 badge badge-dark" for="password">password </label>
                 <input id="password" class="ml-2 form-control" type="email" placeholder="password">
             </span>
-            <span>
-                <i style="font-style:normal" class="ml-2 btn btn-dark">SIGN-IN</i>
-            </span>
+-->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success mr-2" data-toggle="modal-dialog" data-target="#myModal">Sign In
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          UserName <input type="text">
+                            Password <input type="text">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
             <span >
-                <i style="font-style:normal;" class="ml-2 btn btn-dark">SIGN-UP</i>
+                <button type="button" class="btn mr-2 btn-success" data-toggle="modal-dialog" data-target="#myModal_2">Sign Up
+                </button>
+
+                <!-- Modal -->
+            <div class="modal fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel_2">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Name <input type="text" placeholder="Full Name">
+                            UserName <input type="text" placeholder="Username">
+                            Password <input type="text" placeholder="Password">
+                            ReEnter Password <input type="text" placeholder="Re-password">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </span>
         </div>
     </div>
@@ -49,7 +99,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
-            <div class="carousel-item active">
+            <div class="carousel-item beta active">
                 <!--<img class="d-block w-100" src="..." alt="First slide">-->
                 <div class="row p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 50%">
@@ -73,7 +123,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item beta">
                 <div class="row p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 60%">
                         <div class="card-header">
@@ -83,8 +133,8 @@
                             <div class="container d-flex justify-content-around">
                                 <div style="width: 49%" class="card">
                                     <div class="card-header">Soumya Himanish Mohapatra</div>
-                                    <img style="height: 50%" class="card-img-top" src="css/images/soumyaFB.jpg">
-                                    <div class="p-0 card-body">
+                                    <!--<img style="height: 50%" class="card-img-top" src="css/images/soumyaFB.jpg">-->
+                                    <div class="p-2 card-body ">
                                         <br><br>
                                         I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
                                     </div>
@@ -98,8 +148,8 @@
                                     <div class="card-header">
                                         Shikhar Agnihotri
                                     </div>
-                                    <img style="height: 50%" class="card-img-top" src="css/images/shikharFB.jpg">
-                                    <div class="p-0 card-body">
+                                    <!--<img style="height: 50%" class="card-img-top" src="css/images/shikharFB.jpg">-->
+                                    <div class="pl-1 pr-2 card-body">
                                         <br><br>
                                         I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
                                     </div>
@@ -114,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item beta">
                 <div class="row p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 50%">
                         <div class="card-header"><h1>Invite Your Friends</h1></div>
@@ -130,7 +180,7 @@
                 </div>
             </div>
 
-            <div class="carousel-item">
+            <div class="carousel-item beta">
                 <div class="row p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 50%">
                         <div class="card-header">
@@ -147,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
+            <div class="carousel-item beta">
                 <div class="row p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 50%">
                         <div class="card-header">
@@ -178,5 +228,6 @@
 </div>
 <script src="js/jquery-3.2.1.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="js/file.js"></script>
 </body>
 </html>

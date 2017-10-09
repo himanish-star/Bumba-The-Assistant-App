@@ -3,7 +3,9 @@ html,body{
     padding:0;
 }
 
-
+.beta{
+    height: 400px;
+}
 
 .alpha{
     background: url("images/banjo.jpg") left center ;
