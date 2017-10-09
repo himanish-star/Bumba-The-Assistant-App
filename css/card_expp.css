@@ -1,0 +1,19 @@
+img {
+    width:10rem;
+    height:10rem;
+}
+
+.alpha{
+    background: url("images/banjo.jpg") left center ;
+    color: white;
+    border-bottom: 2px solid white;
+    height:100px;
+
+}
+.yo{
+    width: 90%;
+}
+
+body{
+    background: url("images/spiderweb.jpg");
+}
