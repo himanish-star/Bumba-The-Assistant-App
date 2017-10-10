@@ -7,16 +7,28 @@
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main_css.css">
-</head>
+    <link rel="stylesheet" href="css/timerkacss.css">
+
+    </head>
 <body>
+
+<p id="demo"></p>
+
+
 <div class="container-fluid bg-warning p-1" align="center">
     <div class="row justify-content-between">
         <div class="col-1">
             <i class="fa fa-home btn btn-danger"> </i>
         </div>
-        <div class="col-11 justify-content-end row align-self-center">
+
+            <div class="col-11 justify-content-end row align-self-center">
+
+                <button type="button" class=" mr-2 btn btn-danger" id="clk-btn">
+                    <i class="fa fa-clock-o" ></i>
+                </button>
+
             <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal1">Sign In
-            </button>
+                </button>
 
             <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -94,6 +106,7 @@
                 </div>
             </div>
         </div>
+
     </div>
     </div>
     <div class="jumbotron alpha" align="center">
@@ -238,8 +251,13 @@
             </a>
         </div>
     </div>
+
+
+
     </div>
 
+    <script src="js/timerkajs.js"></script>
+q
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
