@@ -1,95 +1,110 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
     <meta charset="UTF-8">
     <title>Bumba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main_css.css">
-</head>
-<body>
-<div class="container-fluid bg-warning p-3" align="center">
+    </head>
+    <body>
+    <div class="container-fluid bg-warning p-3" align="center">
     <div class="row justify-content-between">
         <div class="col-1">
             <i class="fa fa-home btn btn-danger"> </i>
         </div>
         <div class="col-11 justify-content-end row align-self-center">
-            <!--<span class="form-inline">
-                <label class="ml-2 badge badge-dark" for="email">email-id </label>
-                <input id="email" class="ml-2 form-control" type="email" placeholder="email-id">
-            </span>
-            <span class="form-inline">
-                <label class="ml-2 badge badge-dark" for="password">password </label>
-                <input id="password" class="ml-2 form-control" type="email" placeholder="password">
-            </span>
--->
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-success mr-2" data-toggle="modal-dialog" data-target="#myModal">Sign In
+            <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal1">Sign In
             </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel1">SIGN IN</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                          UserName <input type="text">
-                            Password <input type="text">
+                          <form class="form">
+                              <div class="form-group">
+                              <label class="badge badge-dark" for="username">Username</label>
+                              <input id="username" type="text">
+                              </div>
+                              <div class="form-group">
+                                  <label class="badge badge-dark" for="password">Password</label>
+                                  <input id="password" type="text">
+                              </div>
+                          </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
 
-
-            <span >
-                <button type="button" class="btn mr-2 btn-success" data-toggle="modal-dialog" data-target="#myModal_2">Sign Up
-                </button>
-
-                <!-- Modal -->
-            <div class="modal fade" id="myModal_2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal2">Sign Up
+            </button>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel_2">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel2">SIGN UP</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            Name <input type="text" placeholder="Full Name">
-                            UserName <input type="text" placeholder="Username">
-                            Password <input type="text" placeholder="Password">
-                            ReEnter Password <input type="text" placeholder="Re-password">
-                        </div>
+                            <div class="modal-body">
+                                <form class="form">
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="name1">First Name</label>
+                                        <input id="name1" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="name2">Last Name</label>
+                                        <input id="name2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="username2">Username</label>
+                                        <input id="username2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="email">First Name</label>
+                                        <input id="email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="password2">Password</label>
+                                        <input id="password2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                    <label class="badge badge-dark" for="password1">Re-Password</label>
+                                        <input id="password1" type="text">
+                                    </div>
+                                </form>
+                            </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
-            </span>
         </div>
     </div>
-</div>
-<div class="jumbotron alpha" align="center">
-    <h1 class="display-3" >Bumba</h1>
+    </div>
+    <div class="jumbotron alpha" align="center">
+    <h1 class="display-3" >BUMBA</h1>
     <p class="lead">
     <h2>Your assistant to help you make your web time productive.</h2>
     </p>
     <hr class="my-4">
     <p><h5>Crafted and designed by two young inquisitive minds who love to experiment with the knowledge they gather.</h5> </p>
-</div>
-<div class="row justify-content-center">
+    </div>
+    <div class="row justify-content-center">
     <div style="width: 80%" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -100,7 +115,6 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item beta active">
-                <!--<img class="d-block w-100" src="..." alt="First slide">-->
                 <div class="row beta p-4 m-2 alpha1 justify-content-center">
                     <div class="card mt-3" style="width: 50%">
                         <div class="card-header">
@@ -133,7 +147,6 @@
                             <div class="container d-flex justify-content-around">
                                 <div style="width: 49%" class="card">
                                     <div class="card-header">Soumya Himanish Mohapatra</div>
-                                    <!--<img style="height: 50%" class="card-img-top" src="css/images/soumyaFB.jpg">-->
                                     <div class="pl-2 pr-2 card-body ">
                                         I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
                                     </div>
@@ -147,7 +160,6 @@
                                     <div class="card-header">
                                         Shikhar Agnihotri
                                     </div>
-                                    <!--<img style="height: 50%" class="card-img-top" src="css/images/shikharFB.jpg">-->
                                     <div class="pl-1 pr-2 card-body">
                                         I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
                                     </div>
@@ -223,9 +235,11 @@
             </a>
         </div>
     </div>
-</div>
-<script src="js/jquery-3.2.1.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/file.js"></script>
-</body>
-</html>
+    </div>
+
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    </body>
+    </html>
