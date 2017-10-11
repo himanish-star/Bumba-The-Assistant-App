@@ -4,14 +4,16 @@ html,body{
 }
 
 .beta{
-    height: 450px;
+    /*height: 450px;*/
 }
 
 .alpha{
     background: url("images/banjo.jpg") left center ;
     color: white;
 }
-
+.car-dis{
+    display:inline-block;
+}
 .alpha1{
     background:url("images/woodTree.jpg");
     background-size: 100%;
