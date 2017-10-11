@@ -5,7 +5,7 @@ let k2=0;
 let x = setInterval(function() {
 
     // Get todays date and time
-    let now = new Date().getTime();
+    // let now = new Date().getTime();
 
     // Find the distance between now an the count down date
     distance = distance -1000;
@@ -18,8 +18,8 @@ let x = setInterval(function() {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("demo").innerHTML =  minutes + "m " + seconds + "s " +" left";
-    k2=minutes + "m " + seconds + "s " +" left";
+    document.getElementById("demo").innerHTML = "<i class=\"fa fa-clock-o btn btn-primary\"></i>     " +
+    minutes + "m " + seconds + "s ";
     // If the count down is finished, write some text
     if (distance < 0) {
 
