@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/timerkacss.css">
     </head>
 <body class="container-fluid">
+<!--<div id="demo"></div>-->
 <div class="container-fluid m-0 bg-dark p-1" align="center">
     <div class="row justify-content-between">
         <div class="col-1">
@@ -17,11 +18,7 @@
         </div>
 
             <div class="col-11 justify-content-end row align-self-center">
-
-                <button type="button" class=" mr-2 btn btn-danger" id="clk-btn">
-                    <i class="fa fa-clock-o" ></i>
-                </button>
-
+                <button type="button" id="clk-btn" class="mr-2 btn btn-lg btn-danger" data-toggle="popover" data-placement="bottom" title="Popover title"><i class="fa fa-clock-o"></i></button>
             <button type="button" class="btn btn-success mr-2" data-toggle="modal" data-target="#myModal1">Sign In
                 </button>
 
@@ -124,21 +121,41 @@
         </ol>
         <div class="carousel-inner car-dis">
             <div class="carousel-item beta active">
-                <div class="row beta p-4 m-2 alpha1 justify-content-center">
-                    <div class="card mt-3 car-dis" style="width: 50%">
+                <div class="row beta alpha1 justify-content-center">
+                    <div class="card mt-3 car-dis" style="width: 80%">
                         <div class="card-header">
-                            <h1>A Guide To Get Started</h1>
+                            <h3>A Guide To Get Started</h3>
                         </div>
                         <div class="card-body ">
-                            <p>
+                            <!--<p>-->
+                                <!--Having a difficult time managing your web pages?<br>-->
+                                <!--Getting bored bookmarking pages?<br>-->
+                                <!--Need a better way out to categorize stuff?<br>-->
+                                <!--Well then this is the right place to be at. This website is all about managing-->
+                                <!--web pages you're interested in and-->
+                                <!--helping you categorize stuff, especially helping you to manage data in a-->
+                                <!--user-friendly environment.-->
+                            <!--</p>-->
+                            <div class="item">
+
                                 Having a difficult time managing your web pages?<br>
-                                Getting bored bookmarking pages?<br>
-                                Need a better way out to categorize stuff?<br>
-                                Well then this is the right place to be at. This website is all about managing
-                                web pages you're interested in and
-                                helping you categorize stuff, especially helping you to manage data in a
-                                user-friendly environment.
-                            </p>
+                                <!--Getting bored bookmarking pages?<br>-->
+                                Need a better way out to categorize stuff?<br/>
+
+                                <a href="#more_text" id="read_more" >Read More</a><br/>
+
+                                <span id="more_text">
+                                    Well then this is the right place to be at.
+                                    This website is all about managing
+                                    web pages you're interested in and
+                                    helping you categorize stuff, especially helping
+                                    you to manage data in a
+                                    user-friendly environment.
+                                 </span>
+
+                            </div>
+
+
                         </div>
                         <div class="card-footer">
                             <i class="fa fa-book btn btn-success"> Download the guide in PDF</i>
@@ -146,50 +163,65 @@
                     </div>
                 </div>
             </div>
-            <div class="carousel-item beta">
-                <div class="beta row p-4 m-2 alpha1 justify-content-center">
-                    <div class="card mt-3" style="width: 60%">
+            <div class="carousel-item beta ml-auto mr-auto">
+                <div class="beta row alpha1 justify-content-center">
+                    <div class="card mt-3" style="width: 80%">
                         <div class="card-header">
-                            <h1>About Us</h1>
+                            <h3>About Us</h3>
                         </div>
                         <div class="card-body">
                             <div class="container d-flex justify-content-around">
-                                <div style="width: 49%" class="card">
-                                    <div class="card-header">Soumya Himanish Mohapatra</div>
+                                <!--<div style="width: 49%" class="card">-->
 
 
-                                    <div class="pl-2 pr-2 card-body ">
-                                        I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-around">
-                                        <i class="fa btn btn-primary fa-facebook-f"></i>
-                                        <i class="fa btn btn-dark fa-github"></i>
-                                        <i class="fa fa-google-plus btn btn-danger"></i>
-                                    </div>
-                                </div>
-                                <div style="width: 49%" class="card">
-                                    <div class="card-header">
-                                        Shikhar Agnihotri
-                                    </div>
-                                    <div class="pl-1 pr-2 card-body">
+                                    Currently we are a pair of Computer Science underGrads, looking to help out people in whatever way we can.
 
-                                        I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.
-                                    </div>
-                                    <div class="card-footer d-flex justify-content-around">
-                                        <i class="fa btn btn-primary fa-facebook-f"></i>
-                                        <i class="fa btn btn-dark fa-github"></i>
-                                        <i class="fa fa-google-plus btn btn-danger"></i>
-                                    </div>
-                                </div>
+
+
+
+                                    <!--<div class="card-header">Soumya Himanish Mohapatra</div>-->
+
+
+                                    <!--<div class="pl-2 pr-2 card-body ">-->
+                                        <!--I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.-->
+                                    <!--</div>-->
+                                    <!--<div class="card-footer d-flex justify-content-around">-->
+                                        <!--<i class="fa btn btn-primary fa-facebook-f"></i>-->
+                                        <!--<i class="fa btn btn-dark fa-github"></i>-->
+                                        <!--<i class="fa fa-google-plus btn btn-danger"></i>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                                <!--<div style="width: 49%" class="card">-->
+                                    <!--<div class="card-header">-->
+                                        <!--Shikhar Agnihotri-->
+                                    <!--</div>-->
+                                    <!--<div class="pl-1 pr-2 card-body">-->
+
+                                        <!--I am currently doing my Btech at NSIT,Delhi. I am a second year undergrad in Computer Science Engineering.-->
+                                    <!--</div>-->
+                                    <!--<div class="card-footer d-flex justify-content-around">-->
+                                        <!--<i class="fa btn btn-primary fa-facebook-f"></i>-->
+                                        <!--<i class="fa btn btn-dark fa-github"></i>-->
+                                        <!--<i class="fa fa-google-plus btn btn-danger"></i>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            </div>
+<br>
+                            <p align="center">Contact Us</p>
+
+                            <div class="card-footer justify-content-between contact-us">
+                                <i class="fa btn btn-primary fa-facebook-f"></i>
+                                <i class="fa btn btn-dark fa-github"></i>
+                                <i class="fa fa-google-plus btn btn-danger"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="carousel-item beta">
-                <div class="row p-4 m-2 beta alpha1 justify-content-center">
-                    <div class="card mt-3" style="width: 50%">
-                        <div class="card-header"><h1>Invite Your Friends</h1></div>
+                <div class="row beta alpha1 justify-content-center">
+                    <div class="card mt-3" style="width: 80%">
+                        <div class="card-header"><h3>Invite Your Friends</h3></div>
                         <div class="card-body">
                             <p>
                                 If you liked our website. Then please invite your friends too!!!
@@ -203,8 +235,8 @@
             </div>
 
             <div class="carousel-item beta">
-                <div class="beta row p-4 m-2 alpha1 justify-content-center">
-                    <div class="card mt-3" style="width: 50%">
+                <div class="beta row alpha1 justify-content-center">
+                    <div class="card mt-3" style="width: 80%">
                         <div class="card-header">
                             <h1>Feedback</h1>
                         </div>
@@ -220,10 +252,10 @@
                 </div>
             </div>
             <div class="carousel-item beta">
-                <div class="row beta p-4 m-2 alpha1 justify-content-center">
-                    <div class="card mt-3" style="width: 50%">
+                <div class="row beta alpha1 justify-content-center">
+                    <div class="card mt-3" style="width: 80%">
                         <div class="card-header">
-                            <h1>Contribute to us</h1>
+                            <h3>Contribute to us</h3>
                         </div>
                         <div class="card-body">
                             <p>
@@ -256,6 +288,7 @@
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/timerpopper.js"></script>
     </div>
     </body>
     </html>
