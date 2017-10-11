@@ -1,5 +1,6 @@
 // let countDownDate = new Date("Jan 5, 2018 15:37:25").getTime();
 let distance = 2700000;
+let k2=0;
 // Update the count down every 1 second
 let x = setInterval(function() {
 
@@ -19,7 +20,6 @@ let x = setInterval(function() {
     // Display the result in the element with id="demo"
     document.getElementById("demo").innerHTML = "<i class=\"fa fa-clock-o btn btn-primary\"></i> " +
     minutes + "m " + seconds + "s ";
-
     // If the count down is finished, write some text
     if (distance < 0) {
 
@@ -32,7 +32,7 @@ let x = setInterval(function() {
 
 let k=1;
 let clock = document.getElementById("clk-btn");
-
+timer.setAttribute('data-content',k2);
 clock.onclick = function () {
 
     // $("#demo").attr("display","block");

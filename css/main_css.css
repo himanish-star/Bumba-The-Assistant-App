@@ -1,6 +1,7 @@
 html,body{
     margin: 0;
     padding:0;
+    background-image: url("images/whiteBCG.png");
 }
 .beta {
     /*height: 450px;*/
@@ -11,8 +12,9 @@ html,body{
     text-align :justify;
 }
 .alpha{
-    background: url("images/banjo.jpg") left center ;
+    background: url("images/blueSpasrkle.jpg") top center;
     color: white;
+    border-radius: 0;
 }
 
 .car-dis{
@@ -20,7 +22,7 @@ html,body{
 }
 
 .alpha1{
-    background:url("images/woodTree.jpg");
+    background:url("images/redBlue.jpg");
     background-size: 100%;
     height: 100%;
 }

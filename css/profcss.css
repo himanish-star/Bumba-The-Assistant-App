@@ -1,0 +1,21 @@
+
+html,body{
+    height:100%;
+    width:100%;
+    /*background-attachment: fixed;*/
+    /*!*height:100%;*!*/
+    /*!*width:100%;*!*/
+    /*background: url(../todolist/images/stage.jpg) top center no-repeat ;*/
+    /*background-size: cover;*/
+
+    color:black;
+}
+.fa:hover{
+    cursor: pointer;
+}
+.yo {
+    color: white;
+}
+
+
+

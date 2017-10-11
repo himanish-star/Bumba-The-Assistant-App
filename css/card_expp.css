@@ -2,7 +2,20 @@ img {
     width:10rem;
     height:10rem;
 }
+nav{
+    display:grid;
+    grid-template-columns:repeat(12,1fr) ;
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap: 10px;
+}
 
+.form-inline{
+    grid-column: 4/9;
+
+}
+.search-length{
+    grid-column: 4/9;
+}
 .alpha{
     background: url("images/banjo.jpg") left center ;
     color: white;
@@ -16,4 +29,27 @@ img {
 
 body{
     background: url("images/spiderweb.jpg");
+}
+
+#content{
+    display:grid;
+    grid-template-columns:repeat(12,1fr) ;
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap: 10px;
+    margin: 0 auto;
+    position: relative;
+}
+
+header{
+    grid-column: 1/13;
+}
+
+main{
+    grid-column: 4/13;
+    border-left: 1px solid black;
+}
+
+aside{
+    margin-top: -20% ;
+    grid-column: 1/4;
 }
