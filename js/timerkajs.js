@@ -30,8 +30,6 @@ let x = setInterval(function() {
     }
 }, 1000);   
 
-
-
 let k=1;
 let clock = document.getElementById("clk-btn");
 

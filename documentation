@@ -1,6 +1,5 @@
 LETS CHANGE OUR MOTIVE TO MAKING AN ASSISTANT RATHER THAN ONLY A BOOKMARKS MANAGER
 
-
 //Manage all your bookmarks under one place
 
 // Add a new category ==== display in form of cards == clicking it will open a modal (checkout bootstrap) to display the category wise bookmarks
@@ -9,7 +8,7 @@ LETS CHANGE OUR MOTIVE TO MAKING AN ASSISTANT RATHER THAN ONLY A BOOKMARKS MANAG
 // mongo bhai will have an essential role to play in this .... a relational schema to maintain 2 databases linked by category id maybe ... a single bookmark may go in more than one category.
 
 
-//  u can add your own bookmarks
+// u can add your own bookmarks
  give priority to categories
 
 // store list of your fav youtube videos .. though  it can just be one category of bookmarks
@@ -36,11 +35,8 @@ LETS CHANGE OUR MOTIVE TO MAKING AN ASSISTANT RATHER THAN ONLY A BOOKMARKS MANAG
 
         also we can create folder of folders and so on
 
-        make an email notifs bar
+        make an email notifications bar
 
-
-
-******************************************************************************
 ******************************************************************************
 ********************************************************************************
 <h1> please add more features u can think of to make our web experience more productive </h1>
