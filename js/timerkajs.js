@@ -17,7 +17,7 @@ let x = setInterval(function() {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    document.getElementById("demo").innerHTML = "<i class=\"fa fa-clock-o btn btn-primary\"></i>     " +
+    document.getElementById("demo").innerHTML = "<i class=\"fa fa-clock-o btn btn-primary\"></i> " +
     minutes + "m " + seconds + "s ";
 
     // If the count down is finished, write some text
