@@ -34,18 +34,34 @@ let x = setInterval(function() {
 let k=1;
 let clock = document.getElementById("clk-btn");
 
-    clock.onclick = function () {
+clock.onclick = function () {
 
-        // $("#demo").attr("display","block");
-        let timer = document.getElementById("demo");
-       if(k%2)
+    // $("#demo").attr("display","block");
+    let timer = document.getElementById("demo");
+    if(k%2)
         timer.style.display = 'block';
-       else
-           timer.style.display = 'none';
-        k++;
-       console.log(k);
+    else
+        timer.style.display = 'none';
+    k++;
+    // console.log(k);
 
-    };
+};
+let read_more= document.getElementById("read_more");
+let t=1;
+read_more.onclick = function () {
+
+    // $("#demo").attr("display","block");
+    read_more.style.display = 'none';
+    let more_text = document.getElementById("more_text");
+    if(t%2)
+        more_text.style.display = 'block';
+    else
+        more_text.style.display = 'none';
+    t++;
+    // console.log(k);
+
+};
+
 
 
 

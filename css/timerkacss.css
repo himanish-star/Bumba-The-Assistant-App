@@ -2,9 +2,12 @@
 #demo {
     text-align: center;
     font-size: 30px;
-    trasition:2s;
+    /*trasition:2s;*/
     display:none;
 }
 
+#more_text{
+    display: none;
+}
 
 
