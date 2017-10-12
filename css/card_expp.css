@@ -7,6 +7,7 @@ nav{
     grid-template-columns:repeat(12,1fr) ;
     grid-auto-rows: minmax(100px,auto);
     grid-gap: 10px;
+    width: 100% ;
 }
 
 .form-inline{
@@ -44,12 +45,37 @@ header{
     grid-column: 1/13;
 }
 
+
 main{
-    grid-column: 4/13;
+    grid-column: 5/13;
     border-left: 1px solid black;
 }
 
 aside{
-    margin-top: -20% ;
-    grid-column: 1/4;
+    margin-top: -17% ;
+    grid-column: 1/5;
 }
+
+
+@media only screen and (max-width: 1000px) {
+
+    main{    margin-top: -17% ;
+
+        grid-column: 7/13;
+        border-left: 1px solid black;
+        /*width: 100%;*/
+    }
+
+    aside{
+        margin-top: -20% ;
+        grid-column: 1/7;
+    /*width: 100%;*/
+    }
+
+        /*img {*/
+            /*width: 4rem;*/
+            /*height:10rem;*/
+        /*}*/
+
+}
+
