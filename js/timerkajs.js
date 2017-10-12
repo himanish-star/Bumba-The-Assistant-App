@@ -112,18 +112,23 @@ window.onload=()=> {
 
     };
     let read_more = document.getElementById("read_more");
-    let t = 1;
     read_more.onclick = function () {
 
         // $("#demo").attr("display","block");
         read_more.style.display = 'none';
         let more_text = document.getElementById("more_text");
-        if (t % 2)
+        let read_less=document.createElement('a');
+        read_less.setAttribute("href","#less_text");
+        read_less.setAttribute('id','read_less');
+        read_less.innerHTML="Read Less";
+        document.getElementById("readmore").appendChild(read_less);
             more_text.style.display = 'block';
-        else
-            more_text.style.display = 'none';
-        t++;
         // console.log(k);
+        read_less.onclick=function (){
+            more_text.style.display='none';
+            document.getElementById("readmore").removeChild(read_less);
+            read_more.style.display='block';
+        }
 
     };
 };

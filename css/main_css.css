@@ -11,6 +11,10 @@ html,body{
 .aligning{
     text-align :justify;
 }
+.jumbotron{
+    height: 25vh;
+    display: block;
+}
 .alpha{
     background: url("images/blueSpasrkle.jpg") top center;
     color: white;
