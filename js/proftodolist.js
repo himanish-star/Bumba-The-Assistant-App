@@ -58,15 +58,15 @@ window.onload = function () {
             checkBox.onchange = strikeSpan;}
 
         let deleteBtn = document.createElement('i');
-        deleteBtn.className = 'col-1 fa fa-times';
+        deleteBtn.className = 'col-1 fa wrapper fa-times';
         deleteBtn.onclick = deleteTodo;
 
         let moveUpBtn = document.createElement('i');
-        moveUpBtn.className = 'col-1 fa fa-chevron-up';
+        moveUpBtn.className = 'col-1 fa wrapper fa-chevron-up';
         moveUpBtn.onclick = moveuptodo;
 
         let moveDownBtn = document.createElement('i');
-        moveDownBtn.className = 'col-1 fa fa-chevron-down';
+        moveDownBtn.className = 'col-1 fa wrapper fa-chevron-down';
         moveDownBtn.onclick = movedowntodo;
 
         newListItem.appendChild(checkBox);

@@ -10,6 +10,11 @@ html,body{
 
     color:black;
 }
+.buttons_block{
+    overflow: hidden;
+    display: inline-block;
+}
+
 .fa:hover{
     cursor: pointer;
 }
