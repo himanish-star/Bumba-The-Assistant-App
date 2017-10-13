@@ -15,9 +15,10 @@ let x = setInterval(function() {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
     // Display the result in the element with id="demo"
-    var popcontent = minutes + " m " + seconds + "s ";
-console.log(popcontent);
+    let popcontent = minutes + " m " + seconds + "s ";
 
+    // var alph = document.getElementById('clk-btn');
+    // alph.('data-content',popcontent);
     $("#clk-btn").attr('data-content',popcontent);
     // $('#clk-btn').onclick.text(popcontent.toString());
 
