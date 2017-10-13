@@ -11,11 +11,11 @@
   * Give priority to categories
   * Make a parent Category of a bunch of categories. Eg. Study folder has all the Subjects folder under it which further contain the relevant bookmarks
  
- ## * Sample ##
-    * store list of your favourite youtube videos 
-    * Have another category for social media
-    * One for your academics  XD
-    * And many more there after ... 
+* ##  Sample ##
+ * store list of your favourite youtube videos 
+ * Have another category for social media
+ * One for your academics  XD
+  * And many more there after ... 
  
     
     
@@ -23,6 +23,6 @@
   
   ## A take-a-break reminder to make your web experience a bit less stressful. Sitting for more than an  hour in front of a desktop can have serious implications later on your body. ##
   
-  ### * Future goals in mind 
-       * Implement search options for categories.
-       * Make an Email/Social media notifications bar/widget.
+* ### Future goals in mind 
+   * Implement search options for categories.
+   * Make an Email/Social media notifications bar/widget.
