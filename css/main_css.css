@@ -1,24 +1,41 @@
 html,body{
     margin: 0;
     padding:0;
-    background-image: url("images/whiteBCG.png");
+    height: 100%;
+    background-image: url("images/whiteBCG.png") ;
 }
+
 .beta {
     /*height: 450px;*/
     /*width: 90%;*/
-
+    opacity: 0.9;
+    border-radius: 5px;
+    background-color: #0e91a1;
 }
+
+.full_size{
+    align-self: baseline;
+    margin-top: 20vh;
+    border-radius: 5px;
+    /*opacity: 0.9;*/
+    font-size: 15vh;
+}
+
 .aligning{
     text-align :justify;
 }
+
 .jumbotron{
     height: 25vh;
     display: block;
 }
+
 .alpha{
-    background: url("images/blueSpasrkle.jpg") top center;
+    background: url("images/blueSpasrkle.jpg") top center ;
     color: white;
-    border-radius: 0;
+    height: 100%;
+    opacity: 0.9;
+    border-radius: 5px;
 }
 
 .car-dis{
@@ -30,6 +47,7 @@ html,body{
     background-size: 100%;
     height: 100%;
 }
+
 .contact-us{
     justify-items: center;
 }
