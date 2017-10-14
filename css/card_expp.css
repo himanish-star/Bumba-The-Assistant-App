@@ -18,7 +18,7 @@ nav{
     grid-column: 4/9;
 }
 .alpha{
-    background: url("images/banjo.jpg") left center ;
+    background: url("images/whiteBCG.png") left center ;
     color: white;
     border-bottom: 2px solid white;
     height:100px;
