@@ -9,7 +9,9 @@ nav{
     grid-gap: 10px;
     width: 100% ;
 }
-
+#calend{
+    /*display: none;*/
+}
 .form-inline{
     grid-column: 4/9;
 

@@ -1,5 +1,23 @@
 "use strict";
 
+// const mysql = require ('mysql2');
+// const conn = mysql.createConnection({
+//     host:'localhost',
+//     database:'dbOne',
+//     user:'userone',
+//     password: 'passone'
+// });
+
+// function insertTodo(task, done) {
+//     conn.query(
+//         `INSERT INTO todos (task, done) VALUES ('${task}', ${done})`,(err, rows, cols)=>{
+//             if (err) throw err;
+//             console.log(rows);
+//             console.log(cols);
+//         }
+//     );}
+
+
 let list= null;
 let listElements = [];
 let forfilteruse = [];
@@ -83,7 +101,16 @@ window.onload = function () {
             task: todoTask,
             done: false
         };
+
         listElements.push(newTask);
+
+        // conn.query(
+        //     `INSERT INTO todos (task, done) VALUES ('${todoTask}',0)`,(err, rows, cols)=>{
+        //         if (err) throw err;
+        //         console.log(rows);
+        //         console.log(cols);
+        //     }
+        // );
     }
 
     function moveuptodo() {
@@ -127,4 +154,16 @@ window.onload = function () {
         listElements[index].done = event.target.checked;
         showTodos();
     }
+
+    let cal = document.getElementById("calen");
+    cal.onclick=function () {
+    cal.setAttribute('display','block');
+
+    cal.innerHTML = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+         // = popcontent;
+
+    }
+
+
+
 };
