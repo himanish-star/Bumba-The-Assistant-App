@@ -24,6 +24,13 @@ let forfilteruse = [];
 let count=0;
 let itera=0;
 window.onload = function () {
+
+    // tried to make a popover of it ... spent 3 hrs in vain /// had to settle for a modal
+// <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="200" height="300" frameborder="0" scrolling="no"></iframe>
+//     // let popcontent = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+//     let popcontent = "<iframe src=\"https://calendar.google.com/calendar/embed?showPrint=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>"
+//     $('#calen').outerHTML = popcontent;
+
     list = document.getElementById('list');
     let addNewTodo = document.getElementById('add-new-todo');
     let addBtn = document.getElementById('add-btn');
@@ -155,14 +162,19 @@ window.onload = function () {
         showTodos();
     }
 
-    let cal = document.getElementById("calen");
-    cal.onclick=function () {
-    cal.setAttribute('display','block');
+    // let cal = document.getElementById("calen");
+    // cal.onclick=function () {
+    // // cal.setAttribute('display','block');
 
-    cal.innerHTML = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
+
+
+
+
+        // cal.wrapInner("<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>");
+        // cal.innerHTML = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
          // = popcontent;
 
-    }
+    // }
 
 
 

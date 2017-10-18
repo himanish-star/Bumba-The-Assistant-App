@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/card_expp.css">
     <link rel="stylesheet" href="css/profcss.css">
     <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
-    <meta name="viewport" content="width=device-width" />
-
 </head>
 <body>
 <div id="content">
@@ -20,15 +19,30 @@
                 <i class="fa fa-home btn btn-danger"> </i>
             </div>
 
-            <div class="col-1 ">
 
-                <button type="button" id="calen" class="mr-2 btn btn-lg btn-danger" data-toggle="popover" title ="Get Up After" data-content="" data-placement="bottom" ><i class="fa fa-calendar " aria-hidden="true"></i></button>
+                <!--<button type="button" id="calen" class="mr-2 btn btn-lg btn-danger" data-toggle="popover" title ="" data-content="" data-placement="bottom"><i class="fa fa-calendar " ></i></button>-->
 
-                <!--<div id="calend">-->
-                    <!--&lt;!&ndash;<iframe src="https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="200" height="300" frameborder="0" scrolling="no"></iframe>&ndash;&gt;-->
-                <!--</div>-->
 
+            <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#myModal1"><i class="fa fa-calendar " ></i></button>
+
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog width_adjust" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1" align="center">CALENDER</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"> &times; </span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;height=200&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.indian%23holiday%40group.v.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="300" height="200" frameborder="0" scrolling="no"></iframe>
+                        </div>
+
+                    </div>
+                </div>
             </div>
+
+
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -133,9 +147,11 @@
 
 
 </div>
-    <script src="js/jquery-3.2.1.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/proftodolist.js"></script>
 
+    <script src="js/proftodolist.js"></script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timerpopper.js"></script>
 </body>
 </html>

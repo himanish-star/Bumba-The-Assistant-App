@@ -1,4 +1,4 @@
-let distance = 2700;
+let distance = 2700000;
 // Update the count down every 1 second
 //  $('#clk-btn').onclick = function(){
 
