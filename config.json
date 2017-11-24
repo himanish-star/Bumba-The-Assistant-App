@@ -1,0 +1,7 @@
+{
+    "SERVER": {
+        "PORT":7777},
+    "DB" : {
+        "URI" : "mongodb://localhost:27017/categories"
+    }
+}

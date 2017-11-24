@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="css/images/letterB.png" type="image/x-icon">
+    <title>BUMBA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/main_css.css">
+    <link rel="stylesheet" href="css/timerkacss.css">
+</head>
+<body class="container-fluid">
+
+    <div class="container-fluid beta p-3" align="center" style=" width: 100%;">
+        <div class="row justify-content-between">
+
+            <div class="col-1">
+                <i class="fa fa-home btn btn-primary"> </i>
+            </div>
+
+            <div class="col-11 justify-content-end row align-self-center">
+
+                <button type="button" class="mr-2 btn btn-primary" id="clk-btn" data-toggle="popover" title ="" data-content="vkhv" data-placement="bottom" ><i class="fa fa-clock-o"></i></button>
+
+                <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#myModal1">Sign In</button>
+
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">SIGN IN</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"> &times; </span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                          <form class="form">
+                              <div class="form-group">
+                              <label class="badge badge-dark" for="username">Username</label>
+                              <input id="username" type="text">
+                              </div>
+                              <div class="form-group">
+                                  <label class="badge badge-dark" for="password">Password</label>
+                                  <input id="password" type="text">
+                              </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary  mr-4" data-toggle="modal" data-target="#myModal2">Sign Up
+            </button>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">SIGN UP</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"> &times;</span>
+                            </button>
+                        </div>
+                            <div class="modal-body">
+                                <form class="form">
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="name1">First Name</label>
+                                        <input id="name1" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="name2">Last Name</label>
+                                        <input id="name2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="username2">Username</label>
+                                        <input id="username2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="email">Email-ID</label>
+                                        <input id="email" type="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="badge badge-dark" for="password2">Password</label>
+                                        <input id="password2" type="text">
+                                    </div>
+                                    <div class="form-group">
+                                    <label class="badge badge-dark" for="password1">Re-Password</label>
+                                        <input id="password1" type="text">
+                                    </div>
+                                </form>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <div class="jumbotron alpha " align="center">
+
+    <h1 class="full_size">BUMBA</h1>
+        <p>
+            <h3 class="pb-3">Your web assistant to make your browsing time productive.</h3>
+        </p>
+                <hr class="my-4">
+    </div>
+
+    <div class="row justify-content-center">
+        <div style="width: 100%" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner car-dis">
+                <div class="carousel-item   active">
+                    <div class="row   alpha1 justify-content-center">
+                        <div class="card m-lg-5 m-sm-3 car-dis" style="width: 60%">
+                            <div class="card-header">
+                                <h3 align="center">A Guide To Get Started</h3>
+                            </div>
+                            <div class="card-body ">
+
+                                <div class="item">
+
+                                    <p id="readmore" align="center">Having a difficult time managing your web pages?<br>
+                                        Need a better way out to categorize stuff?<br/>
+
+                                        <a href="#more_text" id="read_more" >Read More</a><br/>
+
+                                        <span id="more_text">
+                                        Well then this is the right place to be at.
+                                        This website is all about managing
+                                        web pages you're interested in and
+                                        helping you categorize stuff, especially helping
+                                        you to manage data in a
+                                        user-friendly environment.
+                                 </span>
+
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <i class="fa fa-book btn btn-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item   ml-auto mr-auto">
+                    <div class="  row alpha1 justify-content-center">
+                        <div class="card m-lg-5 m-sm-3" style="width: 60%">
+                            <div class="card-header">
+                                <h3 align="center">About Us</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="container d-flex justify-content-around aligning">
+
+                                    <p align="center">   Currently we are a pair of Computer Science underGrads, looking to help out people in whatever way we can.</p>
+                                </div>
+    <br>
+                                <p align="center">Contact Us</p>
+
+                                <div class="card-footer d-flex justify-content-center  contact-us">
+                                    <i class="fa btn btn-primary mr-2 fa-facebook-f"></i>
+                                    <i class="fa btn btn-dark mr-2 fa-github"></i>
+                                    <i class="fa fa-google-plus mr-2 btn btn-danger"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  ">
+                    <div class="row   alpha1 justify-content-center">
+                        <div class="card m-lg-5 m-sm-3" style="width: 60%">
+                            <div class="card-header"><h3 align="center">Invite Your Friends</h3></div>
+                            <div class="card-body">
+                                <p align="center">
+                                    If you liked our website. Then please invite your friends too!!!
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <i class="fa fa-link btn btn-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item  ">
+                    <div class="  row alpha1 justify-content-center">
+                        <div class="card m-lg-5 m-sm-3" style="width: 60%">
+                            <div class="card-header">
+                                <h3 align="center">Feedback</h3>
+                            </div>
+                            <div class="card-body">
+                                <p align="center">
+                                    Please feel free to send in all your views and recommendations
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <i class="fa fa-file-text-o btn btn-success"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  ">
+                    <div class="row   alpha1 justify-content-center">
+                        <div class="card m-lg-5 m-sm-3" style="width: 60%">
+                            <div class="card-header">
+                                <h3 align="center">Contribute to us</h3>
+                            </div>
+                            <div class="card-body">
+                                <p align="center">
+                                    You can contribute to us through PayPal or by improving our code
+                                </p>
+                            </div>
+                            <div class="card-footer d-flex justify-content-center">
+                                <i class="fa m-2 fa-github btn btn-primary"></i>
+                                <i class="fa m-2 fa-paypal btn btn-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+    </div>
+
+
+
+    </div>
+
+
+        <a href="card_exp.html">click kar </a>
+
+    <script src="js/timerkajs.js"></script>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="../popper.js/dist/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/timerpopper.js"></script>
+
+</div>
+
+    </body>
+    </html>
