@@ -1,25 +1,28 @@
-function showAll(cb) {
 
-    $.get('/categories/',
-                        (data) =>{ cb(data);})
-}
+$(function () {
+    function showAll(cb) {
+        console.log("opop");
+        $.get('categories/',{},
+            (data) =>{ cb(data);});
+        console.log("opop");
+    }
 
-function insertInto(categoryName,cb) {
+    function insertInto(categoryName,cb) {
 
-    $.post('/categories/',{
+        $.post('categories/',{
 
-                        categoryName:categoryName
-                            },
-                            (data) =>{ cb(data);});
+                categoryName:categoryName
+            },
+            (data) =>{ cb(data);});
 
-    window.location.reload();
-}
-
-window.onload = function () {
+        window.location.reload();
+    }
 
     let categoryName = $('#categoryName');
     let addCategory = $('#addCategory');
+    // console.log(addCategory);
     let categoryList = $('#categoryList');
+    console.log("sdlksdkasjdklasjdlkasjd");
 
     function displayList(categories){
 
@@ -27,8 +30,7 @@ window.onload = function () {
 
         var i=0;
 
-        for(typeofcategory of categories)
-        {
+        for(let typeofcategory of categories) {
             let newCategory = $(`<div class="card float-left m-3" style="height: 15rem;">
                 <button type="button" class="btn mr-4" data-toggle="modal" data-target="#myModal${i}"></button>
 
@@ -79,8 +81,9 @@ window.onload = function () {
     }
 
     showAll((categories)=>displayList(categories));
-
-    addCategory.click(()=>{
+    console.log("sdlksdkasjdklasjdlkasjd3242424");
+    document.getElementById('addCategory').onclick=()=>{
+        console.log("clicked");
         insertInto(categoryName.val(),(categories) => showAll(categories))
-    });
-};
+    };
+});
