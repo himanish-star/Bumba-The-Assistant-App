@@ -12,6 +12,7 @@ MongoClient.connect(DataBase.URI, function (err,db) {
 });
 
 const category = {
+
     createNew: function(category){
         return new Promise(function(res,rej){
             catego.insertOne(category,function (err,result) {
@@ -19,10 +20,8 @@ const category = {
                 if(err) return rej(err);
 
                 return res(result)
-
             })
         })
-
     },
 
     showAll: function (whereArgs) {
@@ -36,5 +35,4 @@ const category = {
         })
     }
 };
-
 exports.models={category};

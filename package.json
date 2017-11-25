@@ -1,7 +1,8 @@
 {
   "name": "js_project",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "",
+  "main": "popper.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,7 +17,6 @@
     "url": "https://github.com/himanish-star/JS_project/issues"
   },
   "homepage": "https://github.com/himanish-star/JS_project#readme",
-  "description": "",
   "dependencies": {
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
