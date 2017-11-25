@@ -1,11 +1,17 @@
 function showAll(cb) {
 
-    $.get('/categories/',(data) =>{ cb(data);})
+    $.get('/categories/',
+                        (data) =>{ cb(data);})
 }
 
 function insertInto(categoryName,cb) {
 
-    $.post('/categories/',{categoryName:categoryName},(data) =>{ cb(data);});
+    $.post('/categories/',{
+
+                        categoryName:categoryName
+                            },
+                            (data) =>{ cb(data);});
+
     window.location.reload();
 }
 

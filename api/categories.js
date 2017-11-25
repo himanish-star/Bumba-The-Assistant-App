@@ -1,10 +1,10 @@
 const route = require('express').Router();
-const category = require('../mongo/models').models.category;
+const category = require('../mongo/models.js').models.category;
 
 route.get('/',(req,res)=>{
 
     category.showAll({})
-        .then((categories)=>res.send(categories))
+        .then((data)=>res.send(data))
         .catch((err)=>console.log(err))
 });
 
