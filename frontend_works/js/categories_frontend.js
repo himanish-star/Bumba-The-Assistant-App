@@ -3,18 +3,13 @@ $(function () {
         $.get('categories/',{},
             (data) =>{ console.log(data);
             cb(data);});
-
-
     }
 
     function insertInto(categoryName,cb) {
-
         $.post('categories/',{
-
                 categoryName:categoryName
             },
             (data) =>{ cb(data);});
-
         window.location.reload();
     }
 
@@ -22,9 +17,7 @@ $(function () {
     let categoryList = $('#categoryList');
 
     function displayList(categories){
-
         categoryList.empty();
-
         var i=0;
 
         for(let typeofcategory of categories) {
@@ -78,7 +71,6 @@ $(function () {
     }
 
     showAll((categories)=>displayList(categories));
-
     document.getElementById('addCategory').onclick=()=>{
         insertInto(categoryName.val(),(categories) => showAll(categories))
     };
