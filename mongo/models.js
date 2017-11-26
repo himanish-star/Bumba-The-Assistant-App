@@ -1,16 +1,12 @@
 const MongoClient = require('mongodb').MongoClient;
 const DataBase = require('../config.json').DB;
 
-var catego = null;
+var catego,urls = null;
 
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
-/*
-    console.log(DataBase.URI);
-    console.log("connected to the mongodb server");
-*/
     catego = db.collection('collection');
-    // console.log(catego);
+    urls = db.collection('urls');
 });
 
 const category = {
@@ -36,5 +32,27 @@ const category = {
     }
 };
 
+const URLS={
+    insertOne: function (urlObject) {
+        return new Promise((resolve,reject)=>{
+            urls.insertOne(urlObject,(err,result)=>{
+                if(err) throw reject(err);
+                return resolve(result);
+            })
+        })
+    }
+    ,
+    find:function (whereArgs) {
+        return new Promise(function(res,rej){
+            urls.find(whereArgs).toArray(function (err,result) {
 
-exports.models={category};
+                if(err) return rej(err);
+
+                return res(result)
+            })
+        })
+    }
+};
+
+exports.models={category,URLS};
+
