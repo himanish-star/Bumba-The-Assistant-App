@@ -84,7 +84,7 @@ $(function () {
         for(let url of urls){
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
-            element.append(`<li>${url.urlName}</li>`)
+            element.append(`<li><a href="${url.urlName}">${url.urlName}</a></li>`)
         }
     }
     showAll((categories)=>displayList(categories));

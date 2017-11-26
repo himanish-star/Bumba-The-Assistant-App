@@ -1,36 +1,18 @@
 "use strict";
 
-// const mysql = require ('mysql2');
-// const conn = mysql.createConnection({
-//     host:'localhost',
-//     database:'dbOne',
-//     user:'userone',
-//     password: 'passone'
-// });
-
-// function insertTodo(task, done) {
-//     conn.query(
-//         `INSERT INTO todos (task, done) VALUES ('${task}', ${done})`,(err, rows, cols)=>{
-//             if (err) throw err;
-//             console.log(rows);
-//             console.log(cols);
-//         }
-//     );}
-
-
 let list= null;
 let listElements = [];
 let forfilteruse = [];
 let count=0;
+let allCheck=false;
 let itera=0;
 window.onload = function () {
-
-    // tried to make a popover of it ... spent 3 hrs in vain /// had to settle for a modal
-// <iframe src="https://calendar.google.com/calendar/embed?showPrint=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="200" height="300" frameborder="0" scrolling="no"></iframe>
-//     // let popcontent = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
-//     let popcontent = "<iframe src=\"https://calendar.google.com/calendar/embed?showPrint=0&amp;height=300&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>"
-//     $('#calen').outerHTML = popcontent;
-
+    $.get('categories/todos',
+        (data)=>{
+        listElements=data;
+        console.log(listElements);
+        showTodos();
+        });
     list = document.getElementById('list');
     let addNewTodo = document.getElementById('add-new-todo');
     let addBtn = document.getElementById('add-btn');
@@ -50,8 +32,17 @@ window.onload = function () {
     };
 
     selall.onclick = function () {
-        for (itera in listElements) {
-            listElements[itera].done = 'true';
+        if(!allCheck) {
+            for (itera in listElements) {
+                listElements[itera].done = true;
+            }
+            allCheck=true;
+        }
+        else {
+            for (itera in listElements) {
+                listElements[itera].done = false;
+            }
+            allCheck=false;
         }
         showTodos();
     };
@@ -77,10 +68,13 @@ window.onload = function () {
         let span = document.createElement('span');
         span.className = '';
         span.innerText = todoValue;
-        if(done){
+
+        if(done===true){
             checkBox.setAttribute('checked','true');
             span.style.textDecoration = 'line-through';
-            checkBox.onchange = strikeSpan;}
+            checkBox.onchange = strikeSpan;
+            console.log("saksksksk");
+        }
 
         let deleteBtn = document.createElement('i');
         deleteBtn.className = 'col-1 fa wrapper fa-times';
@@ -108,16 +102,11 @@ window.onload = function () {
             task: todoTask,
             done: false
         };
-
+        $.post('categories/todos',{
+            task:todoTask,
+            done:false
+        });
         listElements.push(newTask);
-
-        // conn.query(
-        //     `INSERT INTO todos (task, done) VALUES ('${todoTask}',0)`,(err, rows, cols)=>{
-        //         if (err) throw err;
-        //         console.log(rows);
-        //         console.log(cols);
-        //     }
-        // );
     }
 
     function moveuptodo() {
@@ -157,25 +146,11 @@ window.onload = function () {
     }
 
     function strikeSpan(event) {
+
         let index = event.target.parentElement.getAttribute('data-id');
         listElements[index].done = event.target.checked;
+        if(!listElements[index].done) allCheck=false;
         showTodos();
     }
-
-    // let cal = document.getElementById("calen");
-    // cal.onclick=function () {
-    // // cal.setAttribute('display','block');
-
-
-
-
-
-        // cal.wrapInner("<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>");
-        // cal.innerHTML = "<iframe src=\"https://calendar.google.com/calendar/embed?title=My%20Calender&amp;showPrint=0&amp;height=300&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FCalcutta\" style=\"border-width:0\" width=\"200\" height=\"300\" frameborder=\"0\" scrolling=\"no\"></iframe>";
-         // = popcontent;
-
-    // }
-
-
 
 };

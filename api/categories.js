@@ -1,6 +1,13 @@
 const route = require('express').Router();
 const category = require('../mongo/models.js').models.category;
 const URLS =require('../mongo/models').models.URLS;
+const Todos=require('../mongo/models').models.todo;
+
+route.get('/todos',(req,res)=>{
+   Todos.findAll({})
+       .then((data)=>res.send(data))
+       .catch((err)=>console.log(err));
+});
 
 route.get('/',(req,res)=>{
     let totalData={};
@@ -25,6 +32,14 @@ route.post('/',(req,res)=>{
         .then((result)=>res.redirect('.'))
         .catch((err)=>console.log(err));
 
+});
+
+route.post('/todos',(req,res)=>{
+    Todos.insertOne({
+        task:req.body.task,
+        done:req.body.done
+    })
+        .catch((err)=>console.log(err));
 });
 
 route.post('/urls',(req,res)=>{
