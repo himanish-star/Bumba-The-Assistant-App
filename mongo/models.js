@@ -5,12 +5,7 @@ var catego = null;
 
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
-/*
-    console.log(DataBase.URI);
-    console.log("connected to the mongodb server");
-*/
     catego = db.collection('collection');
-    // console.log(catego);
 });
 
 const category = {
@@ -35,6 +30,5 @@ const category = {
         })
     }
 };
-
 
 exports.models={category};
