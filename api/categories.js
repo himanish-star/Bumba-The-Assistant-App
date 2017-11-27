@@ -13,7 +13,6 @@ route.get('/',(req,res)=>{
                 res.send(totalData);
             })
             .catch((err)=>console.log(err));
-
     })
         .catch((err)=>console.log(err));
 });

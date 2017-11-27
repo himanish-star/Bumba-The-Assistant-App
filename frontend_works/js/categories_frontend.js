@@ -1,30 +1,25 @@
 $(function () {
-
-
-
     function showAll(cb) {
-        $.get('categories/',{},(data) =>{ cb(data);});
 
+        $.get('categories/',{},
+            (data) =>{ cb(data);});
     }
 
-
-
     function insertInto(categoryName,cb) {
-
         $.post('categories/',{
-
                 categoryName:categoryName
             },
             (data) =>{ cb(data);});
-
         window.location.reload();
     }
 
-    let categoriesList=null;
+    let categoriesList = null;
     let categoryName = $('#categoryName');
     let addCategory = $('#addCategory');
     let categoryList = $('#categoryList');
+
     function displayList(categories){
+
         let urls=categories.urlData;
         categories=categories.categoryData;
         categoriesList=categories;
@@ -46,21 +41,22 @@ $(function () {
                             </div>
                             
                             <div class="modal-body">
-                            <h2>${typeofcategory.categoryName}</h2>
-                                list of urls under this category
+                            <!--<h2>${typeofcategory.categoryName}</h2>-->
+                                <!--list of urls under this category-->
                                <ul id="${typeofcategory.categoryName.split(' ').join('')}">
                                </ul>
                                 <form class="form">
                                 
-                                    <div class="form-group">
+                                    <div class="form-group" text-align="center">
                                         <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
                                         <input id="categoryName${i}" type="text">
                                     </div>
+                                    
                                 </form>
                             </div>
                 
                             <div class="modal-footer">
-                                <button id='${i}' type="button" class="btn btn-primary">ADD URL TO THE LIST</button>
+                                <button id='${i}' type="button" align="center" class="btn btn-primary">ADD URL TO THE LIST</button>
                             </div>
                         </div>
                     </div>
@@ -80,10 +76,12 @@ $(function () {
         for(let url of urls){
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
-            element.append(`<li>${url.urlName}</li>`)
+            element.append(`<li><a href="${url.urlName}" target="_blank">${url.urlName}</a></li>`)
         }
     }
+
     showAll((categories)=>displayList(categories));
+
     function urlAppender(event){
         let ip=event.target.getAttribute('id');
         $.post('categories/urls',{
@@ -96,6 +94,7 @@ $(function () {
         }];
         urlAppenderToModal(url);
     }
+
     addCategory.click(()=>{
         insertInto(categoryName.val(),(categories) => showAll(categories))
     });
