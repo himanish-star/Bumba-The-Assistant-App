@@ -1,6 +1,5 @@
 $(function () {
     function showAll(cb) {
-
         $.get('categories/',{},
             (data) =>{ cb(data);});
     }
@@ -24,6 +23,9 @@ $(function () {
         categories=categories.categoryData;
         categoriesList=categories;
         categoryList.empty();
+
+        console.log(urls);
+        console.log(categories);
 
         var i=0;
 
@@ -72,22 +74,25 @@ $(function () {
         }
         urlAppenderToModal(urls);
     }
+
     function urlAppenderToModal(urls) {
         for(let url of urls){
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
             element.append(`<li><a href="${url.urlName}" target="_blank">${url.urlName}</a></li>`)
-        }
+     }
     }
 
     showAll((categories)=>displayList(categories));
 
     function urlAppender(event){
         let ip=event.target.getAttribute('id');
+
         $.post('categories/urls',{
             categoryName:categoriesList[ip].categoryName,
             urlName:document.getElementById(`categoryName${ip}`).value
         });
+
         let url=[{
             categoryName:categoriesList[ip].categoryName,
             urlName:document.getElementById(`categoryName${ip}`).value

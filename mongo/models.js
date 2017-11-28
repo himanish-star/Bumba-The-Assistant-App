@@ -1,12 +1,13 @@
 const MongoClient = require('mongodb').MongoClient;
 const DataBase = require('../config.json').DB;
 
-var catego,urls = null;
+var catego,urls,todos = null;
 
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
     catego = db.collection('collection');
     urls = db.collection('urls');
+    todos=db.collection('todos');
 });
 
 const category = {
@@ -25,8 +26,7 @@ const category = {
             catego.find(whereArgs).toArray(function (err,result) {
 
                 if(err) return rej(err);
-
-                return res(result)
+                res(result)
             })
         })
     }
@@ -54,5 +54,24 @@ const URLS={
     }
 };
 
-exports.models={category,URLS};
+const todo={
+    insertOne: function (todoObject) {
+        return new Promise((resolve,reject)=>{
+            todos.insertOne(todoObject,(err,result)=>{
+                if (err) throw reject(err);
+                resolve(result);
+            })
+        })
+    },
+    findAll: function (whereArgs) {
+        return new Promise((resolve,reject)=>{
+            todos.find(whereArgs).toArray((err,result)=>{
+                if(err) reject(err);
+                resolve(result);
+            });
+        })
+    }
+};
+
+exports.models={category,URLS,todo};
 
