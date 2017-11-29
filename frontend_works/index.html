@@ -18,12 +18,12 @@
         <div class="row justify-content-between">
 
             <div class="col-1">
-                <i class="fa fa-home btn btn-primary"> </i>
+              <a href="/">  <i class="fa fa-home btn btn-primary"> </i></a>
             </div>
 
             <div class="col-11 justify-content-end row align-self-center">
 
-                <button type="button" class="mr-2 btn btn-primary" id="clk-btn" data-toggle="popover" title ="" data-content="vkhv" data-placement="bottom" ><i class="fa fa-clock-o"></i></button>
+                <button type="button" class="mr-2 btn btn-primary" id="clk-btn" data-toggle="popover" title ="" data-content="" data-placement="bottom" ><i class="fa fa-clock-o"></i></button>
 
                 <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#myModal1">Sign In</button>
 
@@ -37,16 +37,9 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                          <form class="form">
-                              <div class="form-group">
-                              <label class="badge badge-dark" for="username">Username</label>
-                              <input id="username" type="text">
-                              </div>
-                              <div class="form-group">
-                                  <label class="badge badge-dark" for="password">Password</label>
-                                  <input id="password" type="text">
-                              </div>
-                          </form>
+                            <form action="/auth/google">
+                          <button class="btn btn-danger"><i class="fa fa-4x fa-google-plus-official" aria-hidden="true"></i>
+                          </button></form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -55,7 +48,6 @@
                     </div>
                 </div>
             </div>
-
             <button type="button" class="btn btn-primary  mr-4" data-toggle="modal" data-target="#myModal2">Sign Up
             </button>
             <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
@@ -252,6 +244,7 @@
 
     <button class='btn btn-dark' id="goToCardPage">click kar </button>
     <script src="js/timerkajs.js"></script>
+    <script src="js/login_js.js"></script>
     <script src="js/jquery-3.2.1.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
