@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 
 app.use('/categories',routes.categories);
 
-app.use('/auth/',routes.auth);
+app.use('/auth',routes.auth);
 
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
 
