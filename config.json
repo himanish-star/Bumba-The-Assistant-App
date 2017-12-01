@@ -1,7 +1,9 @@
 {
     "SERVER": {
-        "PORT":7777},
+        "PORT":3000},
     "DB" : {
         "URI" : "mongodb://localhost:27017/categories"
-    }
+    },
+    "cookieKey":"BumbaTheAssistant"
+
 }

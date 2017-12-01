@@ -1,4 +1,5 @@
-/.idea
-/mongo_workingfiles
-/mongo_working
-/node_modules
+/.idea/
+/node_modules/
+/google_strategy/keys.json
+mongo_workingfiles/
+/test.html

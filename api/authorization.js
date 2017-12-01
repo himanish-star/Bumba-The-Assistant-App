@@ -1,23 +1,25 @@
 const router = require('express').Router();
 const passport = require('passport');
-const googleStrategy = require('passport-google-oauth20');
-const keys = require('../google_strategy/keys.json')
 
-router.get('/',(req,res) =>{
-    res.render('index');
+router.get('/login',(req,res)=>{
+    res.sendFile('/home/soumya/BUMBA/test.html');
 });
 
+router.get('/google',
+    passport.authenticate('google',{scope:['profile']}),
+    (req,res)=>{
+        console.log("hey I'm here");
+    });
 
-router.post('google/',() =>  {
-    passport.use( new googleStrategy({
-    clientID : keys.clientID,
-    clientSecret : keys.clientSecret,
-    callbackURL : 'auth/google/redirect'
-},() => {}))
-});
+router.get('/google/redirect',
+    passport.authenticate('google'),
+    (req,res)=>{
+        res.redirect('/');
+    });
 
 router.get('/logout',(req,res)=>{
-    res.send('you have been logged out');
+    req.logout();
+    res.redirect('/');
 });
 
-module.exports = router;
+module.exports.router= router;
