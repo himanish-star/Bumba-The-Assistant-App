@@ -23,9 +23,7 @@ router.get('/google/redirect',
     });
 
 router.get('/logout',(req,res)=>{
-    // console.log('before logout');
     req.logout();
-    // console.log('after logout');
     res.redirect('/');
 });
 
