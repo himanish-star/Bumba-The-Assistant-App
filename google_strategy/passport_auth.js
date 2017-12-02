@@ -20,6 +20,19 @@ passport.use( new googleStrategy({
     clientSecret : keys.clientSecret,
     callbackURL : '/auth/google/redirect'
 },(accessToken, refreshToken, profile, done) => {
+
+
+    console.log('Starting gMail Api');
+    let Gmail = require('node-gmail-api');
+    let gmail = new Gmail(accessToken);
+    let s = gmail.messages('label:inbox', {max: 50}, { fields: ['id', 'labelIds:[READ]']});
+    let i = 0;
+    s.on('data', function (data) {
+        i++;
+        console.log (i + '  :  ' +data.snippet);
+    });
+
+    console.log('End gMail api');
     User.findByGoogleId({googleId: profile.id}).then((currentUser) => {
         if(currentUser){
             done(null, currentUser);
@@ -33,6 +46,9 @@ passport.use( new googleStrategy({
                 })
         }
     });
+
+
+
 }));
 
 

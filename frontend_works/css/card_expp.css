@@ -9,6 +9,10 @@ nav{
     grid-gap: 10px;
     width: 100% ;
 }
+.modalClass{}
+.categoryNameClass{
+    width: 100%;
+}
 .form-inline{
     grid-column: 4/9;
 

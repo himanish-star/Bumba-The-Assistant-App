@@ -3,5 +3,11 @@
 /JSONfiles/keys.json
 mongo_workingfiles/
 mongo_working/
+<<<<<<< HEAD
 /frontend_works/HTMLfiles/test.html
 JSONfiles/config.json
+=======
+https:/
+/test.html
+config.json
+>>>>>>> d45b6e75f875ed64b086da6b728d6566db6f18eb
