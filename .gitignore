@@ -1,7 +1,7 @@
 /.idea/
 /node_modules/
-/google_strategy/keys.json
+/JSONfiles/keys.json
 mongo_workingfiles/
 mongo_working/
-/test.html
-config.json
+/frontend_works/HTMLfiles/test.html
+JSONfiles/config.json

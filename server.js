@@ -1,6 +1,6 @@
 //initializing constants
 const express = require('express');
-const config = require('./config.json');
+const config = require('./JSONfiles/config.json');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
@@ -25,6 +25,10 @@ app.use('/',passport.session());
 app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
+
+app.get('/',(req,res)=>{
+    res.redirect('/HTMLfiles');
+});
 
 app.listen(config.SERVER.PORT,
     ()=> {console.log("Server started at http://localhost:" +config.SERVER.PORT)});

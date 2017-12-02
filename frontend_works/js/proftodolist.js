@@ -7,7 +7,7 @@ let count=0;
 let allCheck=false;
 let itera=0;
 window.onload = function () {
-    $.get('categories/todos',
+    $.get('/categories/todos',
         (data)=>{
         listElements=data;
         console.log(listElements);
@@ -102,7 +102,7 @@ console.log(list);
             task: todoTask,
             done: false
         };
-        $.post('categories/todos',{
+        $.post('/categories/todos',{
             task:todoTask,
             done:false
         });

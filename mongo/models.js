@@ -1,8 +1,7 @@
-//my MongoDB model page
 const MongoClient = require('mongodb').MongoClient;
-const DataBase = require('../config.json').DB;
+const DataBase = require('../JSONfiles/config.json').DB;
 
-let users,categories,urls,todos = null;//the collections used inside the DATABASE
+let users,categories,urls,todos = null;
 
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
@@ -13,7 +12,6 @@ MongoClient.connect(DataBase.URI, function (err,db) {
     users=db.collection('users');
 });
 
-//utility object for Categories
 const category = {
 
     createNew: function(category){
@@ -36,7 +34,6 @@ const category = {
     }
 };
 
-//utility object for URLs
 const URLS={
 
     insertOne: function (urlObject) {
@@ -60,7 +57,6 @@ const URLS={
     }
 };
 
-//utility object for TODOs
 const todo={
 
     insertOne: function (todoObject) {
@@ -84,7 +80,6 @@ const todo={
     }
 };
 
-//utility object for Users
 const User={
 
     findByKd:(id,callback)=>{

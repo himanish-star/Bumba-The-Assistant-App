@@ -5,7 +5,7 @@ const passport = require('passport');
 const path = require('path');
 
 router.get('/login',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../frontend_works/logged.html'));
+    res.sendFile(path.join(__dirname,'../frontend_works/HTMLfiles/logged.html'));
     // res.app.use('/auth/login',express.static(path.join(__dirname,'../frontend_works')));
 });
 

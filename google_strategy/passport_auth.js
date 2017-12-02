@@ -1,6 +1,6 @@
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./keys.json');
+const keys = require('../JSONfiles/keys.json');
 const User = require('../mongo/models').models.User;
 
 passport.serializeUser(function(user, done) {
