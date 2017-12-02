@@ -13,13 +13,13 @@ const routes = {
 require('./google_strategy/passport_auth');//requiring this to run the configuration
 
 //loading of middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieSession({
     secret:"famous",
     maxAge:60*60*1000,
-    keys:[config.cookieKey]
+    keys:[config.cookieKey],
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use('/',passport.initialize());
 app.use('/',passport.session());
 app.use('/categories',routes.categories);

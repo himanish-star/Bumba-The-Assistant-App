@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const DataBase = require('../JSONfiles/config.json').DB;
+let ObjectId = require('mongodb').ObjectId;
 
 let users,categories,urls,todos = null;
 
@@ -83,8 +84,9 @@ const todo={
 const User={
 
     findByKd:(id,callback)=>{
-        users.findOne({_id:id},(err,user)=>{
+        users.findOne(ObjectId(id),(err,user)=>{
             if(err) callback(err,user);
+            console.log(user);
             console.log("successfully deserialized");
             callback(err,user);
         })
@@ -104,6 +106,7 @@ const User={
         return new Promise((resolve,reject)=>{
             users.insertOne(Obj,(err,user)=>{
                 if(err) reject(err);
+                console.log(user);
                 user={
                     googleId: user.ops[0].googleId,
                     username: user.ops[0].username,
