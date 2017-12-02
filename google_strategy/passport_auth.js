@@ -1,7 +1,6 @@
 //my utility function to setup the configuration to use PassPortJS
 //this file has to be executed by requiring in the server.js
 //before we can use passport.authenticate
-
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('./keys.json');
@@ -28,6 +27,7 @@ passport.use( new googleStrategy({
     callbackURL : '/auth/google/redirect'
 },(accessToken, refreshToken, profile, done) => {
     User.findByGoogleId({googleId: profile.id}).then((currentUser) => {
+        // console.log(profile);
         if(currentUser){
             done(null, currentUser);
         } else {

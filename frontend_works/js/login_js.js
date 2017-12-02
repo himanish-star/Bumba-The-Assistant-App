@@ -1,3 +1,4 @@
+/*
 const passport = require('passport');
 
 $(function () {
@@ -11,3 +12,4 @@ $(function () {
     }
 )
 
+*/

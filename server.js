@@ -8,7 +8,7 @@ const cookieSession= require('cookie-session');
 const passport = require("passport");
 const routes = {
     categories : require('./api/categories').route,
-    auth : require('./api/authorization').router
+    auth : require('./api/authorization').router,
 };
 require('./google_strategy/passport_auth');//requiring this to run the configuration
 
@@ -16,7 +16,7 @@ require('./google_strategy/passport_auth');//requiring this to run the configura
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieSession({
-    maxAge:24*60*60*1000,
+    maxAge:3*1000,
     keys:config.cookieKey
 }));
 app.use(passport.initialize());

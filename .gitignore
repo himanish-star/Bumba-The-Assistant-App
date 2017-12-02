@@ -2,4 +2,5 @@
 /node_modules/
 /google_strategy/keys.json
 mongo_workingfiles/
+mongo_working/
 /test.html

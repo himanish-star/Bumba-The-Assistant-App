@@ -7,9 +7,9 @@ let users,categories,urls,todos = null;//the collections used inside the DATABAS
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
     console.log("connected");
-    /*categories = db.collection('categories');
+    categories = db.collection('categories');
     urls = db.collection('urls');
-    todos=db.collection('todos');*/
+    todos=db.collection('todos');
     users=db.collection('users');
 });
 

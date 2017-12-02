@@ -1,8 +1,12 @@
 const router = require('express').Router();
+const express = require('express');
+// const express = require('../server.js').express;
 const passport = require('passport');
+const path = require('path');
 
 router.get('/login',(req,res)=>{
-    res.sendFile('/home/soumya/BUMBA/test.html');
+    res.sendFile(path.join(__dirname,'../frontend_works/logged.html'));
+    // res.app.use('/auth/login',express.static(path.join(__dirname,'../frontend_works')));
 });
 
 router.get('/google',
@@ -14,11 +18,13 @@ router.get('/google',
 router.get('/google/redirect',
     passport.authenticate('google'),
     (req,res)=>{
-        res.redirect('/');
+        res.redirect('/auth/login');
     });
 
 router.get('/logout',(req,res)=>{
+    // console.log('before logout');
     req.logout();
+    // console.log('after logout');
     res.redirect('/');
 });
 

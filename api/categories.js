@@ -4,23 +4,23 @@ const URLS =require('../mongo/models').models.URLS;
 const Todos=require('../mongo/models').models.todo;
 
 route.get('/todos',(req,res)=>{
-   Todos.findAll({})
-       .then((data)=>res.send(data))
-       .catch((err)=>console.log(err));
+    Todos.findAll({})
+        .then((data)=>res.send(data))
+        .catch((err)=>console.log(err));
 });
 
 route.get('/',(req,res)=>{
     let totalData={};
     category.showAll({})
         .then((data)=>{
-        totalData.categoryData=data;
-        URLS.find({})
-            .then((data)=>{
-                totalData.urlData=data;
-                res.send(totalData);
-            })
-            .catch((err)=>console.log(err));
-    })
+            totalData.categoryData=data;
+            URLS.find({})
+                .then((data)=>{
+                    totalData.urlData=data;
+                    res.send(totalData);
+                })
+                .catch((err)=>console.log(err));
+        })
         .catch((err)=>console.log(err));
 });
 

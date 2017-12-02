@@ -51,13 +51,13 @@ $(function () {
                                 
                                     <div class="form-group" text-align="center">
                                         <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
-                                        <input id="categoryName${i}" type="text">
+                                        <input id="categoryName${i}" ondrop="dropIt(event)" onDragOver="event.preventDefault();" type="text">
                                     </div>
                                     
                                 </form>
                             </div>
                 
-                            <div class="modal-footer">
+                            <div class="modal-footer">  
                                 <button id='${i}' type="button" align="center" class="btn btn-primary">ADD URL TO THE LIST</button>
                             </div>
                         </div>
@@ -80,7 +80,13 @@ $(function () {
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
             element.append(`<li><a href="${url.urlName}" target="_blank">${url.urlName}</a></li>`)
-     }
+        }
+    }
+
+    function dropIt (event) {
+        let url = event.dataTransfer.getData('Text');
+        setAttribute(event.target.val,url);
+        event.preventDefault();
     }
 
     showAll((categories)=>displayList(categories));
