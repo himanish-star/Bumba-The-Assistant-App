@@ -51,7 +51,7 @@ $(function () {
                                 
                                     <div class="form-group" text-align="center">
                                         <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
-                                        <input id="categoryName${i}" ondrop="dropIt(event)" onDragOver="event.preventDefault();" type="text">
+                                        <input id="categoryName${i}" ondrop="dropIt(event)" onDragOver="dragOver(event)" type="text">
                                     </div>
                                     
                                 </form>
@@ -84,9 +84,15 @@ $(function () {
     }
 
     function dropIt (event) {
-        let url = event.dataTransfer.getData('Text');
-        setAttribute(event.target.val,url);
+        console.log(event);
         event.preventDefault();
+        let url = event.dataTransfer.getData("text");
+        event.target.val = document.getElementById(url);
+    }
+
+    function dragOver (event) {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = "move";
     }
 
     showAll((categories)=>displayList(categories));
