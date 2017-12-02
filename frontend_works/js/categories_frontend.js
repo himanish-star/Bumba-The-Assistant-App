@@ -33,8 +33,8 @@ $(function () {
             let newCategory = $(`<div class="card float-left m-3" style="height: 15rem; width:15rem;">
                 <button type="button" class="btn btn-success" style="width: 15rem; height: 12rem;" data-toggle="modal" data-target="#myModal${i}"><h1>${typeofcategory.categoryName}</h1></button>
                 <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
+                    <div class="modal-dialog modal-lg" role="document">
+                        <div class="modal-content ">
                             <div class="modal-header">
                                 <p><h4 align="center">${typeofcategory.categoryName}</h4><br>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -51,7 +51,7 @@ $(function () {
                                 
                                     <div class="form-group" text-align="center">
                                         <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
-                                        <input id="categoryName${i}" ondrop="dropIt(event)" onDragOver="dragOver(event)" type="text">
+                                        <input id="categoryName${i}" class="categoryNameClass" ondrop="dropIt(event)" onDragOver="dragOver(event)" ondragenter="onDragEnter(event)" type="text">
                                     </div>
                                     
                                 </form>
@@ -84,7 +84,6 @@ $(function () {
     }
 
     function dropIt (event) {
-        console.log(event);
         event.preventDefault();
         let url = event.dataTransfer.getData("text");
         event.target.val = document.getElementById(url);
@@ -93,6 +92,10 @@ $(function () {
     function dragOver (event) {
         event.preventDefault();
         event.dataTransfer.dropEffect = "move";
+    }
+
+    function onDragEnter(event) {
+        event.target.placeholder = 'Bring it here ...'
     }
 
     showAll((categories)=>displayList(categories));
