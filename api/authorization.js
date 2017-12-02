@@ -10,10 +10,7 @@ router.get('/login',(req,res)=>{
 });
 
 router.get('/google',
-    passport.authenticate('google',{scope:['profile']}),
-    (req,res)=>{
-        console.log("hey I'm here");
-    });
+    passport.authenticate('google',{scope:['profile']}));
 
 router.get('/google/redirect',
     passport.authenticate('google'),
@@ -22,9 +19,7 @@ router.get('/google/redirect',
     });
 
 router.get('/logout',(req,res)=>{
-    // console.log('before logout');
     req.logout();
-    // console.log('after logout');
     res.redirect('/');
 });
 

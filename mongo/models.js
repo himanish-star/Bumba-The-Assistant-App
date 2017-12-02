@@ -67,6 +67,7 @@ const todo={
         return new Promise((resolve,reject)=>{
             todos.insertOne(todoObject,(err,result)=>{
                 if (err) throw reject(err);
+                console.log(result);
                 resolve(result);
             })
         })
@@ -76,6 +77,7 @@ const todo={
         return new Promise((resolve,reject)=>{
             todos.find(whereArgs).toArray((err,result)=>{
                 if(err) reject(err);
+                console.log(result);
                 resolve(result);
             });
         })
@@ -84,31 +86,35 @@ const todo={
 
 //utility object for Users
 const User={
+
     findByKd:(id,callback)=>{
-        users.find({_id:id},(err,user)=>{
+        users.findOne({_id:id},(err,user)=>{
             if(err) callback(err,user);
+            console.log("successfully deserialized");
             callback(err,user);
         })
     },
 
-    findByGoogleId:(Obj)=>{
+    findByGoogleId:function (whereArgs) {
         return new Promise((resolve,reject)=>{
-            users.find({googleId:Obj.googleId},(err,user)=>{
+            users.findOne(whereArgs,(err,result)=>{
                 if(err) reject(err);
-                console.log("found out existing user");
-                resolve(user)
-            })
+                console.log("findByGoogleID result\n",result);
+                resolve(result);
+            });
         })
     },
 
     createNewUser:(Obj)=>{
         return new Promise((resolve,reject)=>{
-            users.insertOne({
-                googleId:Obj.googleId,
-                username:Obj.username
-            },(err,user)=>{
+            users.insertOne(Obj,(err,user)=>{
                 if(err) reject(err);
-                console.log("created new user");
+                user={
+                    googleId: user.ops[0].googleId,
+                    username: user.ops[0].username,
+                    _id: user.ops[0]._id,
+                };
+                console.log("created new user :\n",user);
                 resolve(user);
             })
         })

@@ -16,11 +16,12 @@ require('./google_strategy/passport_auth');//requiring this to run the configura
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieSession({
-    maxAge:3*1000,
-    keys:config.cookieKey
+    secret:"famous",
+    maxAge:60*60*1000,
+    keys:[config.cookieKey]
 }));
-app.use(passport.initialize());
-app.use(passport.session());
+app.use('/',passport.initialize());
+app.use('/',passport.session());
 app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
