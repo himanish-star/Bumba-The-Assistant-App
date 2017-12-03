@@ -21,7 +21,6 @@ passport.use( new googleStrategy({
     callbackURL : '/auth/google/redirect'
 },(accessToken, refreshToken, profile, done) => {
 
-
     console.log('Starting gMail Api');
     let Gmail = require('node-gmail-api');
     let gmail = new Gmail(accessToken);
@@ -46,9 +45,4 @@ passport.use( new googleStrategy({
                 })
         }
     });
-
-
-
 }));
-
-
