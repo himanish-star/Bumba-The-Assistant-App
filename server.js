@@ -9,6 +9,7 @@ const passport = require("passport");
 const routes = {
     categories : require('./api/categories').route,
     auth : require('./api/authorization').router,
+    profile: require('./api/profile').route
 };
 require('./google_strategy/passport_auth');//requiring this to run the configuration
 
@@ -24,11 +25,19 @@ app.use('/',passport.initialize());
 app.use('/',passport.session());
 app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
+app.use('/profile',routes.profile);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
 
 app.get('/',(req,res)=>{
     res.redirect('/HTMLfiles');
 });
 
+
+app.get('/HTMLfiles',(req,res,next)=>{
+    res.sendFile(__dirname+'/frontend_works/HTMLfiles/homePage.html');
+});
+
 app.listen(config.SERVER.PORT,
     ()=> {console.log("Server started at http://localhost:" +config.SERVER.PORT)});
+
+module.exports=app;

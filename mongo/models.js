@@ -86,8 +86,6 @@ const User={
     findByKd:(id,callback)=>{
         users.findOne(ObjectId(id),(err,user)=>{
             if(err) callback(err,user);
-            console.log(user);
-            console.log("successfully deserialized");
             callback(err,user);
         })
     },
@@ -96,7 +94,6 @@ const User={
         return new Promise((resolve,reject)=>{
             users.findOne(whereArgs,(err,result)=>{
                 if(err) reject(err);
-                console.log("findByGoogleID result\n",result);
                 resolve(result);
             });
         })
@@ -106,13 +103,7 @@ const User={
         return new Promise((resolve,reject)=>{
             users.insertOne(Obj,(err,user)=>{
                 if(err) reject(err);
-                console.log(user);
-                user={
-                    googleId: user.ops[0].googleId,
-                    username: user.ops[0].username,
-                    _id: user.ops[0]._id,
-                };
-                console.log("created new user :\n",user);
+                user=user.ops[0];
                 resolve(user);
             })
         })

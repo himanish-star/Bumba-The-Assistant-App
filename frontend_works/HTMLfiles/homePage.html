@@ -19,12 +19,12 @@
         <div class="col-1">
             <a href="/">  <i class="fa fa-home btn btn-primary"> </i></a>
         </div>
-
-        <div class="col-11 justify-content-end row align-self-center">
+        <div id="dashboard" class="col-5"></div>
+        <div class="col-6 justify-content-end row align-self-center">
 
             <button type="button" class="mr-2 btn btn-primary" id="clk-btn" data-toggle="popover" title ="" data-content="" data-placement="bottom" ><i class="fa fa-clock-o"></i></button>
 
-            <button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#myModal1">Sign In</button>
+            <button id="signIn" type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#myModal1">Sign In</button>
 
             <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary  mr-2" data-toggle="modal" data-target="#myModal2">Sign Up
+            <button id="signUp" type="button" class="btn btn-primary  mr-2" data-toggle="modal" data-target="#myModal2">Sign Up
             </button>
             <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -93,10 +93,10 @@
                     </div>
                 </div>
             </div>
-            <a href="/auth/logout/"> <button class="btn btn-primary mr-2" >Log Out</button>
+            <a href="/auth/logout/"> <button id="logout" class="btn btn-primary mr-2" >Log Out</button>
             </a>
 
-            <a href="/gmailAuth"> <button class="btn btn-primary mr-2"> Access Gmail </button></a>
+            <a href="/gmailAuth"> <button id="accessGmail" class="btn btn-primary mr-2"> Access Gmail </button></a>
 
         </div>
 
@@ -247,19 +247,17 @@
 
 
 <button class='btn btn-dark' id="goToCardPage">click kar </button>
-<script src="../js/timerkajs.js"></script>
-<script src="../js/login_js.js"></script>
-<script src="../js/jquery-3.2.1.slim.min.js"></script>
+
+<script src="../js/jquery-3.2.1.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/timerkajs.js"></script>
+<script src="../js/login_js.js"></script>
 <script src="../js/timerpopper.js"></script>
 <script>
     $('#goToCardPage').click(()=>{
         window.location.href='/HTMLfiles/card_exp.html';
     });
 </script>
-
-</div>
-
 </body>
 </html>

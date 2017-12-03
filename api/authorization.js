@@ -5,8 +5,8 @@ const passport = require('passport');
 const path = require('path');
 
 router.get('/login',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../frontend_works/HTMLfiles/logged.html'));
-    // res.app.use('/auth/login',express.static(path.join(__dirname,'../frontend_works')));
+    res.redirect('/HTMLfiles');
+// res.app.use('/auth/login',express.static(path.join(__dirname,'../frontend_works')));
 });
 
 router.get('/google',
@@ -18,7 +18,6 @@ router.get('/google',
 router.get('/google/redirect',
     passport.authenticate('google'),
     (req,res)=>{
-        console.log(req.profile);
         res.redirect('/auth/login/')
     });
 
