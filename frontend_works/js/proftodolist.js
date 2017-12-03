@@ -7,12 +7,14 @@ let count=0;
 let allCheck=false;
 let itera=0;
 window.onload = function () {
+
     $.get('/categories/todos',
         (data)=>{
         listElements=data;
-        console.log(listElements);
+        // console.log(listElements);
         showTodos();
-        });
+    });
+
     list = document.getElementById('list');
     let addNewTodo = document.getElementById('add-new-todo');
     let addBtn = document.getElementById('add-btn');
@@ -54,10 +56,10 @@ window.onload = function () {
             count=itera;
         }
     }
-console.log(list);
+
     function addListItem(todoValue,done,id){
         let newListItem = document.createElement('li');
-        newListItem.setAttribute('data-id',id);
+        newListItem.setAttribute('id','todo' + id);
         newListItem.className = 'list-group-item row just';
 
         let checkBox = document.createElement('input');
@@ -67,13 +69,13 @@ console.log(list);
 
         let span = document.createElement('span');
         span.className = '';
+        span.setAttribute('id','todoSpan'+id);
         span.innerText = todoValue;
 
         if(done===true){
             checkBox.setAttribute('checked','true');
             span.style.textDecoration = 'line-through';
             checkBox.onchange = strikeSpan;
-            console.log("saksksksk");
         }
 
         let deleteBtn = document.createElement('i');
@@ -109,9 +111,20 @@ console.log(list);
         listElements.push(newTask);
     }
 
+    function deleteTodo(event) {
+        let index = +event.target.parentElement.getAttribute('id').split('do')[1];
+        listElements.splice(index,1);
+        let task = document.getElementById('todoSpan'+index).innerText;
+
+        $.post('/categories/todos/delete',{
+            task : task
+        });
+        showTodos();
+    }
+
     function moveuptodo() {
 
-        let index = event.target.parentElement.getAttribute('data-id');
+        let index = event.target.parentElement.getAttribute('id').split('do')[1];
        forfilteruse=listElements;
 
        if(parseInt(index))
@@ -123,10 +136,9 @@ console.log(list);
             showTodos();
         }
     }
-
     function movedowntodo() {
 
-        let index = event.target.parentElement.getAttribute('data-id');
+        let index = event.target.parentElement.getAttribute('id').split('do')[1];
         forfilteruse=listElements;
 
         if(index!==count)
@@ -139,18 +151,11 @@ console.log(list);
         }
     }
 
-    function deleteTodo(event) {
-        let index = +event.target.parentElement.getAttribute('data-id');
-        listElements.splice(index,1);
-        showTodos();
-    }
-
     function strikeSpan(event) {
 
-        let index = event.target.parentElement.getAttribute('data-id');
+        let index = event.target.parentElement.getAttribute('id').split('do')[1];
         listElements[index].done = event.target.checked;
         if(!listElements[index].done) allCheck=false;
         showTodos();
     }
-
 };

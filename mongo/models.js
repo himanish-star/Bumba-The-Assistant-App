@@ -32,7 +32,19 @@ const category = {
                 res(result)
             })
         })
+    },
+
+    deleteOne: function (whereArgs) {
+        return new Promise(function (res,rej) {
+            categories.remove({whereArgs},function(err,result){
+
+                if(err) return rej(err);
+                else
+                    return res(result)
+            })
+        })
     }
+
 };
 
 const URLS={
@@ -55,6 +67,19 @@ const URLS={
                 return res(result)
             })
         })
+    },
+
+    deleteOne: function (whereArgs) {
+        return new Promise(function (res,rej) {
+            urls.remove({whereArgs},function(err,result){
+
+                if(err) return rej(err)
+                else
+                    return res(result)
+            })
+
+        })
+
     }
 };
 
@@ -78,6 +103,19 @@ const todo={
                 resolve(result);
             });
         })
+    },
+
+    deleteOne: function (whereArgs) {
+        return new Promise(function (res,rej) {
+            todos.remove({whereArgs},function(err,result){
+
+                if(err) return rej(err)
+                else
+                    return res(result)
+            })
+
+        })
+
     }
 };
 
@@ -120,4 +158,3 @@ const User={
 };
 
 exports.models={category,URLS,todo,User};
-
