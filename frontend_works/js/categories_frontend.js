@@ -1,11 +1,11 @@
 $(function () {
     function showAll(cb) {
-        $.get('categories/',{},
+        $.get('/categories/',{},
             (data) =>{ cb(data);});
     }
 
     function insertInto(categoryName,cb) {
-        $.post('categories/',{
+        $.post('/categories/',{
                 categoryName:categoryName
             },
             (data) =>{ cb(data);});
@@ -103,7 +103,7 @@ $(function () {
     function urlAppender(event){
         let ip=event.target.getAttribute('id');
 
-        $.post('categories/urls',{
+        $.post('/categories/urls',{
             categoryName:categoriesList[ip].categoryName,
             urlName:document.getElementById(`categoryName${ip}`).value
         });

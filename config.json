@@ -1,9 +1,0 @@
-{
-    "SERVER": {
-        "PORT":3000},
-    "DB" : {
-        "URI" : "mongodb://localhost:27017/yopo3"
-    },
-    "cookieKey":"BumbaTheAssistant"
-
-}

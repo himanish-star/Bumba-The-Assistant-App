@@ -1,6 +1,6 @@
 //initializing constants
 const express = require('express');
-const config = require('./config.json');
+const config = require('./JSONfiles/config.json');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
@@ -13,18 +13,22 @@ const routes = {
 require('./google_strategy/passport_auth');//requiring this to run the configuration
 
 //loading of middlewares
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
 app.use(cookieSession({
     secret:"famous",
     maxAge:60*60*1000,
-    keys:[config.cookieKey]
+    keys:[config.cookieKey],
 }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
 app.use('/',passport.initialize());
 app.use('/',passport.session());
 app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
+
+app.get('/',(req,res)=>{
+    res.redirect('/HTMLfiles');
+});
 
 app.listen(config.SERVER.PORT,
     ()=> {console.log("Server started at http://localhost:" +config.SERVER.PORT)});

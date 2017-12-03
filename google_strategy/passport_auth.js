@@ -1,6 +1,6 @@
 const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./keys.json');
+const keys = require('../JSONfiles/keys.json');
 const User = require('../mongo/models').models.User;
 
 passport.serializeUser(function(user, done) {
@@ -11,6 +11,7 @@ passport.serializeUser(function(user, done) {
 passport.deserializeUser(function(id, done) {
     console.log("deserializing user id : "+id);
     User.findByKd(id, function(err, user) {
+        console.log(user);
         done(err, user);
     });
 });
