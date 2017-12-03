@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28801632-4f70-4c7a-a80c-9defbd8e83cd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/categories.js" afterPath="$PROJECT_DIR$/api/categories.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend_works/HTMLfiles/card_exp.html" afterPath="$PROJECT_DIR$/frontend_works/HTMLfiles/card_exp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend_works/js/categories_frontend.js" afterPath="$PROJECT_DIR$/frontend_works/js/categories_frontend.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend_works/js/proftodolist.js" afterPath="$PROJECT_DIR$/frontend_works/js/proftodolist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mongo/models.js" afterPath="$PROJECT_DIR$/mongo/models.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,11 +44,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="proftodolist.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="proftodolist.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/frontend_works/js/proftodolist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="141">
-              <caret line="116" column="71" lean-forward="false" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
+            <state relative-caret-position="224">
+              <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -68,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="models.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mongo/models.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
+            <state relative-caret-position="144">
               <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
               <folding />
             </state>
@@ -110,7 +116,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/frontend_works/js/profile.js" />
         <option value="$PROJECT_DIR$/api/profile.js" />
         <option value="$PROJECT_DIR$/api/authorization.js" />
@@ -120,9 +125,10 @@
         <option value="$PROJECT_DIR$/frontend_works/HTMLfiles/homePage.html" />
         <option value="$PROJECT_DIR$/frontend_works/HTMLfiles/card_exp.html" />
         <option value="$PROJECT_DIR$/frontend_works/js/categories_frontend.js" />
-        <option value="$PROJECT_DIR$/frontend_works/js/proftodolist.js" />
         <option value="$PROJECT_DIR$/api/categories.js" />
         <option value="$PROJECT_DIR$/mongo/models.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/frontend_works/js/proftodolist.js" />
       </list>
     </option>
   </component>
@@ -223,12 +229,12 @@
       <workItem from="1512270368342" duration="9344000" />
       <workItem from="1512282928985" duration="166000" />
       <workItem from="1512284918128" duration="638000" />
-      <workItem from="1512290510980" duration="10681000" />
+      <workItem from="1512290510980" duration="11718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20829000" />
+    <option name="totallyTimeSpent" value="21866000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="-4" width="1303" height="780" extended-state="6" />
@@ -450,13 +456,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontend_works/js/login_js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -558,14 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend_works/js/proftodolist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="116" column="71" lean-forward="false" selection-start-line="116" selection-start-column="71" selection-end-line="116" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/categories.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -574,10 +565,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mongo/models.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="144">
           <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontend_works/js/proftodolist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="33" column="30" lean-forward="false" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
           <folding />
         </state>
       </provider>

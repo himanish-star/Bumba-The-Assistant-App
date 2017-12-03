@@ -29,7 +29,12 @@ window.onload = function () {
 
     delBtn.onclick = function () {
         forfilteruse=listElements;
-        listElements=forfilteruse.filter(function (item,index,forfilteruse) { return (!forfilteruse[index].done) });
+        listElements=forfilteruse.filter(function (item) {
+            if(item.done)
+                return (true);
+            return false;
+        });
+        console.log(listElements);
         showTodos();
     };
 
