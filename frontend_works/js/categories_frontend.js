@@ -1,14 +1,24 @@
 $(function () {
     function showAll(cb) {
         $.get('/categories/',{},
-            (data) =>{ cb(data);});
+            (data) =>{cb(data);});
     }
 
     function insertInto(categoryName,cb) {
         $.post('/categories/',{
-                categoryName:categoryName
+                categoryName:categoryName,
             },
-            (data) =>{ cb(data);});
+            (data) =>{cb(data);});
+        window.location.reload();
+    }
+
+    function deleteFrom(cName,cb){
+        // console.log('Me in deleteFrom');
+        $.post('/categories/delete',{
+            cName : cName,
+        },
+            (data)=>{cb(data)});
+        // console.log('after request');
         window.location.reload();
     }
 
@@ -27,7 +37,7 @@ $(function () {
         console.log(urls);
         console.log(categories);
 
-        var i=0;
+        let i=0;
 
         for(let typeofcategory of categories) {
             let newCategory = $(`<div class="card float-left m-3" style="height: 15rem; width:15rem;">
@@ -64,17 +74,18 @@ $(function () {
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-text" align="center"></p>
+                    <p class="card-text" align="center"><button class="btn btn-danger" id="delBtn${i}"> Delete ${typeofcategory.categoryName}</button></p>
                 </div>
             </div>`);
 
             categoryList.append(newCategory);
             document.getElementById(i).onclick=urlAppender;
+            document.getElementById('delBtn'+i).onclick=categoryDelete;
+
             i++;
         }
         urlAppenderToModal(urls);
     }
-
     function urlAppenderToModal(urls) {
         for(let url of urls){
             let cname=url.categoryName.split(' ').join('');
@@ -86,6 +97,7 @@ $(function () {
     function dropIt (event) {
         event.preventDefault();
         let url = event.dataTransfer.getData("text");
+        event.target.val = "";
         event.target.val = document.getElementById(url);
     }
 
@@ -113,6 +125,16 @@ $(function () {
             urlName:document.getElementById(`categoryName${ip}`).value
         }];
         urlAppenderToModal(url);
+    }
+
+    function categoryDelete(event) {
+        let idI = event.target.getAttribute('id').split('n')[1];
+        // console.log(idI);
+        let cName = categoriesList[idI].categoryName;
+        // console.log(cName);
+        deleteFrom(cName,(categories) => showAll(categories))
+
+
     }
 
     addCategory.click(()=>{

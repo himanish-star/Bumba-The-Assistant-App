@@ -40,9 +40,4 @@ passport.use( new googleStrategy({
                 })
         }
     });
-
-
-
 }));
-
-

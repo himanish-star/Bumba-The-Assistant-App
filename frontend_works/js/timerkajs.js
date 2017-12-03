@@ -8,26 +8,24 @@ $(()=>{
         let dashHTML;
         let text;
         if(!name){
-            text="Please sign in";
             $('#accessGmail').hide();
             $('#logout').hide();
+            $('#goToCardPage').hide();
             $('#signIn').show();
             $('#signUp').show();
-            dashHTML=`<span class="btn-light btn bg-white align-self-center">
-                            ${text} 
-                      </span>`
         }else{
-            let text=`Hey, ${name}`;
+            text=`Hey, ${name}`;
             $('#accessGmail').show();
             $('#logout').show();
+            $('#goToCardPage').show();
             $('#signIn').hide();
             $('#signUp').hide();
             dashHTML=`<span class="btn-light btn bg-white align-self-center">
                             ${text} 
                       </span>
                       <img src="${data.thumbnail}">`;
+            dashboard.append(dashHTML);
         }
-        dashboard.append(dashHTML);
     });
 
     let distance = 2700000;
