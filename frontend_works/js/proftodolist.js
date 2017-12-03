@@ -115,7 +115,6 @@ window.onload = function () {
         let index = +event.target.parentElement.getAttribute('id').split('do')[1];
         listElements.splice(index,1);
         let task = document.getElementById('todoSpan'+index).innerText;
-
         $.post('/categories/todos/delete',{
             task : task
         });

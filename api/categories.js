@@ -25,7 +25,6 @@ route.get('/',(req,res)=>{
 });
 
 route.post('/',(req,res)=>{
-        console.log('inside Insert');
         category.createNew({
             categoryName: req.body.categoryName
         })
@@ -34,21 +33,11 @@ route.post('/',(req,res)=>{
 });
 
 route.post('/delete',(req,res)=>{
-    console.log('inside Delete');
     category.deleteOne({
-        categoryName : req.param.cName
+        categoryName : req.body.cName
     })
-        // .then((result) => res.redirect('/categories/'))
         .catch((err) => console.log(err));
-    console.log('after DELETE');
 });
-/*
-route.get('/delete',(req,res) => {
-
-    console.log('inside Callback of delete');
-    res.redirect('/categories/')
-
-});*/
 
 route.post('/todos',(req,res)=>{
     Todos.insertOne({
