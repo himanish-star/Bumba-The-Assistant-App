@@ -1,0 +1,100 @@
+.tabs {
+    width:100%;
+    display:inline-block;
+}
+
+.body{
+    background-color: #C3CAD9;
+}
+
+h1{
+    color: black;
+    text-align: center;
+}
+#about_bumba, #likeAbout{
+    margin-top: 0;
+    font-size: 100px ;
+}
+#likeAbout{
+    margin-bottom: 0px;
+    padding: 0px;
+}
+.hello{
+    margin-top: -10%;
+
+}
+.masthead{
+    background-color: white;
+}
+.gs{
+    background-color: white;
+
+}
+.hello1{
+    background-color: #d8d8d8;
+
+}
+#main_about{
+    font-size: 30px;
+}
+#gettingStarted{
+    background-color: #d8d8d8;
+}
+#getStarted{
+    /*height: 0.2rem;*/
+    margin-top: 0rem;
+    display: block;
+    /*background-color: #dddfe2;*/
+
+}
+.tab-links a:hover {
+    background: ghostwhite;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+
+/*----- Content of Tabs -----*/
+.tab-content {
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+    /*display: flex;/*/
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+#poweredBy div{
+    /*grid-column: 1/3;*/
+    background-color: white;
+
+}
+.imgClass{
+    background-color: black;
+}
+.imgClass img{
+    max-width: 15rem;
+    /*border: 2px solid #d8d8d8;*/
+    border-radius: 10px;
+    height: 10rem;
+    /*display: grid;*/
+    /*grid-column: 1/3;*/
+}
+
+
+#poweredBy{
+    display:grid;
+    grid-template-columns:repeat(5,1fr) ;
+    grid-auto-rows: minmax(100px,auto);
+    grid-gap: 30px;
+    grid-row-gap: 100px;
+    margin: 0 auto;
+    position: relative;
+}

@@ -6,6 +6,9 @@ html,body{
     height: 10vh;
     position: fixed;
     background-color: white;
+    border-bottom: solid;
+    opacity: 1;
+    z-index: 1;
 }
 
 .dropdown-menu{
@@ -72,3 +75,4 @@ html,body{
 .contact-us{
     justify-items: center;
 }
+

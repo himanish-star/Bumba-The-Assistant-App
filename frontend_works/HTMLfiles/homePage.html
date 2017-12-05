@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/main_css.css">
     <link rel="stylesheet" href="../css/timerkacss.css">
+    <link rel="stylesheet" href="../css/home_below.css">
+    <link rel="stylesheet" href="../css/for_tabs.css">
 </head>
 
 <body class="container-fluid m-0 p-0">
@@ -61,138 +63,68 @@
         <div class="btn btn-success"><i class="fa fa-whatsapp"> Whatsapp</i></div>
     </div>
 </div>
+<!--end of jumbotron-->
 
-<div class="row justify-content-center">
-    <div style="width: 100%" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-        </ol>
-        <div class="carousel-inner car-dis">
-            <div class="carousel-item   active">
-                <div class="row   alpha1 justify-content-center">
-                    <div class="card m-lg-5 m-sm-3 car-dis" style="width: 60%">
-                        <div class="card-header">
-                            <h3 align="center">A Guide To Get Started</h3>
-                        </div>
-                        <div class="card-body ">
+<br><br><br>
 
-                            <div class="item">
-
-                                <p id="readmore" align="center">Having a difficult time managing your web pages?<br>
-                                    Need a better way out to categorize stuff?<br/>
-
-                                    <a href="#more_text" id="read_more" >Read More</a><br/>
-
-                                    <span id="more_text">
-                                        Well then this is the right place to be at.
-                                        This website is all about managing
-                                        web pages you're interested in and
-                                        helping you categorize stuff, especially helping
-                                        you to manage data in a
-                                        user-friendly environment.
-                                 </span>
-
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center">
-                            <i class="fa fa-book btn btn-primary"></i>
-                        </div>
+<div style="font-family:Ubuntu;align-self: center" class="container-fluid intro m-0 p-0">
+        <div class="tabs d-flex p-0 m-0 flex-column ">
+            <div style="margin:0;border-bottom: solid" class="row">
+                    <div align="center" style="font-size: medium" class="col-6" id="main_about">
+                        <h1 id="about_bumba" style="font-size: x-large;font-weight: bold"><b>ABOUT</b></h1>
+                        BUMBA is a multipurpose web application which makes your time on the web
+                        productive. It eases a variety <br> of your tasks and saves a lot of your time.
+                        Have a look at its features <br><br>
                     </div>
+                    <div align="center" class="col-6">
+                        <img style="width: 20%;color: white" src="../css/images/about%20us.png">
+                        <img style="width: 20%;color: white" src="../css/images/us.png">
+                    </div>
+            </div>
+            <div style="width: 100%;margin: 0" class="bg-secondary row">
+            <!--INSERT ICON HERE-->
+                    <div class="col-2 d-flex flex-column justify-content-around m-0 p-0 tab-links">
+                        <div ><a href="#tab1" >BookMarks <i class="fa fa-bookmark" ></i></a></div>
+                    <div ><a href="#tab2" >Todo List <i class="fa fa-list" ></i></a></div>
+                    <div ><a href="#tab3" >GMail <i class="fa fa-bell" ></i></a></div>
+                    <div ><a href="#tab4" >Doodle <i class="fa fa-paint-brush" ></i></a></div>
+                    </div>
+                <div style="height: 60vh;overflow: scroll" class="text-success col-10 tab-content">
+                <div style="height: 50%" id="tab1" align="center" class="tab active">
+                    <h3>Manage All Your Bookmarks Under One Place </h3>
+                    <p>Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
+                        Drag and Drop bookmarks related to those categories. Its as simple as that. </p>
+                    <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/12/firefox-bookmark-tags.png" style="height: 250px; width: 50%;" alt="">
+                </div>
+
+                <div id="tab2" align="center" class="tab">
+
+                    <h3>Keep Track Of All Important Tasks</h3>
+                    <p>Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
+                        <br>Mark tasks as done and delete them if wanted. The user friendly UI is self-explanatory though.</p>
+                    <img src="http://www.jamiegellingsmediablog.com/uploads/2/5/1/5/25153601/7260687.jpg?540" style="height: 250px; width:250px;" alt="">
+                </div>
+
+
+                <div id="tab3" align="center" class="tab">
+                    <h3>Get notified of any new Emails</h3>
+                    <p>Look out for new emails category wise here it self instead of visiting the website. <br>
+                        A must have feature for any desktop application</p>
+                    <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 250px; width:250px;" alt="">
+
+                </div>
+
+                <div id="tab4" align="center" class="tab">
+                    <h3>Doodle Out Imp Figures,Tables</h3>
+                    <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
+                    <img src="http://moziru.com/images/painting-clipart-paint-board-18.jpg" style="height: 250px; width:250px;" alt="">
                 </div>
             </div>
-            <div class="carousel-item   ml-auto mr-auto">
-                <div class="  row alpha1 justify-content-center">
-                    <div class="card m-lg-5 m-sm-3" style="width: 60%">
-                        <div class="card-header">
-                            <h3 align="center">About Us</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="container d-flex justify-content-around aligning">
-
-                                <p align="center">   Currently we are a pair of Computer Science underGrads, looking to help out people in whatever way we can.</p>
-                            </div>
-                            <br>
-                            <p align="center">Contact Us</p>
-
-                            <div class="card-footer d-flex justify-content-center  contact-us">
-                                <i class="fa btn btn-primary mr-2 fa-facebook-f"></i>
-                                <i class="fa btn btn-dark mr-2 fa-github"></i>
-                                <i class="fa fa-google-plus mr-2 btn btn-danger"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <div class="carousel-item  ">
-                <div class="row   alpha1 justify-content-center">
-                    <div class="card m-lg-5 m-sm-3" style="width: 60%">
-                        <div class="card-header"><h3 align="center">Invite Your Friends</h3></div>
-                        <div class="card-body">
-                            <p align="center">
-                                If you liked our website. Then please invite your friends too!!!
-                            </p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center">
-                            <i class="fa fa-link btn btn-success"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="carousel-item  ">
-                <div class="  row alpha1 justify-content-center">
-                    <div class="card m-lg-5 m-sm-3" style="width: 60%">
-                        <div class="card-header">
-                            <h3 align="center">Feedback</h3>
-                        </div>
-                        <div class="card-body">
-                            <p align="center">
-                                Please feel free to send in all your views and recommendations
-                            </p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center">
-                            <i class="fa fa-file-text-o btn btn-success"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item  ">
-                <div class="row   alpha1 justify-content-center">
-                    <div class="card m-lg-5 m-sm-3" style="width: 60%">
-                        <div class="card-header">
-                            <h3 align="center">Contribute to us</h3>
-                        </div>
-                        <div class="card-body">
-                            <p align="center">
-                                You can contribute to us through PayPal or by improving our code
-                            </p>
-                        </div>
-                        <div class="card-footer d-flex justify-content-center">
-                            <i class="fa m-2 fa-github btn btn-primary"></i>
-                            <i class="fa m-2 fa-paypal btn btn-primary"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
         </div>
-    </div>
-
-
-
 </div>
+
+
 
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -268,6 +200,9 @@
 <script src="../js/timerkajs.js"></script>
 <script src="../js/login_js.js"></script>
 <script src="../js/timerpopper.js"></script>
+<script src="../js/for_tabs.js"></script>
+<script src="../js/new-age.js"></script>
+<script src="../js/new-age.min.js"></script>
 <script>
     $('#logout').click(()=>{
         window.location.href='/auth/logout';
