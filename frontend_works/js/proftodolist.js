@@ -29,7 +29,12 @@ window.onload = function () {
 
     delBtn.onclick = function () {
         forfilteruse=listElements;
-        listElements=forfilteruse.filter(function (item,index,forfilteruse) { return (!forfilteruse[index].done) });
+        listElements=forfilteruse.filter(function (item) {
+            if(item.done)
+                return (true);
+            return false;
+        });
+        console.log(listElements);
         showTodos();
     };
 
@@ -115,7 +120,6 @@ window.onload = function () {
         let index = +event.target.parentElement.getAttribute('id').split('do')[1];
         listElements.splice(index,1);
         let task = document.getElementById('todoSpan'+index).innerText;
-
         $.post('/categories/todos/delete',{
             task : task
         });
