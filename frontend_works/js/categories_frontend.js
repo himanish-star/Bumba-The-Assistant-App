@@ -13,12 +13,10 @@ $(function () {
     }
 
     function deleteFrom(cName,cb){
-        // console.log('Me in deleteFrom');
         $.post('/categories/delete',{
-            cName : cName,
-        },
+                cName : cName,
+            },
             (data)=>{cb(data)});
-        // console.log('after request');
         window.location.reload();
     }
 
@@ -48,7 +46,7 @@ $(function () {
                             <div class="modal-header">
                                 <p><h4 align="center">${typeofcategory.categoryName}</h4><br>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true"> &times;</span>
+                                    <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             
@@ -61,7 +59,7 @@ $(function () {
                                 
                                     <div class="form-group" text-align="center">
                                         <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
-                                        <input id="categoryName${i}" class="categoryNameClass" ondrop="dropIt(event)" onDragOver="dragOver(event)" ondragenter="onDragEnter(event)" type="text">
+                                        <input id="categoryName${i}" class="categoryNameClass" ondrop="${dropIt}" onDragOver="${dragOver}" ondragenter="${onDragEnter}" type="text">
                                     </div>
                                     
                                 </form>
@@ -96,17 +94,20 @@ $(function () {
 
     function dropIt (event) {
         event.preventDefault();
+        console.log("sdsdsdsdsdsdsd");
         let url = event.dataTransfer.getData("text");
         event.target.val = "";
         event.target.val = document.getElementById(url);
     }
 
     function dragOver (event) {
+        console.log("sdsdsdsdsdsdsd");
         event.preventDefault();
         event.dataTransfer.dropEffect = "move";
     }
 
     function onDragEnter(event) {
+        console.log("sdsdsdsdsdsdsd");
         event.target.placeholder = 'Bring it here ...'
     }
 
@@ -129,11 +130,8 @@ $(function () {
 
     function categoryDelete(event) {
         let idI = event.target.getAttribute('id').split('n')[1];
-        // console.log(idI);
         let cName = categoriesList[idI].categoryName;
-        // console.log(cName);
         deleteFrom(cName,(categories) => showAll(categories))
-
 
     }
 

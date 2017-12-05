@@ -36,8 +36,7 @@ const category = {
 
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
-            categories.remove({whereArgs},function(err,result){
-
+            categories.remove(whereArgs,function(err,result){
                 if(err) return rej(err);
                 else
                     return res(result)
@@ -89,7 +88,6 @@ const todo={
         return new Promise((resolve,reject)=>{
             todos.insertOne(todoObject,(err,result)=>{
                 if (err) throw reject(err);
-                console.log(result);
                 resolve(result);
             })
         })
@@ -99,7 +97,6 @@ const todo={
         return new Promise((resolve,reject)=>{
             todos.find(whereArgs).toArray((err,result)=>{
                 if(err) reject(err);
-                console.log(result);
                 resolve(result);
             });
         })
@@ -107,11 +104,9 @@ const todo={
 
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
-            todos.remove({whereArgs},function(err,result){
-
-                if(err) return rej(err)
-                else
-                    return res(result)
+            todos.deleteOne(whereArgs,function(err,result){
+                if(err) return rej(err);
+                return res(result)
             })
 
         })

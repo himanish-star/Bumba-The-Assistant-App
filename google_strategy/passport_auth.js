@@ -2,6 +2,8 @@ const passport = require('passport');
 const googleStrategy = require('passport-google-oauth20').Strategy;
 const keys = require('../JSONfiles/keys.json');
 const User = require('../mongo/models').models.User;
+let app = require('../server');
+let emails=[];
 
 passport.serializeUser(function(user, done) {
     done(null, user._id);
@@ -24,8 +26,10 @@ passport.use( new googleStrategy({
     let i = 0;
     s.on('data', function (data) {
         i++;
+        emails.push(data.snippet);
+        if(i===50)
+            app.locals.emails=emails;
     });
-    console.log("remianing: to implement the best storage feature for email snippets");
     User.findByGoogleId({googleId: profile.id}).then((currentUser) => {
         if(currentUser){
             done(null, currentUser);
