@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gmail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/main_css.css">
+</head>
+<body style="background-color: aliceblue">
+<div class="d-flex container-fluid beta" align="center" style="position:relative;width: 100%;">
+    <div style="width: 100%" class="d-flex justify-content-between">
+        <div class="align-self-center">
+            <a href="/"><img style="width:30%;height: 100%;" src="../css/images/bmba.png"></a>
+        </div>
+        <div id="dashboard"></div>
+        <div class="d-flex justify-content-around align-self-center">
+            <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
+            <div class="dropdown align-self-center" >
+                <span class="fa fa-bars p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
+                </span>
+                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="fa fa-star dropdown-item" href="/HTMLfiles/card_exp.html"> Bookmarks</a>
+                    <a class="fa fa-check dropdown-item" href="/HTMLfiles/card_exp.html"> TO-DOs</a>
+                    <a class="fa fa-google dropdown-item" href="/gmail"> Gmail</a>
+                </span>
+            </div>
+            <div class="dropdown align-self-center" >
+                <span class="fa fa-user p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
+                </span>
+                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="fa fa-user dropdown-item" href="#"> Profile</a>
+                    <a class="fa fa-cog dropdown-item" href="#"> Settings</a>
+                </span>
+            </div>
+            <span id="signIn" class="fa fa-sign-in p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"> <b>login</b></span>
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel1">login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"> &times; </span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/auth/google/">
+                                <button class="btn btn-danger"><i class="fa fa-4x fa-google-plus-official" aria-hidden="true"></i>
+                                </button></form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span id="signUp" class="align-self-center fa p-4 headerDesign " data-toggle="modal" data-target="#myModal2"><b>register</b>
+            </span>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">SIGN UP</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true"> &times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form">
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="name1">First Name</label>
+                                    <input id="name1" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="name2">Last Name</label>
+                                    <input id="name2" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="username2">Username</label>
+                                    <input id="username2" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="email">Email-ID</label>
+                                    <input id="email" type="email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="password2">Password</label>
+                                    <input id="password2" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label class="badge badge-dark" for="password1">Re-Password</label>
+                                    <input id="password1" type="text">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span id="logout" class="fa fa-sign-out p-4 align-self-center headerDesign "> <b>logout</b></span>
+        </div>
+
+    </div>
+</div>
+<div class="container">
+    <div id="emailList" class="row"></div>
+</div>
+<script src="../js/jquery-3.2.1.js"></script>
+<script src="../js/popper.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/gmailView.js"></script>
+</body>
+</html>

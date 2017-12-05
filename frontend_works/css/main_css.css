@@ -4,12 +4,21 @@ html,body{
 
 .beta {
     height: 10vh;
+    position: fixed;
     background-color: white;
 }
 
-.dropdown{
-    position: relative;
-    top:100%;
+.dropdown-menu{
+    border-radius: 0;
+}
+
+.dropdown-item{
+    font-weight: bold;
+}
+
+.dropdown-item:hover{
+    color: red;
+    background-color: transparent;
 }
 
 .headerDesign{
@@ -46,7 +55,7 @@ html,body{
 .alpha{
     color: white;
     border-radius: 0;
-    height: 90vh;
+    height: 100vh;
 }
 
 .car-dis{

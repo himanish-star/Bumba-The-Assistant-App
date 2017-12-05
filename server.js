@@ -9,9 +9,9 @@ const passport = require("passport");
 const routes = {
     categories : require('./api/categories').route,
     auth : require('./api/authorization').router,
-    profile: require('./api/profile').route
+    profile: require('./api/profile').route,
+    mail: require('./api/gmail').route
 };
-require('./google_strategy/passport_auth');//requiring this to run the configuration
 
 //loading of middlewares
 app.use(cookieSession({
@@ -26,6 +26,7 @@ app.use('/',passport.session());
 app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
 app.use('/profile',routes.profile);
+app.use('/gmail',routes.mail);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
 
 app.get('/',(req,res)=>{
@@ -41,3 +42,4 @@ app.listen(config.SERVER.PORT,
     ()=> {console.log("Server started at http://localhost:" +config.SERVER.PORT)});
 
 module.exports=app;
+require('./google_strategy/passport_auth');//requiring this to run the configuration
