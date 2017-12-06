@@ -76,17 +76,6 @@ li.active a, li.active a:hover {
     background-color: white;
 
 }
-.imgClass{
-    background-color: black;
-}
-.imgClass img{
-    max-width: 15rem;
-    /*border: 2px solid #d8d8d8;*/
-    border-radius: 10px;
-    height: 10rem;
-    /*display: grid;*/
-    /*grid-column: 1/3;*/
-}
 
 
 #poweredBy{
