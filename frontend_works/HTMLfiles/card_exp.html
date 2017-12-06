@@ -5,156 +5,187 @@
     <link rel="icon" href="../css/images/letterB.png" type="image/x-icon">
     <title>Categories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="../css/bootstrap.css">
     <link rel="stylesheet" href="../css/card_expp.css">
     <link rel="stylesheet" href="../css/profcss.css">
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="../css/main_css.css">
+    <link rel="stylesheet" href="../css/wSHomeBelow.css">
+    <link rel="stylesheet" href="../css/workSpaceTabs.css">
+    <link rel="stylesheet" href="../css/toDo.css">
+    <link rel="stylesheet" href="../css/workSpaceMainCss.css">
 </head>
 <body>
-<div id="content">
-
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
-            <div class="col-1">
-                <i class="fa fa-home btn btn-danger"> </i>
-            </div>
-            <!--<button type="button" id="calen" class="mr-2 btn btn-lg btn-danger" data-toggle="popover" title ="" data-content="" data-placement="bottom"><i class="fa fa-calendar " ></i></button>-->
-            <button type="button" class="btn btn-primary mr-3" data-toggle="modal" data-target="#myModalCalendar"><i class="fa fa-calendar " ></i></button>
-
-            <div class="modal fade" id="myModalCalendar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                <div class="modal-dialog width_adjust" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel1" align="center">CALENDER</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true"> &times; </span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTz=0&amp;height=200&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=en.indian%23holiday%40group.v.calendar.google.com&amp;color=%230F4B38&amp;ctz=Asia%2FCalcutta" style="border-width:0" width="300" height="200" frameborder="0" scrolling="no"></iframe>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control yo col-8 mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0 search-length" type="submit">Search</button>
-                </form>
-
-                <ul class="navbar-nav mr-auto align-right">
-                    <li class="nav-item active">
-                        <a class="nav-link pull-right " href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">next <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Next-> next <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-
-            </div>
-        </nav>
-    </header>
-    <aside>
-        <div class="container">
-            <div id="stage">
-                <div class="container p-4">
-                    <div class="row">
-                        <div class="col-sm-12 ">
-                            <h1 class=" yo text-center">
-                                To Do List
-                            </h1>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="  col-sm-12 mr-auto ml-auto">
-                            <input title="hello" class="form-control" placeholder="Enter Your Task Here" id="add-new-todo">
-                        </div>
-                        <div class="d-flex mt-3 ml-auto mr-auto">
-                            <button type="button" class=" mr-3 btn btn-primary" id="add-btn">
-                                <i class="fa fa-plus-circle"></i>
-                            </button>
-                            <button type="button" class="mr-3 btn btn-danger" id="del-btn">
-                                <i class="fa fa-trash"></i>
-                            </button>
-                            <button type="button" class="mr-3 btn btn-success" id="selall-btn">
-                                <i class="fa fa-check"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-sm-10 ml-auto mr-auto">
-                            <ul class="list-group" id="list"> </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<div class="d-flex container-fluid beta" align="center" style=" width: 100%;position: relative">
+    <div style="width: 100%" class="d-flex justify-content-between">
+        <div class="align-self-center">
+            <a href="/"><img style="width:30%;height: 100%;" src="../css/images/bmba.png"></a>
         </div>
-    </aside>
+        <div id="dashboard"></div>
+        <div class="d-flex justify-content-around align-self-center">
+            <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
+            <div class="dropdown align-self-center" >
+                <span class="fa fa-bars p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
+                </span>
+                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="fa fa-star dropdown-item" href="/HTMLfiles/card_exp.html"> Bookmarks</a>
+                    <a class="fa fa-check dropdown-item" href="/HTMLfiles/card_exp.html"> TO-DOs</a>
+                    <a class="fa fa-google dropdown-item" href="/gmail"> Gmail</a>
+                </span>
+            </div>
+            <div class="dropdown align-self-center" >
+                <span class="fa fa-user p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
+                </span>
+                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="fa fa-user dropdown-item" href="#"> Profile</a>
+                    <a class="fa fa-cog dropdown-item" href="#"> Settings</a>
+                </span>
+            </div>
+            <span id="signIn" class="fa fa-sign-in p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"> <b>login</b></span>
 
-    <main>
+            <span id="signUp" class="align-self-center fa p-4 headerDesign " data-toggle="modal" data-target="#myModal2"><b>register</b>
+            </span>
 
-        <h1 class="text-center">
+            <span id="logout" class="fa fa-sign-out p-4 align-self-center headerDesign "> <b>logout</b></span>
+        </div>
 
-            Bookmarks
-        </h1>
+    </div>
+</div>
+<section class="intro">
+    <div class="content">
+        <div class="tabs">
 
-        <div class="container">
-            <div class="card add_card float-left m-3" id="newCategoryBox" style="height: 15rem; width: 15rem;">
-                <button type="button" class="btn btn-warning" style="width: 15rem; height: 15rem;" data-toggle="modal" data-target="#myModalPlus">
-                    <h1>Add More </h1>
-                    <img class="card-img-top" src="../css/images/plus.png" alt="Card image cap">
-                </button>
+            <ul class="m-0 tab-links col-12 row align-items-start">
+                <li class="col-3 "><a style="border-radius: 0" class="border-0" href="#tab1">BookMarks &nbsp; &nbsp;<i class="fa fa-bookmark" aria-hidden="true"> </i></a></li>
+                <li class="col-3 "><a style="border-radius: 0" class="border-0" href="#tab2">Todo List  &nbsp; &nbsp;<i class="fa fa-list" aria-hidden="true"></i></a></li>
+                <li class="col-3 "><a style="border-radius: 0" class="border-0" href="#tab3">GMail  &nbsp; &nbsp;</i><i class="fa fa-bell" aria-hidden="true"></i></a></li>
+                <li class="col-3 "><a style="border-radius: 0" class="border-0" href="#tab4">Doodle &nbsp; &nbsp;</i><i class="fa fa-paint-brush" aria-hidden="true"></i></a></li>
+            </ul>
 
-                <div class="modal fade mt-3" id="myModalPlus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel" align="center"> Enter Category Name :) </h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">x</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <form class="form">
-                                    <div class="form-group">
-                                        <label for="categoryName"><h4 align="center">Category Name</h4></label><br>
-                                        <input id="categoryName" type="text">
+            <div class="tab-content ">
+
+                <div id="tab1" align="center" class=" tab active bgTab1">
+
+                    <h1 class="text-center">
+                        Bookmarks
+                    </h1>
+                    <div class="card add_card float-left m-3" id="newCategoryBox" style="height: 15rem; width: 15rem;">
+                        <div
+                                class="btn btn-warning" style="width: 15rem; height: 15rem;" data-toggle="modal" data-target="#myModalPlus">
+                            <h1>Add More </h1>
+                            <img class="card-img-top" src="./img/plus.png" alt="Card image cap">
+                        </div>
+                        <div class="modal fade mt-3" id="myModalPlus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel" align="center"> Enter Category Name :) </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">x</span>
+                                        </button>
                                     </div>
-                                </form>
-                                <!--</div>-->
-                                <div class="modal-footer">
-                                    <button type="button" id="addCategory" class="btn btn-primary">ADD THIS</button>
+                                    <div class="modal-body">
+                                        <form class="form">
+                                            <div class="form-group">
+                                                <label for="categoryName"><h4 align="center">Category Name</h4></label><br>
+                                                <input id="categoryName" type="text">
+                                            </div>
+                                        </form>
+                                        <!--</div>-->
+                                        <div class="modal-footer">
+                                            <button type="button" id="addCategory" class="btn btn-primary">ADD THIS</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="container" id="categoryList">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="background-attachment:fixed;background-image: url('../css/images/forTODO.jpg')" id="tab2" align="center" class="tab bgTab2">
+
+                    <div id="stage">
+                        <div class="container p-4">
+                            <div class="row">
+                                <div class="col-sm-12 ">
+                                    <h1 class=" yo text-center">
+                                        To Do List
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="  col-sm-12 mr-auto ml-auto">
+                                    <input title="hello" class="form-control" placeholder="Enter Your Task Here" id="add-new-todo">
+                                </div>
+                                <div class="d-flex mt-3 ml-auto mr-auto">
+                                    <button type="button" class=" mr-3 btn btn-primary" id="add-btn">
+                                        <i class="fa fa-plus-circle"></i>
+                                    </button>
+                                    <button type="button" class="mr-3 btn btn-danger" id="del-btn">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                    <button type="button" class="mr-3 btn btn-success" id="selall-btn">
+                                        <i class="fa fa-check"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-sm-10 ml-auto mr-auto">
+                                    <ul class="list-group" id="list"> </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
 
-            </div>
-            <div class="container" id="categoryList">
+                <div id="tab3" align="center" class="tab">
+                    <div class="container tab33">
+                        <br><br>
+                        <div class="row"  id="gmailHeader">
+                            <div class="col-2" id="gmailimage">
+                                <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 5rem; width:5rem;" alt="">
+                            </div>
+                            <div class="col gmailHeading">
+                                Latest GMail Notifications
+                            </div>
+                        </div>
+                        <br><br>
+                        <div id="emailList" class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">
+                            <div class="col-2 forBorder">
+                                Add Icons For labels
+                            </div>
+                            <div align="left" class="col-10 mb-2">
+                                Sample Emails Here
+                            </div>
+                        </div>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div id="tab4" align="center" class="tab">
+                    <h1>Start Doodling</h1>
+                    <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
+                    <div id="divCanvas"><canvas id="main_canvas"></canvas>
+                    </div>
+                    <button class="btn btn-primary  "><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                </div>
             </div>
         </div>
-    </main>
-</div>
+    </div>
+</section>
 <script src="../js/jquery-3.2.1.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <script src="../js/timerpopper.js"></script>
 <script src="../js/categories_frontend.js"></script>
 <script src="../js/proftodolist.js"></script>
-
+<script src="../js/wSMainTabs.js"></script>
 </body>
 </html>

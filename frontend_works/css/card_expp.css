@@ -1,4 +1,4 @@
-img {
+    img {
     width:10rem;
     height:10rem;
 }
@@ -21,7 +21,6 @@ nav{
     grid-column: 4/9;
 }
 .alpha{
-    background: url("images/whiteBCG.png") left center ;
     color: white;
     border-bottom: 2px solid white;
     height:100px;
@@ -32,7 +31,6 @@ nav{
 }
 
 body{
-    background: url("images/spiderweb.jpg");
 }
 
 #content{
