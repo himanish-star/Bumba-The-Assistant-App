@@ -32,8 +32,8 @@ h1{
 }
 .hello1{
     background-color: #d8d8d8;
-
 }
+
 #main_about{
     font-size: 30px;
 }
@@ -79,9 +79,12 @@ li.active a, li.active a:hover {
 #poweredBy div{
     /*grid-column: 1/3;*/
     background-color: white;
-
 }
 
+@media screen and (max-width :600px){
+    .hideName{
+        display: none;
+    }}
 
 #poweredBy{
     display:grid;

@@ -6,10 +6,9 @@ $(document).ready(function() {
         let alpha = '.tabs ' + currentAttrValue;
         $(alpha).slideDown(400).siblings().slideUp(400);
 
+        console.log($('#exampleModalLabel').position);
         // Change/remove current tab to active
         $(this).parent('li').addClass('active').siblings().removeClass('active');
-
-
 
     });
 });

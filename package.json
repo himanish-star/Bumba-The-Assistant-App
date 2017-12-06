@@ -24,7 +24,8 @@
     "mongodb": "^2.2.33",
     "node-gmail-api": "^0.6.1",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "socket.io": "^2.0.4"
   },
   "devDependencies": {}
 }

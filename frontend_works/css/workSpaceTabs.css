@@ -1,0 +1,150 @@
+.tabs {
+    width:100%;
+    height: 100%;
+    display:inline-block;
+    background-color: white;
+}
+
+.body{
+    background-color: #C3CAD9;
+}
+
+/*----- Tab Links -----*/
+/* Clearfix */
+.tab-links:after {
+    display:block;
+    clear:both;
+    content:'';
+}
+
+.tab-links li {
+    /*margin:0px 5px;*/
+    float:left;
+    justify-content: center;
+    text-align: center;
+    list-style:none;
+    border-bottom: white;
+}
+
+.tab-links a {
+    padding:9px 15px;
+    margin: 0;
+    display:inline-block;
+    border-radius:3px 3px 0px 0px;
+    border-top: 2px solid black ;
+    border-bottom: 2px solid black ;
+    color: white  ;
+    width: 100%;
+    justify-content: space-around;
+    font-size:16px;
+    background-color: black;
+    font-weight:600;
+    /*color:#4c4c4c;*/
+    transition:all linear 0.15s;
+}
+
+.no_pad{
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    padding-left:0%;
+    padding-right:0%;
+    /*height: inherit;*/
+
+
+}
+
+@media screen and (max-width :600px){
+.hideName{
+    display: none;
+}}
+
+h1{
+    color: black;
+    text-align: center;
+}
+
+.tab-links a:hover {
+    background: white;
+    color: black;
+    text-decoration:none;
+}
+
+li.active a, li.active a:hover {
+    background:#fff;
+    color:#4c4c4c;
+}
+
+.bgTab2{
+    height:100%;
+    width:100%;
+    background-attachment: fixed;
+    background: url("images/stage.jpg") top center no-repeat ;
+    background-size: cover;
+    color:black;
+}
+
+.bgTab1{
+    height:100%;
+    width:100%;
+    background-attachment: fixed;
+    background: url("images/bg-pattern.png");
+    color:black;
+}
+
+.tab-content {
+    padding:15px;
+    height: 100%;
+    border-radius:3px;
+    box-shadow:-1px 1px 1px rgba(0,0,0,0.15);
+    background:#fff;
+    border-bottom: 2px solid black;
+}
+
+.tab {
+    display:none;
+}
+
+.tab.active {
+    display:block;
+}
+
+#drawing{
+    height: inherit;
+    width: inherit;
+}
+
+#divCanvas{
+    border: black 2px solid;
+    height: 60vh;
+    width: 150vh;
+    overflow: scroll;
+}
+
+#gmailHeader{
+    border: 2px solid white;
+}
+
+#emailList :nth-of-type(4n-2){
+    background-color: #C3CAD9;
+}
+
+.gmailHeading{
+    font-size: 3rem;
+    margin-top: auto;
+}
+
+.forBorder{
+    padding: auto;
+    margin: auto;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+
+}
+
+.tab33{
+    background-image: url("images/bg-pattern.png");
+}
+
+#tab3{
+    background: #dddfe2
+}
