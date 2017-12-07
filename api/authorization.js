@@ -5,7 +5,7 @@ const passport = require('passport');
 const path = require('path');
 
 router.get('/login',(req,res)=>{
-    res.redirect('/HTMLfiles');
+    res.redirect('/HTMLfiles/card_exp.html');
 // res.app.use('/auth/login',express.static(path.join(__dirname,'../frontend_works')));
 });
 

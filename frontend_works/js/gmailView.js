@@ -3,7 +3,7 @@
 $(()=>{
     let emailList= $('#emailList');
     let fetchedEmails=[];
-    $.get('gmail/mails',(mails)=>{
+    $.get('/gmail/mails',(mails)=>{
         fetchedEmails=mails;
         gmailAppender(fetchedEmails);
     });

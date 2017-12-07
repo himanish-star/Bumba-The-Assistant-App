@@ -24,20 +24,14 @@
         <div id="dashboard"></div>
         <div class="d-flex justify-content-around align-self-center">
             <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
+            <span id='activityPage' class="align-self-center fa fa-bar-chart headerDesign">
+            </span>
             <div class="dropdown align-self-center" >
-                <span class="fa fa-bars p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
+                <span class="fa p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton"><i id="userIMG">
+                </i>
                 </span>
                 <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="fa fa-star dropdown-item" href="/HTMLfiles/card_exp.html"> Bookmarks</a>
-                    <a class="fa fa-check dropdown-item" href="/HTMLfiles/card_exp.html"> TO-DOs</a>
-                    <a class="fa fa-google dropdown-item" href="/gmail"> Gmail</a>
-                </span>
-            </div>
-            <div class="dropdown align-self-center" >
-                <span class="fa fa-user p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
-                </span>
-                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="fa fa-user dropdown-item" href="#"> Profile</a>
+                    <a id="userNAME" class="fa dropdown-item" href="#"></a>
                     <a class="fa fa-cog dropdown-item" href="#"> Settings</a>
                 </span>
             </div>
@@ -157,12 +151,8 @@
                             </div>
                         </div>
                         <br><br>
-                        <div id="emailList" class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">
-                            <div class="col-2 forBorder">
-                                Add Icons For labels
-                            </div>
-                            <div align="left" class="col-10 mb-2">
-                                Sample Emails Here
+                        <div class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">
+                            <div id="emailList" align="center" class="col-12 mb-2">
                             </div>
                         </div>
                     </div>
@@ -183,9 +173,19 @@
 <script src="../js/jquery-3.2.1.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
+<script src="../js/timerkajs.js"></script>
 <script src="../js/timerpopper.js"></script>
 <script src="../js/categories_frontend.js"></script>
 <script src="../js/proftodolist.js"></script>
 <script src="../js/wSMainTabs.js"></script>
+<script src="../js/gmailView.js"></script>
+<script>
+    $('#activityPage').click(()=>{
+        window.location.href='/HTMLfiles/card_exp.html';
+    });
+    $('#logout').click(()=>{
+        window.location.href='/auth/logout';
+    });
+</script>
 </body>
 </html>

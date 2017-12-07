@@ -25,23 +25,8 @@
         <div id="dashboard"></div>
         <div class="d-flex justify-content-around align-self-center">
             <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
-            <div class="dropdown align-self-center" >
-                <span class="fa fa-bars p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
-                </span>
-                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="fa fa-star dropdown-item" href="/HTMLfiles/card_exp.html"> Bookmarks</a>
-                    <a class="fa fa-check dropdown-item" href="/HTMLfiles/card_exp.html"> TO-DOs</a>
-                    <a class="fa fa-google dropdown-item" href="/gmail"> Gmail</a>
-                </span>
-            </div>
-            <div class="dropdown align-self-center" >
-                <span class="fa fa-user p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton">
-                </span>
-                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="fa fa-user dropdown-item" href="#"> Profile</a>
-                    <a class="fa fa-cog dropdown-item" href="#"> Settings</a>
-                </span>
-            </div>
+            <span id='activityPage' class="align-self-center fa fa-bar-chart headerDesign">
+            </span>
             <span id="signIn" class="fa fa-sign-in p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"> <b>login</b></span>
 
             <span id="signUp" class="align-self-center fa p-4 headerDesign " data-toggle="modal" data-target="#myModal2"><b>register</b>
@@ -305,64 +290,84 @@
 
 
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div style="position: absolute;top:5vh;left: 30vw" class="modal-dialog" role="document">
+        <div style="height: 80vh;width: 40vw" class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">login</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">login to Bumba</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="/auth/google/">
-                    <button class="btn btn-danger"><i class="fa fa-4x fa-google-plus-official" aria-hidden="true"></i>
-                    </button></form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
-            </div>
+            <div class="modal-body d-flex flex-column justify-content-around">
+                <div style="width: 100%;height: 20vh" class="d-flex flex-column justify-content-around">
+                    <form class="d-flex justify-content-center" action="/auth/google/">
+                        <button style="width: 30%" class="btn btn-danger"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Google
+                        </button>
+                    </form>
+                    <form class="d-flex justify-content-center">
+                        <button style="width: 30%" class="btn btn-primary"><i class="fa fa-facebook-f" aria-hidden="true"></i> Facebook
+                        </button>
+                    </form>
+                </div>
+                <div style="border-bottom: solid" align="middle"></div>
+                            <label class="badge-pill badge-dark" style="align-self: center" for="loginUsername">Username</label>
+                            <input style="align-self: center" id="loginUsername">
+                            <label class="badge-pill badge-dark" style="align-self: center" for="loginPassword">Password</label>
+                            <input style="align-self: center" type="password" id="loginPassword">
+                            <button style="align-self: center;width: 30%" class="btn btn-success" type="submit"><i class="fa fa-check"></i>Submit</button>
+                </div>
         </div>
     </div>
 </div>
 
 <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
+    <div style="position: absolute;top:5vh;left:25vw" class="modal-dialog" role="document">
+        <div style="height: 80vh;width:50vw;" class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel2">SIGN UP</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form class="form">
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="name1">First Name</label>
-                        <input id="name1" type="text">
+                <div style="height: 100%;width: 50vw" class="d-flex flex-column justify-content-around">
+                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="name1">First Name</label>
+                            <br>
+                            <input id="name1" type="text">
+                        </div>
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="name2">Last Name</label>
+                            <br>
+                            <input id="name2" type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="name2">Last Name</label>
-                        <input id="name2" type="text">
+                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="username2">Username</label>
+                            <br>
+                            <input id="username2" type="text">
+                        </div>
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="email">Email-ID</label>
+                            <br>
+                            <input id="email" type="email">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="username2">Username</label>
-                        <input id="username2" type="text">
+                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="password2">Password</label>
+                            <br>
+                            <input id="password2" type="text">
+                        </div>
+                        <div style="width: 30%" class="form-group">
+                            <label class="badge badge-dark" for="password1">Re-Password</label>
+                            <br>
+                            <input id="password1" type="text">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="email">Email-ID</label>
-                        <input id="email" type="email">
-                    </div>
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="password2">Password</label>
-                        <input id="password2" type="text">
-                    </div>
-                    <div class="form-group">
-                        <label class="badge badge-dark" for="password1">Re-Password</label>
-                        <input id="password1" type="text">
-                    </div>
-                </form>
-            </div>
+                   <!-- <div class="justify-content-around d-flex"></div>-->
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                 <button type="button" class="btn btn-primary">Submit</button>
@@ -382,6 +387,9 @@
 <script src="../js/new-age.js"></script>
 <script src="../js/new-age.min.js"></script>
 <script>
+    $('#activityPage').click(()=>{
+        window.location.href='/HTMLfiles/card_exp.html';
+    });
     $('#logout').click(()=>{
         window.location.href='/auth/logout';
     });

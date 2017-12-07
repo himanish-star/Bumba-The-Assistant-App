@@ -3,28 +3,30 @@
 $(()=>{
 
     $.get('/profile',(data)=>{
-        let dashboard=$('#dashboard');
         let name=data.username;
+        let userIMG=$('#userIMG');
         let dashHTML;
         let text;
         if(!name){
-            $('#accessGmail').hide();
+            $('#clk-btn').hide();
             $('#logout').hide();
-            $('#goToCardPage').hide();
+            $('#activityPage').hide();
+            $('#profile').hide();
             $('#signIn').show();
             $('#signUp').show();
         }else{
-            text=`Hey, ${name}`;
-            $('#accessGmail').show();
+            text=`${name}`;
+            let profile = $('#userNAME');
+            profile.text(text);
+            userIMG.append(`
+<img style="height: 40%;width: 40%" class="fa" src="${data.thumbnail}">`);
+            $('#profile').show();
+            $('#clk-btn').show();
             $('#logout').show();
-            $('#goToCardPage').show();
+            $('#activityPage').show();
             $('#signIn').hide();
             $('#signUp').hide();
-            dashHTML=`<span class="btn-light btn bg-white align-self-center">
-                            ${text} 
-                      </span>
-                      <img src="${data.thumbnail}">`;
-            dashboard.append(dashHTML);
+
         }
     });
 
