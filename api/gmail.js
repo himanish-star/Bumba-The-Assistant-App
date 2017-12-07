@@ -9,6 +9,7 @@ router.get('/',(req, res)=>{
 
 router.get('/mails',(req,res,next)=>{
     let emails=req.app.locals.emails;
+    // let labelIds=req.app.locals.labelIds;
     res.send(emails);
 });
 

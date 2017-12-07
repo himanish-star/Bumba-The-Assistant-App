@@ -4,6 +4,7 @@ const keys = require('../JSONfiles/keys.json');
 const User = require('../mongo/models').models.User;
 let app = require('../server');
 let emails=[];
+let labelIds =[];
 
 passport.serializeUser(function(user, done) {
     done(null, user._id);
@@ -26,9 +27,11 @@ passport.use( new googleStrategy({
     let i = 0;
     s.on('data', function (data) {
         i++;
+        emails.push(data.labelIds);
         emails.push(data.snippet);
         if(i===50)
             app.locals.emails=emails;
+            // app.locals.labelIds=labelIds
     });
     User.findByGoogleId({googleId: profile.id}).then((currentUser) => {
         if(currentUser){
