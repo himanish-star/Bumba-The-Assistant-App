@@ -1,4 +1,3 @@
-"use strict";
 
 let list= null;
 let listElements = [];
@@ -7,11 +6,9 @@ let count=0;
 let allCheck=false;
 let itera=0;
 window.onload = function () {
-
     $.get('/categories/todos',
         (data)=>{
         listElements=data;
-        // console.log(listElements);
         showTodos();
     });
 

@@ -32,9 +32,6 @@ $(function () {
         categoriesList=categories;
         categoryList.empty();
 
-        console.log(urls);
-        console.log(categories);
-
         let i=0;
 
         for(let typeofcategory of categories) {
