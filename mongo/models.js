@@ -123,11 +123,11 @@ const User={
         })
     },
 
-    findByGoogleId:function (whereArgs) {
+    findByGoogleId:function (whereArgs,accessToken) {
         return new Promise((resolve,reject)=>{
-            users.findOne(whereArgs,(err,result)=>{
+            users.findOneAndUpdate(whereArgs,{$set:{ accessToken : accessToken } },(err,result)=>{
                 if(err) reject(err);
-                resolve(result);
+                resolve(result.value);
             });
         })
     },

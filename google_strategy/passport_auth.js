@@ -21,26 +21,15 @@ passport.use( new googleStrategy({
     clientSecret : keys.clientSecret,
     callbackURL : '/auth/google/redirect'
 },(accessToken, refreshToken, profile, done) => {
-    let Gmail = require('node-gmail-api');
-    let gmail = new Gmail(accessToken);
-    let s = gmail.messages('label:inbox', {max: 50}, { fields: ['id', 'labelIds:[READ]']});
-    let i = 0;
-    s.on('data', function (data) {
-        i++;
-        emails.push(data.labelIds);
-        emails.push(data.snippet);
-        if(i===50)
-            app.locals.emails=emails;
-            // app.locals.labelIds=labelIds
-    });
-    User.findByGoogleId({googleId: profile.id}).then((currentUser) => {
+    User.findByGoogleId({googleId: profile.id},accessToken).then((currentUser) => {
         if(currentUser){
             done(null, currentUser);
         } else {
             User.createNewUser({
                 googleId:profile.id,
                 username:profile.displayName,
-                thumbnail:profile._json.image.url
+                thumbnail:profile._json.image.url,
+                accessToken:accessToken
             })
                 .then((newUser)=>{
                     done(null,newUser);
