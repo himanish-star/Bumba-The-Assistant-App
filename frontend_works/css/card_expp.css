@@ -1,4 +1,5 @@
-    img {
+
+img {
     width:10rem;
     height:10rem;
 }
@@ -9,7 +10,7 @@ nav{
     grid-gap: 10px;
     width: 100% ;
 }
-.modalClass{}
+
 .categoryNameClass{
     width: 100%;
 }
@@ -29,58 +30,18 @@ nav{
 .yo{
     width: 90%;
 }
-
-body{
-}
-
-#content{
-    display:grid;
-    grid-template-columns:repeat(12,1fr) ;
-    grid-auto-rows: minmax(100px,auto);
-    grid-gap: 10px;
-    margin: 0 auto;
-    position: relative;
-}
-
-header{
-    grid-column: 1/13;
-}
-
-.add_card{
-    grid-column: 6/11;
-}
-
-main{
-    grid-column: 5/13;
-    border-left: 1px solid black;
-}
-
-aside{
-    margin-top: -17% ;
-    grid-column: 1/5;
-}
-
-
 @media only screen and (max-width: 1000px) {
 
     main{    margin-top: -17% ;
 
         grid-column: 7/13;
         border-left: 1px solid black;
-        /*width: 100%;*/
     }
 
     aside{
         margin-top: -20% ;
         grid-column: 1/7;
-    /*width: 100%;*/
     }
-
-        /*img {*/
-            /*width: 4rem;*/
-            /*height:10rem;*/
-        /*}*/
-
 }
 
 .width_adjust{

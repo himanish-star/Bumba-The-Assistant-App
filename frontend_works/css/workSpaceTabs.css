@@ -78,7 +78,7 @@ li.active a, li.active a:hover {
     height:100%;
     width:100%;
     background-attachment: fixed;
-    background: url(../img/stage.jpg) top center no-repeat ;
+    background: url("images/stage.jpg") top center no-repeat ;
     background-size: cover;
     color:black;
 }
@@ -87,7 +87,7 @@ li.active a, li.active a:hover {
     height:100%;
     width:100%;
     background-attachment: fixed;
-    background: url(../img/bg-pattern.png);
+    background: url("images/bg-pattern.png");
     color:black;
 }
 
@@ -108,9 +108,9 @@ li.active a, li.active a:hover {
     display:block;
 }
 
-#main_canvas{
-    height: 1000vh;
-    width: 1000vh;
+#drawing{
+    height: inherit;
+    width: inherit;
 }
 
 #divCanvas{
@@ -142,7 +142,7 @@ li.active a, li.active a:hover {
 }
 
 .tab33{
-    background-image: url("../img/bg-pattern.png");
+    background-image: url("images/bg-pattern.png");
 }
 
 #tab3{

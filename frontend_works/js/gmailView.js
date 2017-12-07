@@ -1,5 +1,4 @@
 
-
 $(()=>{
     let emailList= $('#emailList');
     let fetchedEmails=[];
@@ -10,13 +9,13 @@ $(()=>{
 
     function gmailAppender(fetchedEmails) {
         for(let fetchedEmail of fetchedEmails){
-            let snippet=$('<div></div>');
+                let snippet=$('<div></div>');
             snippet.css({
                 'color':'darkblue',
                 "background-color":'lightgrey'
             });
             snippet.text(fetchedEmail+' ..read more');
-            emailList.append(snippet,'<br>');
+            emailList.append(snippet,'<br><br>');
         }
     }
 

@@ -14,8 +14,8 @@ $(function () {
 
     function deleteFrom(cName,cb){
         $.post('/categories/delete',{
-            cName : cName,
-        },
+                cName : cName,
+            },
             (data)=>{cb(data)});
         window.location.reload();
     }
