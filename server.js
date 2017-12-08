@@ -12,7 +12,8 @@ const routes = {
     categories : require('./api/categories').route,
     auth : require('./api/authorization').router,
     profile: require('./api/profile').route,
-    mail: require('./api/gmail').route
+    mail: require('./api/gmail').route,
+    webshot: require('./api/webshot').route
 };
 
 //loading of middlewares
@@ -29,6 +30,7 @@ app.use('/categories',routes.categories);
 app.use('/auth',routes.auth);
 app.use('/profile',routes.profile);
 app.use('/gmail',routes.mail);
+app.use('/webshot',routes.webshot);
 app.use('/',express.static(path.join(__dirname,'frontend_works')));
 
 app.get('/',(req,res)=>{
