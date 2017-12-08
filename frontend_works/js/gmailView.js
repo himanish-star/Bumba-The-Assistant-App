@@ -24,7 +24,6 @@ $(()=>{
                     case 'CATEGORY_PRIMARY' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: red"></i>&nbsp;`;
                         break;
                     case 'CATEGORY_UPDATES' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: yellow"></i>&nbsp;`;
-                            // fetchedEmails[i+1] = fetchedEmails[i+1].split('Difficulties reading this email? You can also check your Emailer by clicking here.')[i];
                         break;
                     case 'CATEGORY_PROMOTIONS' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: green"></i>&nbsp;`;
                         break;
@@ -33,16 +32,20 @@ $(()=>{
                     case 'CATEGORY_FORUMS' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: purple"></i>&nbsp;`;
                         break;
                     case 'INBOX' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: black"></i>&nbsp;`;
-                    break;
+                        break;
+                    case 'CATEGORY_PERSONAL' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: #FE4B74"></i>&nbsp;`;
+                        break;
+                    case 'SENT' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: lightgreen"></i>&nbsp;`;
+                        break;
 
                 }
             }
 
             let snippet=$(`<div class ="row">
-                                <div class="col-1 forBorder">
+                                <div class="col-2 forBorder">
                                    ${fetchedEmails[i].toString().split(',').join('  ')}
                                 </div>
-                                <div class="col-11 mb-2">
+                                <div class="col-10 mb-2">
                                    ${fetchedEmails[++i]}
                                 </div>
                             </div>`);
@@ -54,7 +57,7 @@ $(()=>{
                 "word-wrap": 'break-word'
             });
             // snippet.innerText=(fetchedEmails[i] + '     ' + fetchedEmails[++i] +' ..read more');
-            emailList.append(snippet,'<br><br>');
+            emailList.append(snippet,'<br>');
         }
     }
 });
