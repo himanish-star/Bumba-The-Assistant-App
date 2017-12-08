@@ -65,9 +65,6 @@ io.on('connection', function (socket) {
     });
 });
 
-// app.listen(config.SERVER.PORT,
-//     ()=> {console.log("app Server started at http://localhost:" +config.SERVER.PORT)});
-
 server.listen(config.SERVER.PORT,
     ()=> {console.log("socket Server started at http://localhost:" +config.SERVER.PORT)});
 

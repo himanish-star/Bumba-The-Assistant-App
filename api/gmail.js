@@ -10,7 +10,7 @@ router.get('/',(req, res)=>{
 function mailFetcher(accessToken,callback) {
     let Gmail = require('node-gmail-api');
     let gmail = new Gmail(accessToken);
-    let s = gmail.messages('label:inbox', {max: 50}, { fields: ['id', 'labelIds:[READ]']});
+    let s = gmail.messages('label:inbox', {max: 50}, { fields: ['id', `labelIds=['READ']`]});
     let i = 0;
     let emails=[];
     s.on('data', function (data) {

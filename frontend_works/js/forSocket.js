@@ -1,5 +1,7 @@
 window.onload = function () {
 
+    console.log('socket js loaded');
+
     let mouse = {
         click: false,
         move: false,
@@ -15,24 +17,25 @@ window.onload = function () {
     let socket  = io.connect();
 
     // set canvas to full browser width/height
-    let divHeight = $('#divCanvas').innerHeight;
-    let divWidth = $('#divCanvas').innerWidth;
+
+    // let divHeight = $('#divCanvas').innerHeight;
+    // let divWidth = $('#divCanvas').innerWidth;
     // canvas.width = divWidth;
     // canvas.height = divHeight;
 
-    canvas.width = width;
-    canvas.height = height;
+    // canvas.width = width;
+    // canvas.height = height;
 
     // register mouse event handlers
-    canvas.onmousedown = function(e){ mouse.click = true; };
+    canvas.onmousedown = function(e){ mouse.click = true; console.log('mousedown') };
     canvas.onmouseup = function(e){ mouse.click = false; };
 
     canvas.onmousemove = function(e) {
         // normalize mouse position to range 0.0 - 1.0
-        /*mouse.pos.x = e.clientX / width;
-        mouse.pos.y = e.clientY / height;*/
-        mouse.pos.x = e.clientX;
-        mouse.pos.y = e.clientY;
+        mouse.pos.x = e.clientX / width;
+        mouse.pos.y = e.clientY / height;
+       /* mouse.pos.x = e.clientX;
+        mouse.pos.y = e.clientY;*/
         mouse.move = true;
     };
 
@@ -40,12 +43,13 @@ window.onload = function () {
     socket.on('draw_line', function (data) {
         let line = data.line;
         context.beginPath();
-/*
         context.moveTo(line[0].x * width, line[0].y * height);
         context.lineTo(line[1].x * width, line[1].y * height);
-*/
+        console.log('storing a line');
+/*
         context.moveTo(line[0].x, line[0].y);
         context.lineTo(line[1].x, line[1].y);
+*/
         context.stroke();
     });
 

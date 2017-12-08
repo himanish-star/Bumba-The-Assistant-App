@@ -152,8 +152,20 @@
                         </div>
                         <br><br>
 
+                    <div style="border: 1px solid black">
+                        <b align="left">KEY ||</b>
+                       UNREAD <i class="fa fa-circle-thin"></i>&nbsp;&nbsp;&nbsp;
+                       IMPORTANT <i class="fa fa-circle" style="color: blue"></i>&nbsp;&nbsp;&nbsp;
+                       PRIMARY <i class="fa fa-circle" style="color: red"></i>&nbsp;&nbsp;&nbsp;
+                       UPDATES <i class="fa fa-circle" style="color: yellow"></i>&nbsp;&nbsp;&nbsp;
+                       PROMOTION <i class="fa fa-circle" style="color: green"></i>&nbsp;&nbsp;&nbsp;
+                       SOCIAL <i class="fa fa-circle" style="color: lightblue"></i> &nbsp;&nbsp;&nbsp;
+                       FORUMS <i class="fa fa-circle" style="color: purple"></i>&nbsp;&nbsp;&nbsp;
+                       INBOX <i class="fa fa-circle" style="color: black"></i>&nbsp;
+                    </div>
+                        <br><br>
                         <div class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">
-                            <div id="emailList" align="center" class="col-12 mb-2">
+                            <div id="emailList" align="left" class="col-12 mb-2">
                             </div>
                         </div>
 
@@ -167,7 +179,7 @@
 
                 <div id="tab4" align="center" class="tab">
                     <h1>Start Doodling</h1>
-                    <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
+                    <!--<p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>-->
                     <div id="divCanvas">
                         <canvas id="drawing"></canvas>
                     </div>
@@ -178,11 +190,11 @@
         </div>
     </div>
 </section>
-<script src="/socket.io/socket.io.js"></script>
 <script src="../js/jquery-3.2.1.js"></script>
 <script src="../js/popper.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
-
+<script src="/socket.io/socket.io.js"></script>
+<script src="../js/forSocket.js"></script>
 <script>
     $('#activityPage').click(()=>{
         window.location.href='/HTMLfiles/card_exp.html';
@@ -197,6 +209,5 @@
 <script src="../js/timerpopper.js"></script>
 <script src="../js/wSMainTabs.js"></script>
 <script src="../js/gmailView.js"></script>
-<script src="../js/forSocket.js"></script>
 </body>
 </html>
