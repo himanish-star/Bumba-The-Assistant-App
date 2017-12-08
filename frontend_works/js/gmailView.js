@@ -42,10 +42,10 @@ $(()=>{
             }
 
             let snippet=$(`<div class ="row">
-                                <div class="col-2 forBorder">
+                                <div class="col-1 forBorder">
                                    ${fetchedEmails[i].toString().split(',').join('  ')}
                                 </div>
-                                <div class="col-10 mb-2">
+                                <div class="col-11 mb-2">
                                    ${fetchedEmails[++i]}
                                 </div>
                             </div>`);
