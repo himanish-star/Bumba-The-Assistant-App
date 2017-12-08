@@ -38,8 +38,8 @@ $(function () {
             let newCategory = $(`<div class="card float-left m-3" style="height: 15rem; width:15rem;">
                 <button type="button" class="btn btn-success" style="width: 15rem; height: 12rem;" data-toggle="modal" data-target="#myModal${i}"><h1>${typeofcategory.categoryName}</h1></button>
                 <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                    <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content ">
+                    <div  class="modal-dialog modal-lg" role="document">
+                        <div style="height: 80vh" class="modal-content ">
                             <div class="modal-header">
                                 <p><h4 align="center">${typeofcategory.categoryName}</h4><br>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -47,11 +47,9 @@ $(function () {
                                 </button>
                             </div>
                             
-                            <div class="modal-body">
+                            <div style="overflow-y: scroll" class="modal-body">
                             <!--<h2>${typeofcategory.categoryName}</h2>-->
                                 <!--list of urls under this category-->
-                               <ul id="${typeofcategory.categoryName.split(' ').join('')}">
-                               </ul>
                                 <form class="form">
                                 
                                     <div class="form-group" text-align="center">
@@ -60,6 +58,8 @@ $(function () {
                                     </div>
                                     
                                 </form>
+                                 <ul id="${typeofcategory.categoryName.split(' ').join('')}">
+                               </ul>
                             </div>
                 
                             <div class="modal-footer">  
@@ -85,7 +85,13 @@ $(function () {
         for(let url of urls){
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
-            element.append(`<li><a href="${url.urlName}" target="_blank">${url.urlName}</a></li>`)
+            $.get('/webshot',{url:url.urlName},(fileName)=>{
+                element.append(`<li>
+<img src="../screenShot/${fileName}" style="height: 10vh;width: 10vw">
+<br>
+<a href="${url.urlName}" target="_blank">${url.urlName}</a>
+</li>`)
+            });
         }
     }
 
