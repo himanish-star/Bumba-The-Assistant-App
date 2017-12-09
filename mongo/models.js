@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const DataBase = require('../JSONfiles/config.json').DB;
 let ObjectId = require('mongodb').ObjectId;
 
-let users,categories,urls,todos = null;
+let users,categories,urls,todos, typeOfCanvas = null;
 
 MongoClient.connect(DataBase.URI, function (err,db) {
     if(err) throw err;
@@ -11,6 +11,7 @@ MongoClient.connect(DataBase.URI, function (err,db) {
     urls = db.collection('urls');
     todos=db.collection('todos');
     users=db.collection('users');
+    typeOfCanvas=db.collection('canvas')
 });
 
 const category = {
@@ -143,4 +144,25 @@ const User={
     }
 };
 
-exports.models={category,URLS,todo,User};
+const canvas =
+    {
+        insertOne: function (todoObject) {
+            return new Promise((resolve,reject)=>{
+                typeOfCanvas.insertOne(todoObject,(err,result)=>{
+                    if (err) throw reject(err);
+                    resolve(result);
+                })
+            })
+        },
+
+        findAll: function (whereArgs) {
+            return new Promise((resolve,reject)=>{
+                typeOfCanvas.find(whereArgs).toArray((err,result)=>{
+                    if(err) reject(err);
+                    resolve(result);
+                });
+            })
+        }
+};
+
+exports.models={category,URLS,todo,User,canvas};

@@ -18,7 +18,7 @@ router.get('/',(req,res)=>{
         modifiedUrl=modifiedUrl.split('www.')[1];
     webshot(`${modifiedUrl}`, `./frontend_works/screenShot/${modifiedUrl.split('/').join('')}.png`, function(err) {
         if (err) throw err;
-        console.log("sreenshot taken");
+        // console.log("sreenshot taken");
         res.send(`${modifiedUrl.split('/').join('')}.png`);
     });
 });

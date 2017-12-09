@@ -1,4 +1,3 @@
-
 $(()=>{
     let emailList= $('#emailList');
     let fetchedEmails=[];

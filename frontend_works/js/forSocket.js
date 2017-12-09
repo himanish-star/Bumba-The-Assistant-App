@@ -1,6 +1,7 @@
-window.onload = function () {
+// const lineHistory = require('server').line_history;
 
-    console.log('socket js loaded');
+window.onload = function () {
+    // console.log('socket js loaded');
 
     let mouse = {
         click: false,
@@ -27,8 +28,8 @@ window.onload = function () {
     // canvas.height = height;
 
     // register mouse event handlers
-    canvas.onmousedown = function(e){ mouse.click = true; console.log('mousedown') };
-    canvas.onmouseup = function(e){ mouse.click = false; };
+    canvas.onmousedown = function(){ mouse.click = true; console.log('mousedown') };
+    canvas.onmouseup = function(){ mouse.click = false; };
 
     canvas.onmousemove = function(e) {
         // normalize mouse position to range 0.0 - 1.0
@@ -65,4 +66,7 @@ window.onload = function () {
         setTimeout(mainLoop, 25);
     }
     mainLoop();
+
+
+
 };
