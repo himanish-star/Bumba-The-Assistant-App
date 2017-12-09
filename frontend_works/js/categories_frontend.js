@@ -35,8 +35,8 @@ $(function () {
         let i=0;
 
         for(let typeofcategory of categories) {
-            let newCategory = $(`<div class="card float-left m-3" style="height: 15rem; width:15rem;">
-                <button type="button" class="btn btn-success" style="width: 15rem; height: 12rem;" data-toggle="modal" data-target="#myModal${i}"><h1>${typeofcategory.categoryName}</h1></button>
+            let newCategory = $(`<div class="card float-left m-3 cardSize">
+                <button type="button" class="btn btn-success btnSize" data-toggle="modal" data-target="#myModal${i}"><h1>${typeofcategory.categoryName}</h1></button>
                 <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div  class="modal-dialog modal-lg" role="document">
                         <div style="height: 80vh" class="modal-content ">
