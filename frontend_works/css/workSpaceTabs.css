@@ -52,11 +52,41 @@
 
 
 }
+.cardSize{
+    height: 15rem;
+    width: 15rem;
+    -webkit-transition:-webkit-transform 1s;
 
-@media screen and (max-width :600px){
+}
+.btnSize{
+    height: 12rem;
+    width: 15rem;
+}
+.addMore{
+    height: 15rem;
+    width: 15rem;
+    padding: 0;
+    -webkit-transition:-webkit-transform 1s;
+}
+@media screen and (max-width :700px){
 .hideName{
     display: none;
-}}
+}
+    .cardSize{
+       -webkit-transform: scale(.5);
+    }
+
+    #newCategoryBox{
+        -webkit-transform: scale(.5);
+    }
+    .addMore{
+        -webkit-transform: scale(.5);
+    }
+    /*.btnSize{
+         height: 4rem;
+         width: 7rem;
+     }*/
+}
 
 h1{
     color: black;
