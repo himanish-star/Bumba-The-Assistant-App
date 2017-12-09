@@ -1,17 +1,19 @@
 $(()=>{
     let emailList= $('#emailList');
     let fetchedEmails=[];
+    let percentComplete = $('#percentComplete');
     $.get('/gmail/mails',(mails)=>{
-         fetchedEmails=mails;
-        // let fetchedLabels=labelIds;
+        fetchedEmails=mails;
+        emailList.hide();
+        percentComplete.css('width','100%');
         gmailAppender(fetchedEmails);
     });
 
     function gmailAppender(fetchedEmails) {
-        for(let i=0 ;i<fetchedEmails.length;i++){
-
-
+        let totalMails=fetchedEmails.length;
+        for(let i=0 ;i<totalMails;i++){
                 // let snippet=$(`<div>`);
+            percentComplete.css('width',`${((i+2)*100)/totalMails}%`);
             for(let j=0 ; j<fetchedEmails[i].length;j++)
             {
                 switch(fetchedEmails[i][j])
@@ -57,6 +59,12 @@ $(()=>{
             });
             // snippet.innerText=(fetchedEmails[i] + '     ' + fetchedEmails[++i] +' ..read more');
             emailList.append(snippet,'<br>');
+            if(i===49){
+                setTimeout(()=>{
+                    $('#preLoaderForMails').hide();
+                    emailList.show();
+                },1000);
+            }
         }
     }
 });
