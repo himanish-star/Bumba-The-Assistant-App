@@ -1,8 +1,10 @@
 
 const router = require('express').Router();
 let webshot = require('webshot');
+let specificData;
 
-router.get('/',(req,res)=>{
+router.get('/',(req,res,next)=>{
+    specificData="";
     let modifiedUrl = req.query.url;
     //for https://
     let k = modifiedUrl.split('https://')[0];
@@ -16,11 +18,18 @@ router.get('/',(req,res)=>{
     k = modifiedUrl.split('www.')[0];
     if (k==='')
         modifiedUrl=modifiedUrl.split('www.')[1];
-    webshot(`${modifiedUrl}`, `./frontend_works/screenShot/${modifiedUrl.split('/').join('')}.png`, function(err) {
-        if (err) throw err;
-        // console.log("sreenshot taken");
-        res.send(`${modifiedUrl.split('/').join('')}.png`);
+
+    let renderStream = webshot(`${modifiedUrl}`);
+    renderStream.on('data', function(data) {
+        specificData += data.toString('base64');
     });
+
+    renderStream.on('end', function() {
+        next();
+    });
+},(req,res)=>{
+    res.send(specificData);
 });
+
 
 module.exports.route=router;
