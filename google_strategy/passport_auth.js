@@ -12,6 +12,7 @@ passport.serializeUser(function(user, done) {
 
 passport.deserializeUser(function(id, done) {
     User.findByKd(id, function(err, user) {
+        const userId =
         done(err, user);
     });
 });

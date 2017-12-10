@@ -23,7 +23,7 @@ const routes = {
 //loading of middlewares
 app.use(cookieSession({
     secret:"famous",
-    maxAge:60*60*1000,
+    maxAge:24*60*60*1000,
     keys:[config.cookieKey],
 }));
 app.use(bodyParser.json());
@@ -65,8 +65,11 @@ io.on('connection', function (socket) {
     // add handler for message type "draw_line".
     socket.on('draw_line', function (data) {
         // add received line to history
+        console.log('pushing received' + JSON.stringify(data.line) + 'line from there to line_history')
         line_history.push(data.line);
+        console.log('line history' + JSON.stringify(...line_history));
         // send line to all clients
+        console.log('emitting now to clients');
         io.emit('draw_line', { line: data.line });
     });
 });
@@ -76,7 +79,7 @@ server.listen(config.SERVER.PORT,
 
 module.exports=app;
 module.exports = {
-    line_history
+    line_history,
 };
 
 require('./google_strategy/passport_auth');//requiring this to run the configuration
