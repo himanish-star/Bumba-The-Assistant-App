@@ -36,7 +36,8 @@ $(function () {
 
         for(let typeofcategory of categories) {
             let newCategory = $(`<div class="card float-left m-3 cardSize">
-                <button type="button" class="btn btn-success btnSize" data-toggle="modal" data-target="#myModal${i}"><h1>${typeofcategory.categoryName}</h1></button>
+                <div><i class="fa fa-5x fa-star"></i></div>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}</button>
                 <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div  class="modal-dialog modal-lg" role="document">
                         <div style="height: 80vh" class="modal-content ">
@@ -58,7 +59,9 @@ $(function () {
                                     </div>
                                     
                                 </form>
-                                 <ul id="${typeofcategory.categoryName.split(' ').join('')}">
+                                <div style="visibility: hidden" id="loadingMSG">loading ...
+                                </div>
+<ul id="${typeofcategory.categoryName.split(' ').join('')}">
                                </ul>
                             </div>
                 
@@ -69,7 +72,7 @@ $(function () {
                     </div>
                 </div>
                 <div class="card-body">
-                    <p class="card-text" align="center"><button class="btn btn-danger" id="delBtn${i}"> Delete ${typeofcategory.categoryName}</button></p>
+                    <p class="card-text" align="center"><button class="btn btn-danger" id="delBtn${i}"> Delete </button></p>
                 </div>
             </div>`);
 
@@ -81,36 +84,64 @@ $(function () {
         }
         urlAppenderToModal(urls);
     }
+
     function urlAppenderToModal(urls) {
+        let i=1;
         for(let url of urls){
+            let loadingMSG = $('#loadingMSG');
+            loadingMSG.css('visibility','visible');
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
-            $.get('/webshot',{url:url.urlName},(fileName)=>{
-                element.append(`<li>
-<img src="../screenShot/${fileName}" style="height: 10vh;width: 10vw">
+            let imgData=localStorage.getItem(url.urlName);
+            if(imgData){
+                loadingMSG.css('visibility','hidden');
+                element.prepend(`<li>
+<img src="data:image/png;base64,${imgData}" style="height: 10vh;width: 10vw">
 <br>
 <a href="${url.urlName}" target="_blank">${url.urlName}</a>
+<i id="urlID${i}" class="fa fa-times"></i>
+</li>`);
+            }else{
+                $.get('/webshot',{url:url.urlName},(specificData)=>{
+                    localStorage.setItem(url.urlName,specificData);
+                    loadingMSG.hide();
+                    element.prepend(`<li>
+<img src="data:image/png;base64,${specificData}" style="height: 10vh;width: 10vw">
+<br>
+<a href="${url.urlName}" target="_blank">${url.urlName}</a>
+<i id="urlID${i}" class="fa fa-times"></i>
 </li>`)
+                });
+            }
+            $(`#urlID${i++}`).click(()=>{
+                localStorage.removeItem(url.urlName);
+                $.post('/categories/urls/delete',
+                    {
+                        urlName:url.urlName
+                    }
+                );
             });
         }
+
+    }
+    
+    function delURL(event) {
+        console.log("sd");
     }
 
     function dropIt (event) {
         event.preventDefault();
-        console.log("sdsdsdsdsdsdsd");
         let url = event.dataTransfer.getData("text");
         event.target.val = "";
         event.target.val = document.getElementById(url);
     }
 
     function dragOver (event) {
-        console.log("sdsdsdsdsdsdsd");
         event.preventDefault();
         event.dataTransfer.dropEffect = "move";
     }
 
     function onDragEnter(event) {
-        console.log("sdsdsdsdsdsdsd");
         event.target.placeholder = 'Bring it here ...'
     }
 

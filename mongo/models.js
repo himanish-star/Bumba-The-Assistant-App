@@ -71,11 +71,11 @@ const URLS={
 
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
-            urls.remove({whereArgs},function(err,result){
-
-                if(err) return rej(err)
+            urls.deleteOne(whereArgs,function(err,result){
+                if(err)
+                    rej(err);
                 else
-                    return res(result)
+                    res(result)
             })
 
         })
@@ -106,8 +106,8 @@ const todo={
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
             todos.deleteOne(whereArgs,function(err,result){
-                if(err) return rej(err);
-                return res(result)
+                if(err) rej(err);
+                res(result)
             })
 
         })

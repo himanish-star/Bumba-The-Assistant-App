@@ -69,4 +69,11 @@ route.post('/urls',(req,res)=>{
         .catch((err)=>console.log(err));
 });
 
+route.post('/urls/delete',(req,res)=>{
+    URLS.deleteOne({
+        urlName:req.body.urlName
+    })
+        .catch((err)=>console.log(err));
+});
+
 exports.route = route;
