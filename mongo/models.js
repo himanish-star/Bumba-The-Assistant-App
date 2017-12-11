@@ -76,6 +76,7 @@ const URLS={
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
             urls.deleteOne(whereArgs,function(err,result){
+                console.log("deleting",whereArgs);
                 if(err)
                     rej(err);
                 else
