@@ -59,7 +59,7 @@ $(function () {
                                     </div>
                                     
                                 </form>
-                                <div style="visibility: hidden" id="loadingMSG">loading ...
+                                <div style="display: none" id="loadingMSG${typeofcategory.categoryName.split(" ").join("")}">loading ...
                                 </div>
 <ul id="${typeofcategory.categoryName.split(' ').join('')}">
                                </ul>
@@ -86,21 +86,33 @@ $(function () {
     }
 
     function urlAppenderToModal(urls) {
-        let i=1;
+        let i=0;
         for(let url of urls){
-            let loadingMSG = $('#loadingMSG');
-            loadingMSG.css('visibility','visible');
+            i++;
+            console.log(i);
             let cname=url.categoryName.split(' ').join('');
             let element=$(`#${cname}`);
+            let loadingMSG = $(`#loadingMSG${cname}`);
+            loadingMSG.css('display','block');
             let imgData=localStorage.getItem(url.urlName);
             if(imgData){
-                loadingMSG.css('visibility','hidden');
+                loadingMSG.css('display','none');
                 element.prepend(`<li>
 <img src="data:image/png;base64,${imgData}" style="height: 10vh;width: 10vw">
 <br>
 <a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="urlID${i}" class="fa fa-times"></i>
+<i id="${url.urlName}" class="fa fa-times"></i>
 </li>`);
+                $(`#${url.urlName}`).click(()=>{
+                    console.log("deleting");
+                    document.getElementById(`${url.urlName}`).parentNode.style.display='none';
+                    localStorage.removeItem(url.urlName);
+                    $.post('/categories/urls/delete',
+                        {
+                            urlName:url.urlName
+                        }
+                    );
+                });
             }else{
                 $.get('/webshot',{url:url.urlName},(specificData)=>{
                     localStorage.setItem(url.urlName,specificData);
@@ -109,24 +121,21 @@ $(function () {
 <img src="data:image/png;base64,${specificData}" style="height: 10vh;width: 10vw">
 <br>
 <a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="urlID${i}" class="fa fa-times"></i>
-</li>`)
+<i id="${url.urlName}" class="fa fa-times"></i>
+</li>`);
+                    $(`#${url.urlName}`).click(()=>{
+                        document.getElementById(`${url.urlName}`).parentNode.style.display='none';
+                        localStorage.removeItem(url.urlName);
+                        $.post('/categories/urls/delete',
+                            {
+                                urlName:url.urlName
+                            }
+                        );
+                    });
                 });
             }
-            $(`#urlID${i++}`).click(()=>{
-                localStorage.removeItem(url.urlName);
-                $.post('/categories/urls/delete',
-                    {
-                        urlName:url.urlName
-                    }
-                );
-            });
         }
 
-    }
-    
-    function delURL(event) {
-        console.log("sd");
     }
 
     function dropIt (event) {
