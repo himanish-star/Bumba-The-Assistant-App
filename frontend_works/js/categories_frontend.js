@@ -24,6 +24,8 @@ $(function () {
     let categoryName = $('#categoryName');
     let addCategory = $('#addCategory');
     let categoryList = $('#categoryList');
+    let globalURLS=[];
+    let totalCategories=0;
 
     function displayList(categories){
 
@@ -82,60 +84,83 @@ $(function () {
 
             i++;
         }
+        totalCategories=i;
+        globalURLS=urls;
         urlAppenderToModal(urls);
     }
 
     function urlAppenderToModal(urls) {
         let i=0;
-        for(let url of urls){
-            i++;
-            console.log(i);
-            let cname=url.categoryName.split(' ').join('');
+        for(let j=0;j<categoriesList.length;j++){
+            let cname=categoriesList[j].categoryName.split(' ').join('');
             let element=$(`#${cname}`);
-            let loadingMSG = $(`#loadingMSG${cname}`);
-            loadingMSG.css('display','block');
-            let imgData=localStorage.getItem(url.urlName);
-            if(imgData){
-                loadingMSG.css('display','none');
-                element.prepend(`<li>
+            element.html("");
+            if(j===totalCategories-1)
+                callback();
+        }
+        function callback() {
+            for (let url of urls) {
+                i++;
+                console.log(i);
+                let cname = url.categoryName.split(' ').join('');
+                let element = $(`#${cname}`);
+                let loadingMSG = $(`#loadingMSG${cname}`);
+                loadingMSG.css('display', 'block');
+                let imgData = localStorage.getItem(url.urlName);
+                if (imgData) {
+                    loadingMSG.css('display', 'none');
+                    element.prepend(`<li>
 <img src="data:image/png;base64,${imgData}" style="height: 10vh;width: 10vw">
 <br>
 <a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="${url.urlName}" class="fa fa-times"></i>
+<i id="urlID${i}" class="fa fa-times"></i>
 </li>`);
-                $(`#${url.urlName}`).click(()=>{
-                    console.log("deleting");
-                    document.getElementById(`${url.urlName}`).parentNode.style.display='none';
-                    localStorage.removeItem(url.urlName);
-                    $.post('/categories/urls/delete',
-                        {
-                            urlName:url.urlName
-                        }
-                    );
-                });
-            }else{
-                $.get('/webshot',{url:url.urlName},(specificData)=>{
-                    localStorage.setItem(url.urlName,specificData);
-                    loadingMSG.hide();
-                    element.prepend(`<li>
+                    theFinalCall();
+                } else {
+                    $.get('/webshot', {url: url.urlName}, (specificData) => {
+                        localStorage.setItem(url.urlName, specificData);
+                        loadingMSG.hide();
+                        element.prepend(`<li>
 <img src="data:image/png;base64,${specificData}" style="height: 10vh;width: 10vw">
 <br>
 <a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="${url.urlName}" class="fa fa-times"></i>
+<i id="urlID${i}" class="fa fa-times"></i>
 </li>`);
-                    $(`#${url.urlName}`).click(()=>{
-                        document.getElementById(`${url.urlName}`).parentNode.style.display='none';
-                        localStorage.removeItem(url.urlName);
-                        $.post('/categories/urls/delete',
-                            {
-                                urlName:url.urlName
-                            }
-                        );
+                       theFinalCall();
                     });
+                }
+                function theFinalCall() {
+                    if(i===urls.length)
+                        onclickAppender();
+                }
+            }
+            function onclickAppender() {
+                console.log("isdaasas",i);
+                let temp=[];
+                let o=0;
+                for(let k=1;k<=i;k++)
+                $(`#urlID${k}`).click(() => {
+                    console.log(urls[k-1].urlName);
+                    localStorage.removeItem(urls[k-1].urlName);
+                    for(let m=0;m<urls.length;m++){
+                        if(urls[m]===urls[k-1]){
+
+                        }else{
+                            temp[o++]=urls[m];
+                        }
+                        if(m===urls.length-1) {
+                            urls=temp;
+                            urlAppenderToModal(urls);
+                        }
+                    }
+                    $.post('/categories/urls/delete',
+                        {
+                            urlName: urls[k-1].urlName
+                        }
+                    );
                 });
             }
         }
-
     }
 
     function dropIt (event) {
@@ -164,11 +189,12 @@ $(function () {
             urlName:document.getElementById(`categoryName${ip}`).value
         });
 
-        let url=[{
+        let url={
             categoryName:categoriesList[ip].categoryName,
             urlName:document.getElementById(`categoryName${ip}`).value
-        }];
-        urlAppenderToModal(url);
+        };
+        globalURLS.push(url);
+        urlAppenderToModal(globalURLS);
     }
 
     function categoryDelete(event) {
