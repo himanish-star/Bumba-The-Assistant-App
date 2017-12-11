@@ -10,11 +10,14 @@ passport.serializeUser(function(user, done) {
     done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(
+
+    function(id, done) {
     User.findByKd(id, function(err, user) {
-        const userId =
         done(err, user);
     });
+    // exports.models = {userId}
+
 });
 
 passport.use( new googleStrategy({
@@ -24,6 +27,10 @@ passport.use( new googleStrategy({
 },(accessToken, refreshToken, profile, done) => {
     User.findByGoogleId({googleId: profile.id},accessToken).then((currentUser) => {
         if(currentUser){
+            // const userId = currentUser._id;
+            // exports.hey = {userId};
+
+            // console.log(userId);
             done(null, currentUser);
         } else {
             User.createNewUser({
@@ -33,6 +40,8 @@ passport.use( new googleStrategy({
                 accessToken:accessToken
             })
                 .then((newUser)=>{
+                    // const userId = newUser._id;
+                    // exports.hey = {userId};
                     done(null,newUser);
                 })
         }
