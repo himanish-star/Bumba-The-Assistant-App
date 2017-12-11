@@ -1,0 +1,9 @@
+{
+    "SERVER": {
+        "PORT":3000},
+    "DB" : {
+        "URI" : "mongodb://localhost:27017/masterDB",
+        "mlabURI" : "mongodb://bumba:16331644@ds133496.mlab.com:33496/masterdb"
+    },
+    "cookieKey":"BumbaTheAssistant"
+}

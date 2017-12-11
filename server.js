@@ -83,3 +83,5 @@ io.on('connection', function (socket) {
 module.exports = {line_history,app};
 
 require('./google_strategy/passport_auth');//requiring this to run the configuration
+
+app.use((req,res)=> res.status(404).send('page not found'));

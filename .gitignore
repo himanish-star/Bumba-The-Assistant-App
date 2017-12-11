@@ -1,6 +1,6 @@
 .idea/
 /node_modules/
-/JSONfiles/
+/JSONfiles/keys.JSON
 mongo_workingfiles/
 mongo_working/
 /frontend_works/HTMLfiles/test.html
