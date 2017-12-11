@@ -140,8 +140,12 @@ $(function () {
                 let o=0;
                 for(let k=1;k<=i;k++)
                 $(`#urlID${k}`).click(() => {
-                    console.log(urls[k-1].urlName);
                     localStorage.removeItem(urls[k-1].urlName);
+                    $.post('/categories/urls/delete',
+                        {
+                            urlName: urls[k-1].urlName
+                        }
+                    );
                     for(let m=0;m<urls.length;m++){
                         if(urls[m]===urls[k-1]){
 
@@ -150,14 +154,10 @@ $(function () {
                         }
                         if(m===urls.length-1) {
                             urls=temp;
+                            globalURLS=urls;
                             urlAppenderToModal(urls);
                         }
                     }
-                    $.post('/categories/urls/delete',
-                        {
-                            urlName: urls[k-1].urlName
-                        }
-                    );
                 });
             }
         }
