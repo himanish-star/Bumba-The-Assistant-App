@@ -141,6 +141,12 @@ li.active a, li.active a:hover {
 #drawing{
     height: inherit;
     width: inherit;
+    color: black;
+}
+
+#savedCanvas{
+    font-size: 30px;
+    text-align: center;
 }
 
 #divCanvas{

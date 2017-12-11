@@ -12,7 +12,8 @@ router.get('/login',(req,res)=>{
 router.get('/google',
     passport.authenticate('google',{scope:['profile','https://www.googleapis.com/auth/gmail.readonly','https://www.googleapis.com/auth/gmail.modify']}),
     (req,res)=>{
-        console.log("hey I'm here");
+        // console.log("hey I'm here");
+
     });
 
 router.get('/google/redirect',
