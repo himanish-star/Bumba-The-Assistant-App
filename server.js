@@ -51,7 +51,7 @@ app.get('/HTMLfiles',(req,res,next)=>{
 const server =  http.createServer(app);
 const io = socketIo.listen(server);
 
-server.listen(config.SERVER.PORT,
+server.listen( process.env.PORT || config.SERVER.PORT ,
     ()=> {console.log("socket Server started at http://localhost:" +config.SERVER.PORT)});
 
 
