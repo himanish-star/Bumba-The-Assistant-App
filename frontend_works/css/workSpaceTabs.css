@@ -72,9 +72,9 @@
 .hideName{
     display: none;
 }
-    .cardSize{
-       -webkit-transform: scale(.5);
-    }
+        /*.cardSize{*/
+           /*-webkit-transform: scale(.5);*/
+        /*}*/
 
     #newCategoryBox{
         -webkit-transform: scale(.5);
