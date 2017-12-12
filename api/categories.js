@@ -73,6 +73,7 @@ route.post('/urls/delete',(req,res)=>{
     URLS.deleteOne({
         urlName:req.body.urlName
     })
+        .then((data)=>{res.send('hey')})
         .catch((err)=>console.log(err));
 });
 
