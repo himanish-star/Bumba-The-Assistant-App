@@ -156,19 +156,21 @@ $(function () {
                         {
                             urlName: urls[k-1].urlName
                         }
-                    );
-                    for(let m=0;m<urls.length;m++){
-                        if(urls[m]===urls[k-1]){
+                    ,(data)=>{
+                        console.log(data);
+                            for(let m=0;m<urls.length;m++){
+                                if(urls[m]===urls[k-1]){
 
-                        }else{
-                            temp[o++]=urls[m];
-                        }
-                        if(m===urls.length-1) {
-                            urls=temp;
-                            globalURLS=urls;
-                            urlAppenderToModal(urls);
-                        }
-                    }
+                                }else{
+                                    temp[o++]=urls[m];
+                                }
+                                if(m===urls.length-1) {
+                                    urls=temp;
+                                    globalURLS=urls;
+                                    urlAppenderToModal(urls);
+                                }
+                            }
+                    });
                 });
             }
         }
