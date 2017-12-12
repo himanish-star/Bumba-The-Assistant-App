@@ -41,8 +41,8 @@ $(function () {
                 <div><i class="fa fa-5x fa-star"></i></div>
                 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}</button>
                 <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                    <div  class="modal-dialog modal-lg" role="document">
-                        <div style="height: 80vh" class="modal-content ">
+                    <div style="position:absolute;left: 10vw;" class="modal-dialog modal-lg" role="document">
+                        <div style="height: 80vh;width: 80vw;" class="modal-content ">
                             <div class="modal-header">
                                 <p><h4 align="center">${typeofcategory.categoryName}</h4><br>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -53,22 +53,27 @@ $(function () {
                             <div style="overflow-y: scroll" class="modal-body">
                             <!--<h2>${typeofcategory.categoryName}</h2>-->
                                 <!--list of urls under this category-->
-                                <form class="form">
-                                
-                                    <div class="form-group" text-align="center">
-                                        <label for="categoryName${i}"><h4 align="center">URL</h4></label><br>
-                                        <input id="categoryName${i}" class="categoryNameClass" ondrop="${dropIt}" onDragOver="${dragOver}" ondragenter="${onDragEnter}" type="text">
-                                    </div>
-                                    
-                                </form>
-                                <div style="display: none" id="loadingMSG${typeofcategory.categoryName.split(" ").join("")}">loading ...
+                                <div style="display: none" id="loadingMSG${typeofcategory.categoryName.split(" ").join("")}">
+                               
+<div class="card" style="width: 20%;">
+  <!--<div class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>-->
+  <img class="card-img-top" alt="Loading">
+  <div class="card-footer">
+  loading
+  </div>
+</div>
                                 </div>
-<ul id="${typeofcategory.categoryName.split(' ').join('')}">
-                               </ul>
+                                <div id="${typeofcategory.categoryName.split(' ').join('')}">
+                               </div>
                             </div>
                 
-                            <div class="modal-footer">  
-                                <button id='${i}' type="button" align="center" class="btn btn-primary">ADD URL TO THE LIST</button>
+                            <div class="d-flex justify-content-around modal-footer"> 
+                                <div style="width: 80%">
+                                        <input id="categoryName${i}" class="categoryNameClass" type="text">
+                                </div> 
+                                <div class='d-flex flex-wrap' style="margin:0;padding:0;width: 15%">
+                                <button id='${i}' style="width: 80%" type="button" class="btn btn-primary">ADD URL</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -109,23 +114,29 @@ $(function () {
                 let imgData = localStorage.getItem(url.urlName);
                 if (imgData) {
                     loadingMSG.css('display', 'none');
-                    element.prepend(`<li>
-<img src="data:image/png;base64,${imgData}" style="height: 10vh;width: 10vw">
-<br>
-<a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="urlID${i}" class="fa fa-times"></i>
-</li>`);
+                    element.prepend(`<div>
+<div class="card" style="height: 100%;width: 20%;">
+  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>
+  <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${imgData}" alt="Card image cap">
+  <div style="height: 20%" class="card-footer">
+  <a href="${url.urlName}" target="_blank">${url.urlName}</a>
+  </div>
+</div>
+</div>`);
                     theFinalCall();
                 } else {
                     $.get('/webshot', {url: url.urlName}, (specificData) => {
                         localStorage.setItem(url.urlName, specificData);
                         loadingMSG.hide();
-                        element.prepend(`<li>
-<img src="data:image/png;base64,${specificData}" style="height: 10vh;width: 10vw">
-<br>
-<a href="${url.urlName}" target="_blank">${url.urlName}</a>
-<i id="urlID${i}" class="fa fa-times"></i>
-</li>`);
+                        element.prepend(`<div>
+<div class="card" style="height:100%;width: 20%;">
+  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>
+  <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${specificData}" alt="Card image cap">
+  <div style="height: 20%" class="card-footer">
+  <a href="${url.urlName}" target="_blank">${url.urlName}</a>
+  </div>
+</div>
+</div>`);
                        theFinalCall();
                     });
                 }
@@ -161,22 +172,6 @@ $(function () {
                 });
             }
         }
-    }
-
-    function dropIt (event) {
-        event.preventDefault();
-        let url = event.dataTransfer.getData("text");
-        event.target.val = "";
-        event.target.val = document.getElementById(url);
-    }
-
-    function dragOver (event) {
-        event.preventDefault();
-        event.dataTransfer.dropEffect = "move";
-    }
-
-    function onDragEnter(event) {
-        event.target.placeholder = 'Bring it here ...'
     }
 
     showAll((categories)=>displayList(categories));
