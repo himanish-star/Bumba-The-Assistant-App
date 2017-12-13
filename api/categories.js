@@ -5,10 +5,10 @@ const Todos=require('../mongo/models').models.todo;
 
 route.get('/',(req,res)=>{
     let totalData={};
-    category.showAll({})
+    category.showAll({userID:req.user._id})
         .then((data)=>{
             totalData.categoryData=data;
-            URLS.find({})
+            URLS.find({userID:req.user._id})
                 .then((data)=>{
                     totalData.urlData=data;
                     res.send(totalData);
@@ -18,16 +18,18 @@ route.get('/',(req,res)=>{
         .catch((err)=>console.log(err));
 });
 
-route.post('/',(req,res)=>{
-        category.createNew({
-            categoryName: req.body.categoryName
-        })
-            .then((result) => res.redirect('.'))
-            .catch((err) => console.log(err));
+route.post ('/',(req,res) => {
+    category.createNew({
+        userID: req.user._id,
+        categoryName: req.body.categoryName
+    })
+        .then((result) => res.redirect('.'))
+        .catch((err) => console.log(err));
 });
 
 route.post('/delete',(req,res)=>{
     category.deleteOne({
+        userID:req.user._id,
         categoryName : req.body.cName
     })
         .catch((err) => console.log(err));
@@ -35,6 +37,7 @@ route.post('/delete',(req,res)=>{
 
 route.post('/todos',(req,res)=>{
     Todos.insertOne({
+        userID:req.user._id,
         task:req.body.task,
         done:req.body.done
     })
@@ -42,7 +45,7 @@ route.post('/todos',(req,res)=>{
 });
 
 route.get('/todos',(req,res)=>{
-    Todos.findAll({})
+    Todos.findAll({userID:req.user._id})
         .then((data)=>res.send(data))
         .catch((err)=>console.log(err));
 });
@@ -50,19 +53,16 @@ route.get('/todos',(req,res)=>{
 
 route.post('/todos/delete',(req,res)=>{
     Todos.deleteOne({
+        userID:req.user._id,
         task:req.body.task
     })
         .catch((err)=>console.log(err));
 });
 
-/*route.get('/todos/delete',(req,res)=>{
-    Todos.findAll({})
-        .then((data)=>res.send(data))
-        .catch((err)=>console.log(err));
-});*/
 
 route.post('/urls',(req,res)=>{
     URLS.insertOne({
+        userID:req.user._id,
         categoryName:req.body.categoryName,
         urlName:req.body.urlName
     })
@@ -71,6 +71,7 @@ route.post('/urls',(req,res)=>{
 
 route.post('/urls/delete',(req,res)=>{
     URLS.deleteOne({
+        userID:req.user._id,
         urlName:req.body.urlName
     })
         .then((data)=>{res.send('hey')})
