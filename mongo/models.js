@@ -32,7 +32,6 @@ const category = {
     showAll: function (whereArgs) {
         return new Promise(function(res,rej){
             categories.find(whereArgs).toArray(function (err,result) {
-
                 if(err) return rej(err);
                 res(result)
             })
@@ -76,7 +75,6 @@ const URLS={
     deleteOne: function (whereArgs) {
         return new Promise(function (res,rej) {
             urls.deleteOne(whereArgs,function(err,result){
-                console.log("deleting",whereArgs);
                 if(err)
                     rej(err);
                 else

@@ -3,7 +3,7 @@
         "PORT":3000},
     "DB" : {
         "URI" : "mongodb://localhost:27017/masterDB",
-        "mlabURI" : "mongodb://test:test@ds127436.mlab.com:27436/oauthdemo"
+        "mlabURI" : "mongodb://test:test@ds137256.mlab.com:37256/bumba-master-database"
     },
     "cookieKey":"BumbaTheAssistant"
 }
