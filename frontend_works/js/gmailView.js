@@ -18,42 +18,42 @@ $(()=>{
             {
                 switch(fetchedEmails[i][j])
                 {
-                    case 'UNREAD': fetchedEmails[i][j]=`<i class="fa fa-circle-thin"></i>&nbsp;`;
+                    case 'UNREAD': fetchedEmails[i][j]=`<i class="material-icons">panorama_fish_eye</i>&nbsp;`;
                         break;
-                    case 'IMPORTANT': fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: blue"></i>&nbsp;`;
+                    case 'IMPORTANT': fetchedEmails[i][j]=`<i class="material-icons" style="color: blue">lens</i>&nbsp;`;
                         break;
-                    case 'CATEGORY_PRIMARY' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: red"></i>&nbsp;`;
+                    case 'CATEGORY_PRIMARY' : fetchedEmails[i][j]=`<i class="material-icons" style="color: red">lens</i>&nbsp;`;
                         break;
-                    case 'CATEGORY_UPDATES' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: yellow"></i>&nbsp;`;
+                    case 'CATEGORY_UPDATES' : fetchedEmails[i][j]=`<i class="material-icons" style="color: yellow">lens</i>&nbsp;`;
                         break;
-                    case 'CATEGORY_PROMOTIONS' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: green"></i>&nbsp;`;
+                    case 'CATEGORY_PROMOTIONS' : fetchedEmails[i][j]=`<i class="material-icons" style="color: green">lens</i>&nbsp;`;
                         break;
-                    case 'CATEGORY_SOCIAL' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: lightblue"></i> &nbsp;`;
+                    case 'CATEGORY_SOCIAL' : fetchedEmails[i][j]=`<i class="material-icons" style="color: lightblue">lens</i> &nbsp;`;
                         break;
-                    case 'CATEGORY_FORUMS' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: purple"></i>&nbsp;`;
+                    case 'CATEGORY_FORUMS' : fetchedEmails[i][j]=`<i class="material-icons" style="color: purple">lens</i>&nbsp;`;
                         break;
-                    case 'INBOX' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: black"></i>&nbsp;`;
+                    case 'INBOX' : fetchedEmails[i][j]=`<i class="material-icons" style="color: black">lens</i>&nbsp;`;
                         break;
-                    case 'CATEGORY_PERSONAL' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: #FE4B74"></i>&nbsp;`;
+                    case 'CATEGORY_PERSONAL' : fetchedEmails[i][j]=`<i class="material-icons" style="color: #FE4B74">lens</i>&nbsp;`;
                         break;
-                    case 'SENT' : fetchedEmails[i][j]=`<i class="fa fa-circle" style="color: lightgreen"></i>&nbsp;`;
+                    case 'SENT' : fetchedEmails[i][j]=`<i class="material-icons" style="color: lightgreen">lens</i>&nbsp;`;
                         break;
 
                 }
             }
 
             let snippet=$(`<div class ="row">
-                                <div class="col-1 forBorder" align="center">
+                                    <div class="col-offset-1 forBorder" align="center">
                                    ${fetchedEmails[i].toString().split(',').join('  ')}
                                 </div>
-                                <div class="col-11 mb-2" >
+                                <div class=" col-10" >
                                    ${fetchedEmails[++i]}
                                 </div>
                             </div>`);
 
             snippet.css({
 
-                "background-color":'lightgrey',
+
                 "overflow-wrap": 'break-word',
                 "word-wrap": 'break-word'
             });

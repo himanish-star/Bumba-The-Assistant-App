@@ -5,7 +5,7 @@ let ObjectId = require('mongodb').ObjectId;
 
 let users,categories,urls,todos, typeOfCanvas = null;
 // let dbUri =
-MongoClient.connect(DataBase.mlabURI, function (err,db) {
+MongoClient.connect(DataBase.URI, function (err,db) {
     // MongoClient.connect('mongodb://localhost:27017/' + dbName , function (err,db) {
 
 
