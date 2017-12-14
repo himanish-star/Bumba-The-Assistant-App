@@ -185,25 +185,13 @@
                 </div>
 
                 <div id="tab4" align="center" class="tab">
-                    <h1>Start Doodling</h1>
-                    <!--<p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>-->
-                    <div id="divCanvas">
-                        <canvas id="drawing" style="color: black;"></canvas>
+                    <div style="margin: 0;padding: 0">
+                        <canvas id="can" height="500" width="600" style=";border:2px solid;"></canvas>
                     </div>
-                    <br><br>
-                    <label for="canvasName"><h4 align="center">Canvas Name</h4></label>
-                    <input type="text" placeholder="canvas Name" id="canvasName">
-                    <button class="btn btn-primary" id="saveCanvas">
-                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
-                    </button>
-
-                    <div class="row" style="overflow: scroll;overflow-x: hidden;height:200px;">
-                       <div align="center" id="savedCanvas">SAVED CANVAS</div>
-                        <div id="canvasNameList" align="center" class="col-12 mb-2">
-
-                        </div>
+                    <input type="button" value="save" id="saveBtn" size="30" style="top:55%;left:10%;">
+                    <input type="button" value="clear" id="clrBtn" size="23" style="top:55%;left:15%;">
+                    <div id="imgList">
                     </div>
-
                 </div>
 
             </div>
@@ -226,10 +214,7 @@
 <script src="../js/timerkajs.js"></script>
 <script src="../js/timerpopper.js"></script>
 <script src="../js/wSMainTabs.js"></script>
-<!--<script src="../js/canvasFrontend.js"></script>-->
 <script src="../js/gmailView.js"></script>
-<!--<script src="../js/forSocket.js"></script>-->
-<!--<script src="/socket.io/socket.io.js"></script>-->
-
+<script src="../js/canvasManipultor.js"></script>
 </body>
 </html>
