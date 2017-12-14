@@ -72,9 +72,9 @@
 .hideName{
     display: none;
 }
-    .cardSize{
-       -webkit-transform: scale(.5);
-    }
+        /*.cardSize{*/
+           /*-webkit-transform: scale(.5);*/
+        /*}*/
 
     #newCategoryBox{
         -webkit-transform: scale(.5);
@@ -157,20 +157,20 @@ li.active a, li.active a:hover {
     border: 2px solid white;
 }
 
-#emailList :nth-of-type(4n-2){
-    background-color: #C3CAD9;
+#emailList :nth-of-type(2n-1){
+    /*background-color: #C3CAD9;*/
 }
 
 .gmailHeading{
-    font-size: 3rem;
+    /*font-size: 3rem;*/
     margin-top: auto;
 }
 
 .forBorder{
     padding: auto;
     margin: auto;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
+    /*border-right: 1px solid black;*/
+    /*border-left: 1px solid black;*/
 
 }
 

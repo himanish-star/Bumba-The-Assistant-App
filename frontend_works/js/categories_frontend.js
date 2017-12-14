@@ -37,10 +37,11 @@ $(function () {
         let i=0;
 
         for(let typeofcategory of categories) {
+            console.log("appending new category");
             let newCategory = $(`<div class="card float-left m-3 cardSize">
                 <div><i class="fa fa-5x fa-star"></i></div>
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}</button>
-                <div class="modal fade" id="myModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalCategories${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}</button>
+                <div class="modal fade" id="myModalCategories${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div style="position:absolute;left: 10vw;" class="modal-dialog modal-lg" role="document">
                         <div style="height: 80vh;width: 80vw;" class="modal-content ">
                             <div class="modal-header">
@@ -61,7 +62,7 @@ $(function () {
   <div class="card-footer">
   loading
   </div>
-</div>
+</div>  
                                 </div>
                                 <div id="${typeofcategory.categoryName.split(' ').join('')}">
                                </div>
@@ -82,11 +83,9 @@ $(function () {
                     <p class="card-text" align="center"><button class="btn btn-danger" id="delBtn${i}"> Delete </button></p>
                 </div>
             </div>`);
-
             categoryList.append(newCategory);
             document.getElementById(i).onclick=urlAppender;
             document.getElementById('delBtn'+i).onclick=categoryDelete;
-
             i++;
         }
         totalCategories=i;
@@ -116,7 +115,7 @@ $(function () {
                     loadingMSG.css('display', 'none');
                     element.prepend(`<div>
 <div class="card" style="height: 100%;width: 20%;">
-  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>
+  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
   <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${imgData}" alt="Card image cap">
   <div style="height: 20%" class="card-footer">
   <a href="${url.urlName}" target="_blank">${url.urlName}</a>
@@ -130,7 +129,7 @@ $(function () {
                         loadingMSG.hide();
                         element.prepend(`<div>
 <div class="card" style="height:100%;width: 20%;">
-  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>
+  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
   <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${specificData}" alt="Card image cap">
   <div style="height: 20%" class="card-footer">
   <a href="${url.urlName}" target="_blank">${url.urlName}</a>

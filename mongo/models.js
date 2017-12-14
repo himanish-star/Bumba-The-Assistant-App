@@ -4,9 +4,7 @@ const DataBase = require('../JSONfiles/config.json').DB;
 let ObjectId = require('mongodb').ObjectId;
 
 let users,categories,urls,todos, typeOfCanvas = null;
-MongoClient.connect(DataBase.URI, function (err,db) {
-
-
+MongoClient.connect(DataBase.mlabURI, function (err,db) {
     if(err) throw err;
     console.log("connected");
     categories = db.collection('categories');

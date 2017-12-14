@@ -1,527 +1,1540 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="../css/images/logo.png" type="image/x-icon">
-    <title>BUMBA</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<link rel="stylesheet" href="../css/new-age.css">
-    <link rel="stylesheet" href="../css/new-age.min.css">-->
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/main_css.css">
-    <link rel="stylesheet" href="../css/timerkacss.css">
-    <link rel="stylesheet" href="../css/home_below.css">
-    <link rel="stylesheet" href="../css/for_tabs.css">
-</head>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Bumba : Your Web Assisstant</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-<body class="container-fluid m-0 p-0">
+        <!--Google Font link-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
 
-<div class="d-flex container-fluid beta" align="center" style=" width: 100%;">
-    <div style="width: 100%" class="hey d-flex justify-content-between">
-        <div class="align-self-center">
-            <a href="/"><img style="width:30%;height: 100%;" src="../css/images/bmba.png"></a>
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+        <link rel="stylesheet" href="../css/bootstrapOld.min.css">
+        <link rel="stylesheet" href="../css/magnific-popup.css">
+
+
+        <!--For Plugins external css-->
+        <link rel="stylesheet" href="../css/plugins.css" />
+
+        <!--Theme custom css -->
+        <link rel="stylesheet" href="../css/style.css">
+
+        <!--Theme Responsive css-->
+        <link rel="stylesheet" href="../css/responsive.css" />
+
+        <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="200">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div class='preloader'>
+            <div class='loaded'>&nbsp;</div>
         </div>
-        <div id="dashboard"></div>
-        <div class="d-flex justify-content-around align-self-center">
-            <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
-            <span id='activityPage' class="align-self-center fa fa-bar-chart headerDesign">
-            </span>
-            <span id="signIn" class="fa fa-sign-in p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"> <b>login</b></span>
 
-            <span id="signUp" class="align-self-center fa p-4 headerDesign " data-toggle="modal" data-target="#myModal2"><b>register</b>
-            </span>
+        <div class="column">
+            <header id="main_menu" class="header navbar-fixed-top">
+                <div class="main_menu_bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="nave_menu">
+                                <nav class="navbar navbar-default">
+                                    <div class="container-fluid">
+                                        <!-- Brand and toggle get grouped for better mobile display -->
+                                        <div class="navbar-header">
+                                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                                <span class="sr-only">Toggle navigation</span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                                <span class="icon-bar"></span>
+                                            </button>
+                                            <a class="navbar-brand" href="#home">
+                                                <img src="../assets/images/bmba.png" style="height: 50px;width: 50px">
+                                            </a>
+                                        </div>
 
-            <span id="logout" class="fa fa-sign-out p-4 align-self-center headerDesign "> <b>logout</b></span>
-        </div>
+                                        <!-- Collect the nav links, forms, and other content for toggling -->
 
-    </div>
-</div>
 
-<div class="d-flex flex-column justify-content-center jumbotron alpha " align="center">
-    <img src="../css/images/bmba.png">
-    <h3 class="pb-3 text-dark">Doodle . Bookmark . Todo . Enjoy</h3>
-    <span style="color: black"><b>Follow Us On</b></span>
-    <div class="text-light">
-        <div class="btn btn-primary"><a style="color: white" href="https://www.facebook.com/shikhar.agnihotri.01"><i class="fa fa-facebook-f"> Facebook</i></a></div>
-        <div class="btn btn-danger"><a style="color: white" href="https://plus.google.com/u/0/114237015785483647561"><i class="fa fa-google"> Google</i></a></div>
-        <div class="btn btn-dark"><a style="color: white" href="https://github.com/himanish-star/Bumba-The-Assistant-App"><i class="fa fa-github"> Github</i></a></div>
-        <div class="btn btn-primary"><a style="color: white" href="https://twitter.com/shikhar9a"><i class="fa fa-twitter"> Twitter</i></a></div>
-        <div class="btn btn-success"><a style="color: white" href=""></a><i class="fa fa-whatsapp"> Whatsapp</i></div>
-    </div>
-</div>
-<!--end of jumbotron-->
 
-<br><br><br>
-<br><br><br>
+                                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-<!--<div style="font-family:Ubuntu;align-self: center;" class="container-fluid intro m-0 p-0">
-        <div class="tabs d-flex p-0 m-0 flex-column ">
-            <div style="margin:0;border-bottom: solid" class="row">
-                    <div align="center" style="font-size: medium" class="bg-secondary col-6" id="main_about">
-                        <h1 id="about_bumba" style="font-size: x-large;font-weight: bold"><b>ABOUT</b></h1>
-                        BUMBA is a multipurpose web application which makes your time on the web
-                        productive. It eases a variety <br> of your tasks and saves a lot of your time.
-                        Have a look at its features <br><br>
-                    </div>
-                    <div align="center" class="col-6">
-                        <img style="width: 20%;color: white" src="../css/images/about%20us.png">
-                        <img style="width: 20%;color: white" src="../css/images/us.png">
-                    </div>
-            </div>
-            <div style="width: 100%;margin: 0" class="bg-secondary row">
-            &lt;!&ndash;INSERT ICON HERE&ndash;&gt;
-                    <div class="col-2 d-flex flex-column justify-content-around m-0 p-0 tab-links">
-                        <div ><div align="center"><a href="#tab1">BookMarks<i class="fa fa-bookmark" ></i></a></div></div>
-                    <div ><div align="center"><a href="#tab2" >Todo List <i class="fa fa-list" ></i></a></div></div>
-                    <div ><div align="center"><a href="#tab3" >GMail <i class="fa fa-bell" ></i></a></div></div>
-                    <div ><div align="center"><a href="#tab4" >Doodle <i class="fa fa-paint-brush" ></i></a></div></div>
-                    </div>
-                <div style="height: 60vh;" class="text-success col-10 tab-content">
-                <div id="tab1" align="center" class="tab active">
-                    <div class="d-flex">
-                        <div style="width: 50%">
-                            <h3>Manage All Your Bookmarks Under One Place </h3>
-                            <p>Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
-                            Drag and Drop bookmarks related to those categories. Its as simple as that.
-                            </p>
+                                            <ul class="nav navbar-nav navbar-right">
+                                                <li><a href="#home">HOME</a></li>
+                                                <li><a href="#service">Service</a></li>
+                                                <li><a href="#team">TEAMS</a></li>
+                                                <!--<li><a href="#portfolio">WORKS</a></li>-->
+                                                <li><a href="#testimonial">Testimonial</a></li>
+                                                <li><a href="#contact">CONTACT</a></li>
+
+                                                <!--<li>-->
+                                                <li id="signIn" class="fa p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"><a>LOGIN</a></li>
+                                                    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                                        <div style="position: absolute;top:5vh;left: 30vw" class="modal-dialog" role="document">
+                                                            <div style="height: 20vh;width: 40vw" class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel1">login to Bumba</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true"> Close </span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body d-flex flex-column justify-content-around">
+                                                                    <div style="width: 100%;height: 20vh" class="d-flex flex-column justify-content-around">
+                                                                        <form class="d-flex justify-content-center" style="height: 5vh  ;" action="/auth/google/">
+                                                                            <button style="width: 30%; height: 5vh;" class="btn btn-danger"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Google
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <!--</li>-->
+                                            </ul>
+
+
+                                        </div>
+
+                                    </div>
+                                </nav>
+                            </div>
                         </div>
-                        <div style="width: 50%">
-                            <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/12/firefox-bookmark-tags.png" style="height: 250px; width: 50%;" alt="">
-                        </div>
-                    </div>
-                </div>
 
-                <div id="tab2" align="center" class="tab">
-                    <div class="d-flex">
-                        <div style="width: 50%">
-                            <h3>Keep Track Of All Important Tasks</h3>
-                            <p>Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
-                                <br>Mark tasks as done and delete them if wanted. The user friendly UI is self-explanatory though.</p>
-                        </div>
-                        <div style="width: 50%">
-                            <img src="http://www.jamiegellingsmediablog.com/uploads/2/5/1/5/25153601/7260687.jpg?540" style="height: 250px; width:250px;" alt="">
-                        </div>
                     </div>
 
-
                 </div>
+            </header> <!--End of header -->
 
 
-                <div id="tab3" align="center" class="tab">
-                    <div class="d-flex">
-                        <div style="width: 50%">
-                            <h3>Get notified of any new Emails</h3>
-                            <p>Look out for new emails category wise here it self instead of visiting the website. <br>
-                                A must have feature for any desktop application</p>
+
+
+
+            <section id="home" class="home">
+                <div class="overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 ">
+                                <div class="main_home_slider text-center">
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>WELCOME TO BUMBA</h1>
+                                            <p style="font-size: 30px;">Your Web Assisstant to make your time on the web productive</p>
+                                            <div class="home_btn">
+                                                <a href="#service" class="btn btn-primary">BEGIN</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>CRAFTED WITH <i class="fa fa-heart"> </i></h1>
+                                            <p style="font-size: 30px;">Once you start, there's no looking back</p>
+                                            <div class="home_btn">
+                                                <a href="#service" class="btn btn-primary">BEGIN</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="single_home_slider">
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1>CRAFTED FOR <i class="fa fa-smile-o"> </i><br>Yes It's You  </h1>
+                                            <p style="font-size: 30px;">It runs on NodeJS</p>
+
+                                            <div class="home_btn">
+                                                <a href="#service" class="btn btn-primary">LETS START</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div style="width: 50%">
-                            <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 250px; width:250px;" alt="">
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="service" class="service">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_service_area">
+                                <div class="main_service_content">
+                                    <div class="service_tabe">
+                                        <!-- Nav tabs -->
+                                        <ul class="service_tabe_menu nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active"><a href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bookmark"></i> <br />BOOK MARKS</a></li>
+                                            <li role="presentation"><a href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-list"></i> <br />TODO LIST</a></li>
+                                            <li role="presentation"><a href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bell"></i> <br />GMAIL NOTIFS</a></li>
+                                            <li role="presentation"><a href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-paint-brush"></i> <br />DOODLE</a></li>
+                                        </ul>
+
+                                        <!-- Tab panes -->
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane active" id="webdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>BOOK MARKS MANAGER</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
+                                                                    Drag and Drop bookmarks related to those categories. Its as simple as that.  </p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="https://i.pinimg.com/736x/71/06/a8/7106a8374f2319df286e84714179a064--bookmarks-handmade-creative-bookmarks.jpg" style="height: 250px; width:250px;" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="appdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Todo List</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
+                                                                    <br>Mark tasks as done and delete them if wanted. The user friendly UI is self-explanatory though.</p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="https://images.britcdn.com/wp-content/uploads/2015/03/todo-list.png?fit=max&w=1440" style="height: 250px; width:250px;" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="graphicdesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>Track Your Gmail Notifications</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>>Look out for new emails category wise here it self instead of visiting the website. <br>
+                                                                    A must have feature for any desktop application</p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 250px; width:250px;" alt="" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane" id="gamedesign">
+                                                <div class="single_service_tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_content">
+                                                                <div class="head_title">
+                                                                    <h3>DOODLE</h3>
+                                                                    <div class="separator"></div>
+                                                                </div>
+                                                                <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
+
+                                                                <a href="" class="btn btn-primary">LEARN MORE</a>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-sm-6">
+                                                            <div class="single_tab_img">
+                                                                <img src="http://moziru.com/images/painting-clipart-paint-board-18.jpg" style="height: 250px; width:250px;" alt="" />
+                                                            </div>
+                                                        </div>
+                                                        <!--                                                        <div id="pentagon"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="features">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_features_area sections">
+                                <div class="head_title">
+                                    <h3>GET STARTED</h3>
+                                    <div class="separator"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="main_features_content">
+
+                                        <div class="col-sm-6">
+
+                                            <div class="single_features_slide">
+                                                <div class="single_ft_s_item">
+                                                    <img src="../assets/images/laptop.png" style="height: 50vh; width:50vh;" alt="" />
+                                                </div>
+                                                <div class="single_ft_s_item">
+                                                    <img src="../assets/images/laptop.png" style="height: 50vh; width:50vh;" alt="" />
+                                                </div>
+                                                <div class="single_ft_s_item">
+                                                    <img src="../assets/images/laptop.png" style="height: 50vh; width:50vh;" alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="single_features_text">
+                                                <h4 style="font-size: 40px">GET STARTED</h4>
+                                                <p style="font-size: 30px">Get Started Now. Its  Easy to Use and the UI itself is self explanatory.</p>
+
+                                                <ul>
+                                                    <li><span>Client:</span> Dadit Lorm</li>
+                                                    <li><span>Deivered:</span> Sunday, 15 August, 2015</li>
+                                                    <li><span>Tags:</span> Hand, Watch, Black, Tree</li>
+                                                </ul>
+
+                                                <a href="" class="btn">LAUNCH NOW</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="video" class="video text-center wow fadeIn"  data-wow-duration="2s" data-wow-dealy="1.5s">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_video">
+                                <div class="col-sm-12">
+                                    <div class="icon">
+                                        <a href="https://www.youtube.com/embed/_l6CQRHIGyg" class="youtube-media"><img src="../assets/images/play.png" alt="play-icon" /></a>
+                                        <h3>WATCH OUR INTRO</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+            <section id="about" class="about">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="main_about_area sections">
+                            <div class="col-sm-12">
+
+                                <div class="main_about_content">
+                                    <div class="row">
+
+                                        <div class="col-sm-7 wow fadeInRight" data-wow-duration="700ms">
+                                            <div class="single_about_right_content">
+                                                <div class="head_title">
+                                                    <h3>ABOUT BUMBA</h3>
+                                                    <div class="separator"></div>
+                                                </div>
+
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+                                                        <div class="ab_border_right"></div>
+                                                        <i class="fa fa-coffee"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>RESPONSIVE DESIGN</h3>
+                                                        <p>The design of this website has been made keeping in mind that you would use it on different platforms.
+                                                            <br>
+                                                        th UI here is such that it automatically adapts to any new screen changes irrespective of your platform</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+
+                                                        <i class="fa fa-heart"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>EASY TO USE</h3>
+                                                        <p>The sole purpose of this website is to help you manage your daily tasks and also lend a helpin ghand when you are in need.
+                                                        The UI is self explanatory and once you begin using it, there's no looking back.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="single_about">
+                                                    <div class="single_ab_icon">
+                                                        <i class="fa fa-leaf"></i>
+                                                    </div>
+                                                    <div class="single_ab_text">
+                                                        <h3>ITS FREE</h3>
+                                                        <p>No money charged. All you need is a gmail account to log in.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-5">
+                                            <div class="single_about_left_img margin-top-40 text-center wow fadeInLeft" data-wow-duration=".6s">
+                                                <img src="../assets/images/abright.png" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="about_skill_area">
+                                            <div class="col-sm-6">
+                                                <div class="about_tabe">
+                                                    <!-- Nav tabs -->
+                                                    <ul class="about_tabe_menu" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#mission" aria-controls="mission" role="tab" data-toggle="tab">OUR MISSION</a></li>
+                                                        <li role="presentation"><a href="#goal" aria-controls="goal" role="tab" data-toggle="tab">OUR GOAL</a></li>
+                                                        <li role="presentation"><a href="#achivements" aria-controls="achivements" role="tab" data-toggle="tab">ACHIVEMENTS</a></li>
+                                                    </ul>
+
+                                                    <!-- Tab panes -->
+                                                    <div class="tab-content">
+                                                        <div role="tabpanel" class="tab-pane active" id="mission">
+                                                            <div class="single_about_tab">
+                                                                <p>This was our very first live project. A lot of hours and brain power has been invested. Our mission,as noob developers (no we aren't being modest), was to gain experience . And to
+                                                                a large extent we managed to achieve it.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="goal">
+                                                            <div class="single_about_tab">
+                                                                <p>Our goal was to make something of a kind which did not pre-exist, and , at the same time , something which shoud attract
+                                                                people to use our website. You can help us achieve our goal. NOW is the time. Lets GO and start.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div role="tabpanel" class="tab-pane" id="achivements">
+                                                            <div class="single_about_tab">
+                                                                <p>As of now we would rather count BUMBA as our only hard earned achievement. Something, we built from scratch and finally brought it where it is today.
+                                                                We have also made several small scale static projects which can be found on our github link.</p>
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                    <div class="col-sm-6">
+                                                                        <ul class="single_ab_mision">
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                            <li><i class="fa fa-check-square"></i> We just want to help you</li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="about_skill">
+                                                    <h3>PROJECT CONTENTS</h3>
+                                                    <div class="skillbar" data-percent="54%">
+                                                        <div class="skillbar-title"><h3 class="blue">JavaScript</h3><span class="sm-text">54%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <div class="skillbar" data-percent="9%">
+                                                        <div class="skillbar-title"><h3 class="blue">HTML</h3><span class="sm-text">9%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <div class="skillbar" data-percent="37%">
+                                                        <div class="skillbar-title"><h3 class="blue">CSS</h3><span class="sm-text">37%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>
+
+                                                    <!--<div class="skillbar" data-percent="92%">
+                                                        <div class="skillbar-title"><h3 class="blue">WORDPRESS</h3><span class="sm-text">92%</span></div>
+                                                        <div class="skillbar-bar blue"></div>
+                                                    </div>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
 
                         </div>
                     </div>
-
-
                 </div>
+            </section>
 
-                <div id="tab4" align="center" class="tab">
-                    <div class="d-flex">
-                        <div style="width: 50%">
-                            <h3>Doodle Out Imp Figures,Tables</h3>
-                            <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
-                        </div>
-                        <div style="width: 50%">
-                            <img src="http://moziru.com/images/painting-clipart-paint-board-18.jpg" style="height: 250px; width:250px;" alt="">
+
+            <section id="counter" class="counter">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="main_counter_area text-center">
+
+                                    <div class="row">
+                                        <div class="single_counter border_right">
+                                            <div class="col-sm-4 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">10000</h2>+
+                                                    <i class="icon icon-thumbs-up"></i>
+                                                    <p class="margin-top-20">LINES OF CODE</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="single_counter">
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter"></h2>
+                                                    <i class="icon icon-business-3"></i>
+                                                    <p class="margin-top-20">AWARDS WON</p>
+                                                </div>
+
+                                            </div>
+                                        </div>-->
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-4 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">14</h2>
+                                                    <i class="icon icon-people-32"></i>
+                                                    <p class="margin-top-20">HAPPY USERS</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="single_counter">
+                                            <div class="col-sm-4 col-xs-12">
+                                                <div class="single_counter_item">
+                                                    <h2 class="statistic-counter">126</h2>
+                                                    <i class="icon icon-cup"></i>
+                                                    <p class="margin-top-20">COMMITS ON GITHUB</p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
-</div>-->
+            </section>  <!-- End of counter section -->
 
-<section class="intro">
-    <div class="content">
-        <div class="tabs">
 
-            <div align="center" id="main_about">
-                <h1 id="about_bumba">ABOUT</h1>
-                BUMBA is a multipurpose web application which makes your time on the web
-                productive. It eases a variety <br> of your tasks and saves a lot of your time.
-                Have a look at its features <br><br>
-            </div>
+            <section id="othersservice" class="othersservice">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_othersservice_area sections">
+                                <div class="row">
+                                    <div class="head_title">
+                                        <h3>PPOWERED BY</h3>
+                                        <div class="separator"></div>
+                                    </div>
 
-            <!--INSERT ICON HERE-->
-            <ul class="tab-links col-12 row" style="list-style: none" >
-                <li class="col aboutTab"><a href="#tab1"><i class="fa fa-2x">BookMarks </i><br><br><i class="fa fa-bookmark fa-2x" style="align-self: center" aria-hidden="true"> </i></a></li>
-                <li class="col aboutTab"><a href="#tab2"><i class="fa fa-2x">Todo List </i><br><br><i class="fa fa-list fa-2x" aria-hidden="true"></i></a></li>
-                <li class="col aboutTab"><a href="#tab3"><i class="fa fa-2x">GMail </i><br><br><i class="fa fa-bell fa-2x" aria-hidden="true"></i></a></li>
-                <li class="col aboutTab"><a href="#tab4"><i class="fa fa-2x">Doodle</i><br><br><i class="fa fa-paint-brush fa-2x" aria-hidden="true"></i></a></li>
-            </ul>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/bootstrap.png" style="height: 5rem; max-width: 10rem" alt=""></span></h4>
+                                                </div>
 
-            <div class="tab-content">
-                <div id="tab1" align="center" class=" tab active">
-                    <h1><b>Manage All Your Bookmarks Under One Place</b> </h1>
-                    <p>Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
-                        Drag and Drop bookmarks related to those categories. Its as simple as that. </p>
-                    <img src="https://i.pinimg.com/736x/71/06/a8/7106a8374f2319df286e84714179a064--bookmarks-handmade-creative-bookmarks.jpg" style="height: 250px; width:250px;" alt="">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/consoleDevelopers.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/css3.svg" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/express.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/font-awesome.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/github.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/HTML5.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/javascript.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/jquery.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span>y</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/MongoDB.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/nodejs.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/passport.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/phantomjs-icon.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/socket-io.svg" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/themeWagon.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="main_othersservice_content">
+                                        <div class="col-sm-3">
+                                            <div class="single_othersservice">
+                                                <div class="single_othersservice_icon">
+                                                    <h4><span><img src="../assets/images/poweredBY/webstorm.png" style="height: 5rem; max-width: 10rem" alt="">
+                                                    </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div id="tab2" align="center" class="tab">
 
-                    <h1>Keep Track Of All Important Tasks</h1>
-                    <p>Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
-                        <br>Mark tasks as done and delete them if wanted. The user friendly UI is self-explanatory though.</p>
-                    <img src="https://images.britcdn.com/wp-content/uploads/2015/03/todo-list.png?fit=max&w=1440" style="height: 250px; width:250px;" alt="">
+
+
+            <section id="team" class="team">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_team sections">
+                                <div class="row">
+                                    <div class="head_title">
+                                        <h3>MMEET US</h3>
+                                        <div class="separator"></div>
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="../assets/images/team1.jpg" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>SHIKHAR AGNIHOTRI</h4>
+                                                <p>CORE DEVELOPER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <!--<a href=""><i class="fa fa-twitter"></i></a>-->
+                                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                                    <a href=""><i class="fa fa-github"></i></a>
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+
+                                                    <!--<a href=""><i class="fa fa-pinterest-p"></i></a>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="single_team_content">
+                                            <div class="single_team_img">
+                                                <img src="../assets/images/team2.jpg" alt="" />
+                                            </div>
+                                            <div class="single_team_text_overlay">
+                                                <h4>SOUMYA HIMANISH MOHAPATRA</h4>
+                                                <p>CORE DEVELOPER</p>
+                                                <div class="team_overlay_socail">
+                                                    <a href=""><i class="fa fa-facebook"></i></a>
+                                                    <!--<a href=""><i class="fa fa-twitter"></i></a>-->
+                                                    <a href=""><i class="fa fa-linkedin"></i></a>
+                                                    <a href=""><i class="fa fa-github"></i></a>
+
+                                                    <a href=""><i class="fa fa-google-plus"></i></a>
+                                                    <!--<a href=""><i class="fa fa-pinterest-p"></i></a>-->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                                                   </div>
+
+                            </div><!-- End of main team contant -->
+                        </div>
+                    </div><!-- End of row -->
                 </div>
+            </section>
 
 
-                <div id="tab3" align="center" class="tab">
-                    <h1>Get notified of any new Emails</h1>
-                    <p>Look out for new emails category wise here it self instead of visiting the website. <br>
-                        A must have feature for any desktop application</p>
-                    <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 250px; width:250px;" alt="">
+            <section id="choose" class="choose">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_choose sections">
+                            <div class="col-sm-6">
+                                <div class="head_title">
+                                    <h3>WHY CHOOSE US</h3>
+                                    <div class="separator"></div>
+                                </div>
+                                <div class="single_choose">
+                                    <div class="single_choose_acording">
+                                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingOne">
+                                                    <h4 class="panel-title">
+                                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                                                            <i class="fa fa-picture-o"></i> GREAT DESIGN
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="height: auto;">
+                                                    <div class="panel-body">
+                                                       Powered by The theme Wagon, it gives you one of the best user friendly Designs.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingTwo">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                            <i class="fa fa-map-signs"></i> RESPONSIVE DESIGN
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                    It automatically shrinks and expands as and when needed. You dont need to worry about anything.It handles everything on its own.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-heart"></i> FOR YOU
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Time and again we have mentioned that ots for you only. Start now and see what all it can do. :)
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-umbrella"></i>SYNCED WITH GOOGLE
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="collapsefour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Forget all the hassle of making a new acoount and remembering your ID password and stuff.
+                                                        Just sign from google and sit back and relax. It manages everything on its own. Once ready It
+                                                        will lead you to the dashboard.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<div class="panel panel-default">
+                                                <div class="panel-heading" role="tab" id="headingThree">
+                                                    <h4 class="panel-title">
+                                                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapsefive" aria-expanded="false" aria-controls="collapseThree">
+                                                            <i class="fa fa-subway"></i>1170 PX GRID BASE
+                                                        </a>
+                                                    </h4>
+                                                </div>-->
+                                               <!-- <div id="collapsefive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingfive" aria-expanded="false">
+                                                    <div class="panel-body">
+                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                                        ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                                        culpa qui officia deserunt mollit anim id est laborum.
+                                                    </div>
+                                                </div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                            <div class="col-sm-6">
+                                <div class="single_choose">
+                                    <div class="single_choose_img">
+                                        <img src="../assets/images/choose.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div id="tab4" align="center" class="tab">
-                    <h1>Doodle Out Imp Figures,Tables</h1>
-                    <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
-                    <img src="http://moziru.com/images/painting-clipart-paint-board-18.jpg" style="height: 250px; width:250px;" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<br><br><br>
-<br><br><br>
-
-
-
-
-
-<div class="container-fluid bg-danger">
-    <div class="row">
-        <div class="d-flex flex-column justify-content-around col-6">
-            <h1 style="color: white">Get Started</h1>
-            <h1 style="font-size: x-large;color: white">Get Started Now. Its  Easy to Use and the UI itself is self explanatory. <br><a style="text-decoration: none" href="#">Click here</a> for a full demo video </h1>
-            <a style="align-self:center;font-size: large;width: 40%" class="btn btn-light btn-outline ">Start Now for Free!</a>
-
-        </div>
-        <div class="col-6">
-            <div>
-                <img src="../css/images/laptop.png" class="img-fluid" >
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
 
 <!--
-<div class="container-fluid">
-    <h1 class="ml-auto mr-auto" style="width:80vw;border-bottom:dashed;font-size: 300%">Powered By <i class="fa fa-heart-o" style=" color : red;"></i></h1>
-    <div style="height: 80vh;overflow-y: scroll" class="d-flex border">
-        <div class="d-flex flex-column justify-content-around" style="height:100vh;width: 25%">
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/github.png" alt="">
-                <h3>Github</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/bootstrap.png" alt="">
-                <h3>BootStrap</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/css3.svg" alt="">
-                <h3>CSS 3</h3>
-            </div>
-        </div>
-        <div class="d-flex flex-column justify-content-around" style="height:100vh;width: 25%">
-            <div align="center">
-                <img style="background-color:white;height: 10vh;width: 10vw;" src="../css/images/express.png" alt="">
-                <h3>Express</h3>
 
-            </div>
-            <div align="center">
-                <img style="background-color:white;height: 10vh;width: 10vw;" src="../css/images/phantomjs-icon.png" alt="">
-                <h3>Phantom JS</h3>
+            <section id="portfolio" class="portfolio lightbg">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_portfolio sections">
+                            <div class="col-sm-4">
+                                <div class="head_title">
+                                    <h3>LATEST PROJECT</h3>
+                                    <div class="separator"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-sm-offset-2">
+                                <div id="filters" class="toolbar mb2 mt2">
+                                    <button class="btn-md fil-cat filter active" href=""  data-filter="all">SHOW ALL</button>
+                                    <button class="btn-md fil-cat filter" data-rel="web" data-filter=".web">PHOTOGRAPHY</button>
+                                    <button class="btn-md fil-cat filter" data-rel="flyers" data-filter=".flyers">BRANDING</button>
+                                    <button class="btn-md fil-cat filter" data-rel="bcards" data-filter=".bcards">GRAPHIC DESIGN</button>
+                                    <div class="separator2"></div>
+                                </div>
 
-            </div>
-            <div align="center">
-                <img style="background-color:white;height: 10vh;width: 10vw;" src="../css/images/nodejs.png" alt="">
-                <h3>Node JS</h3>
+                            </div>
 
-            </div>
-            <div align="center">
-                <img style="background-color:white;height: 10vh;width: 10vw;" src="../css/images/font-awesome.png" alt="">
-                <h3>Font Awesome</h3>
-            </div>
-        </div>
-        <div class="justify-content-around d-flex flex-column" style="height:100vh;width: 25%">
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/HTML5.png" alt="">
-                <h3>HTML5</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/javascript.png" alt="">
-                <h3>JavaScript</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 10vw;" src="../css/images/jquery.png" alt="">
-                <h3>jQuery</h3>
-            </div>
-        </div>
-        <div class="justify-content-around d-flex flex-column" style="height:100vh;width: 25%">
-            <div align="center">
-                <img style="background-color:white;height: 10vh;width: 10vw;" src="../css/images/MongoDB.png" alt="">
-                <h3>mongoDB</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/passport.png" alt="">
-                <h3>Passport</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 5vw;" src="../css/images/socket-io.svg" alt="">
-                <h3>SocketIO</h3>
-            </div>
-            <div align="center">
-                <img style="height: 10vh;width: 10vw;" src="../css/images/webstorm.png" alt="">
-                <h3>WebStorm IDE</h3>
-            </div>
-        </div>
-    </div>
-</div>
+                            <div style="clear:both;"></div>
+                            <div id="portfoliowork">
+                                <div class="single_portfolio tile scale-anm web grid-item-width2" >
+                                    <img src="assets/images/pf1.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf2.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf2.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web ">
+                                    <img src="assets/images/pf3.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf3.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web" >
+                                    <img src="assets/images/pf4.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf4.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf8.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf8.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm web" >
+                                    <img src="assets/images/pf9.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf9.jpg" class="portfolio-img">
+                                            <i class="fa fa-link"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa fa-search"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf5.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_2">
+                                        <a href="assets/images/pf5.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf6.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf7.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+                                <div class="single_portfolio tile scale-anm flyers">
+                                    <img src="assets/images/pf6.jpg" alt="" />
+                                    <div class="grid_item_overlay g_overlay_1">
+                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm bcards" >
+                                    <img src="assets/images/pf7.jpg" alt="" />
+                                    <div class="grid_item_overlay">
+                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-link"></i></a>
+                                        <a href="#"> <i class="fa fa-search"></i></a>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>-->
+
+
+
+
+
+
+            <!--            <section id="portfolio" class="portfolio">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="main_portfolio sections">
+                                        <div class="heading_filter_menu">
+                                            <div class="col-sm-4">
+                                                <div class="head_title">
+                                                    <h3>LATEST PROJECT</h3>
+                                                    <div class="separator"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div id="filters" class="toolbar mb2 mt2">
+                                                    <button class="btn fil-cat filter active" href=""  data-filter="all">All</button>
+                                                    <button class="btn fil-cat filter" data-rel="web" data-filter=".web">Websites</button>
+                                                    <button class="btn fil-cat filter" data-rel="flyers" data-filter=".flyers">Flyers</button>
+                                                    <button class="btn fil-cat filter" data-rel="bcards" data-filter=".bcards">Business Cards</button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="main_portfolio_content text-center">
+                                            <div class="grid">
+                                                <div class="grid-item grid-item--width2">
+                                                    <img src="assets/images/pf1.jpg" alt="" />
+                                                    <div class="grid_item_overlay all_overlay">
+                                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf2.jpg" alt="" />
+                                                    <div class="grid_item_overlay all_overlay">
+                                                        <a href="assets/images/pf2.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf3.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf1.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf4.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf4.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf5.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf5.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item grid-item--width2">
+                                                    <img src="assets/images/pf6.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf7.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf8.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf6.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+                                                <div class="grid-item ">
+                                                    <img src="assets/images/pf9.jpg" alt="" />
+                                                    <div class="grid_item_overlay">
+                                                        <a href="assets/images/pf7.jpg" class="portfolio-img"> <i class="fa fa-picture-o"></i></a>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>-->
+
+
+            <section id="testimonial" class="testimonial">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="main_testimonial sections text-center">
+                                <div class="col-md-12" data-wow-delay="0.2s">
+                                    <div class="main_teastimonial_slider text-center">
+
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+                                                        in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                                                        hidden in the middle of text. All the Lorem  ww</p>
+                                                    <div class="single_test_author">
+                                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                                                        alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing
+                                                        hidden in the middle of text. All the Lorem</p>
+                                                    <div class="single_test_author">
+                                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="single_testimonial">
+                                            <div class="row">
+                                                <div class="col-sm-8 col-sm-offset-2">
+                                                    <i class="fa fa-quote-left"></i>
+                                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                                                        suffered alteration in some form, by injected humour, or randomised words which don't look even
+                                                        slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there
+                                                        isn't anything embarrassing hidden in the middle of text. All the Lorem</p>
+                                                    <div class="single_test_author">
+                                                        <h4>JANE GALADRIEL <span> -- CEO TENGKUREP</span></h4>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section id="clogo" class="clogo">
+                <div class="container">
+                    <div class="row">
+                        <div class="main_clogo sections text-center">
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                            <div class="col-sm-2 col-xs-6">
+                                <a href=""><img src="../assets/images/bmba.png" alt="" /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+
+            <section id="contact" class="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="contact_contant sections">
+                                    <div class="col-sm-6">
+
+                                        <div class="main_contact_info">
+                                            <div class="head_title">
+                                                <h3>CONTACT INFO</h3>
+                                                <div class="separator"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="contact_info_content">
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-home"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>VISIT US</h3>
+                                                                <p><a href="https://github.com/himanish-star/Bumba-The-Assistant-App"><i class="fa fa-2x    fa-github" style="color: black;">  Github</i></a></p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-envelope-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>MAIL US</h3>
+                                                                <p>teamsawinsa@gmail.com</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-mobile"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>CALL US</h3>
+                                                                <p>+(91) 88 60 377 453</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single_contact_info">
+                                                            <div class="single_info_icon">
+                                                                <i class="fa fa-clock-o"></i>
+                                                            </div>
+                                                            <div class="single_info_text">
+                                                                <h3>Availability</h3>
+                                                                <p> 24x7x365 (seriously guys)</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6">
+                                        <div class="head_title">
+                                            <h3>LEAVE MESSAGE</h3>
+                                            <div class="separator"></div>
+                                        </div>
+                                        <div class="single_contant_left">
+                                            <form action="#" id="formid">
+                                                <!--<div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">-->
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="name" placeholder="Last Name" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="email" class="form-control" name="email" placeholder="Email" required="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="message" rows="8" placeholder="Message"></textarea>
+                                                </div>
+
+                                                <div class="">
+                                                    <input type="submit" value="Submit" class="btn btn-primary">
+                                                </div>
+                                                <!--</div>-->
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>  <!-- End of contact section -->
+
+
+
+            <section id="maps" class="maps">
+                <div class="map-overlay">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="main_maps text-center">
+                                <div class="col-sm-12 no-padding">
+                                    <div class="map_canvas_icon">
+                                        <i class="fa fa-map-marker" onClick="showmap()"></i>
+                                        <h2 onClick="showmap()">FIND US ON GOOGLE MAP</h2>
+                                    </div>
+                                    <div id="map_canvas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+
+            <section id="footer" class="footer_widget">
+                <div class="video_overlay">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="main_widget">
+                                        <div class="col-sm-3 col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+                                                <div class="footer_logo">
+                                                    <img src="../assets/images/bmba.png" alt="" />
+                                                </div>
+                                                <p style="font-size: 15px   ">We Thank You from the bottom of our heart for making it so far. </p>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4  col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>SITEMAP</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="#service">Services</a></li>
+                                                    <li><a href="#about">About Us</a></li>
+                                                    <li>Login from the right top corner</li>
+                                                    <!--<li><a href="#">Our Team</a></li>-->
+                                                    <!--<li><a href="#">Portfolio</a></li>-->
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!--<div class="col-sm-3  col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>ACHIVES</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+                                                <ul>
+                                                    <li><a href="">January 2015</a></li>
+                                                    <li><a href="">February 2015</a></li>
+                                                    <li><a href="">March 2015</a></li>
+                                                    <li><a href="">April 2015</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+-->
+                                        <div class="col-sm-4 col-xs-12">
+                                            <div class="single_widget wow fadeIn" data-wow-duration="800ms">
+
+                                                <div class="footer_title">
+                                                    <h4>CONTRIBUTE</h4>
+                                                    <div class="separator"></div>
+                                                </div>
+
+                                                <div class="footer_subcribs_area">
+                                                    <p>Contribute to our Source code on GITHUB</p>
+                                                    <form class="navbar-form navbar-left" role="search">
+                                                        <div class="form-group">
+                                                            <a href="https://github.com/himanish-star/Bumba-The-Assistant-App"><i class="fa fa-4x fa-github"></i></a>
+                                                        </div>
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+           <!-- <section class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="main_footer">
+                                <div class="row">
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="copyright_text">
+                                            <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="https://bootstrapthemes.co">Bootstrap Themes</a>2016. All Rights Reserved</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="flowus">
+                                            <a href=""><i class="fa fa-facebook"></i></a>
+                                            <a href=""><i class="fa fa-twitter"></i></a>
+                                            <a href=""><i class="fa fa-google-plus"></i></a>
+                                            <a href=""><i class="fa fa-instagram"></i></a>
+                                            <a href=""><i class="fa fa-youtube"></i></a>
+                                            <a href=""><i class="fa fa-dribbble"></i></a>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 -->
 
 
-<section class="hello1">
-    <br>
 
-    <div class="container">
-        <div class="content gs">
-            <h1 style="font-size: 60px">Powered By </h1>        <br><br>
 
-            <div  id="poweredBy" >
-                <div class="imgClass"  align="center">
-                    <img src="../css/images/github.png" alt="">
-                    <h3>Github</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/bootstrap.png" alt="">
-                    <h3>BootStrap</h3>
 
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/css3.svg" alt="">
-                    <h3>CSS 3</h3>
 
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/express.png" alt="">
-                    <h3>Express</h3>
 
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/nodejs.png" alt="">
-                    <h3>Node JS</h3>
-
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/font-awesome.png" alt="">
-                    <h3>Font Awesome</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/HTML5.png" alt="">
-                    <h3>HTML5</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/javascript.png" alt="">
-                    <h3>JavaScript</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/jquery.png" alt="">
-                    <h3>jQuery</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/MongoDB.png" alt="">
-                    <h3>mongoDB</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/phantomjs-icon.png" alt="">
-                    <h3>PhantomJS</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/passport.png" alt="">
-                    <h3>Passport</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/socket-io.svg" alt="">
-                    <h3>SocketIO</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/webstorm.png" alt="">
-                    <h3>WebStorm IDE</h3>
-                </div>
-                <div class="imgClass" align="center">
-                    <img src="../css/images/consoleDevelopers.png" alt="">
-                    <h3>Google Developers</h3>
-                </div>
-
-            </div>
         </div>
-        <br>
-    </div>
-</section>
 
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
+        <!-- START SCROLL TO TOP  -->
 
-<div style="font-size:100%;background-color:black;height: 50vh;" class="container-fluid d-flex flex-column text-light justify-content-around">
-    <div style="color: chartreuse" class="mr-auto ml-auto">
-        <i class="fa fa-times"></i>
-        &nbsp;
-        &nbsp;
-        <i class="fa fa-times"></i>
-        &nbsp;
-        &nbsp;
-        <i class="fa fa-times"></i>
-        &nbsp;
-        &nbsp;
-        <i class="fa fa-times"></i>
-    </div>
-    <div class="d-flex justify-content-around">
-        <div style="border-right:solid chartreuse;width: 20vw">
-            <u style="color: greenyellow">WHO WE ARE</u>
-            <i class="fa fa-question-circle"></i>
-            <div>    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magnia deserunt mollit anim id est laborum.</div>
+        <div class="scrollup">
+            <a href="#"><i class="fa fa-chevron-up"></i></a>
         </div>
-        <div style="border-right:solid chartreuse;width: 20vw">
-            <u style="color: greenyellow">FEEDBACK</u>
-            <i class="fa fa-feed"></i>
-            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dosint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </div>
-        </div>
-        <div style="border-right:solid chartreuse;width: 20vw">
-            <u style="color: greenyellow">CONTACT US</u>
-            <i class="fa fa-phone"></i>
-            <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lafficia deserunt mollit anim id est laborum.
-            </div>
-        </div>
-        <div style="width: 20vw">
-            <u style="color: greenyellow">SUBSCRIBE</u>
-            <i class="fa fa-envelope-o"></i>
-            <div>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-            </div>
-        </div>
-    </div>
-    <div style="color: chartreuse" class="mr-auto ml-auto">
-        <span>&copy;2017&nbsp;&nbsp;www.bumba.io . All rights reserved</span>
-    </div>
-</div>
+
+        <script src="../js/vendor/jquery-1.11.2.min.js"></script>
+        <script src="../js/vendor/bootstrap.js"></script>
+
+        <script src="../js/jquery.magnific-popup.js"></script>
+        <script src="../js/jquery.mixitup.min.js"></script>
+        <script src="../js/jquery.easing.1.3.js"></script>
+        <script src="../js/jquery.masonry.min.js"></script>
+        <script src="../js/popper.js"></script>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+        <script src="http://maps.google.com/maps/api/js"></script>
+        <script src="../js/gmaps.min.js"></script>
 
 
-<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-    <div style="position: absolute;top:5vh;left: 30vw" class="modal-dialog" role="document">
-        <div style="height: 20vh;width: 40vw" class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">login to Bumba</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"> Close </span>
-                </button>
-            </div>
-            <div class="modal-body d-flex flex-column justify-content-around">
-                <div style="width: 100%;height: 20vh" class="d-flex flex-column justify-content-around">
-                    <form class="d-flex justify-content-center" style="height: 5vh  ;" action="/auth/google/">
-                        <button style="width: 30%; height: 5vh;" class="btn btn-danger"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Google
-                        </button>
-                    </form>
-                </div>
-        </div>
-    </div>
-</div>
+        <script>
 
-<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-    <div style="position: absolute;top:5vh;left:25vw" class="modal-dialog" role="document">
-        <div style="height: 80vh;width:50vw;" class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel2">SIGN UP</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true"> &times;</span>
-                </button>
-            </div>
-                <div style="height: 100%;width: 50vw" class="d-flex flex-column justify-content-around">
-                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="name1">First Name</label>
-                            <br>
-                            <input id="name1" type="text">
-                        </div>
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="name2">Last Name</label>
-                            <br>
-                            <input id="name2" type="text">
-                        </div>
-                    </div>
-                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="username2">Username</label>
-                            <br>
-                            <input id="username2" type="text">
-                        </div>
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="email">Email-ID</label>
-                            <br>
-                            <input id="email" type="email">
-                        </div>
-                    </div>
-                    <div style="width: 50vw" class="d-flex justify-content-around flex-wrap">
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="password2">Password</label>
-                            <br>
-                            <input id="password2" type="text">
-                        </div>
-                        <div style="width: 30%" class="form-group">
-                            <label class="badge badge-dark" for="password1">Re-Password</label>
-                            <br>
-                            <input id="password1" type="text">
-                        </div>
-                    </div>
-                   <!-- <div class="justify-content-around d-flex"></div>-->
-                </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-    </div>
-</div>
+                                            function showmap() {
+                                                var mapOptions = {
+                                                    zoom: 8,
+                                                    scrollwheel: false,
+                                                    center: new google.maps.LatLng(-34.397, 150.644),
+                                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                                };
+                                                var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+                                            }
+        </script>
 
+        <script src="../js/plugins.js"></script>
+        <script src="../js/main.js"></script>
 
-<script src="../js/jquery-3.2.1.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/timerkajs.js"></script>
-<script src="../js/login_js.js"></script>
-<script src="../js/timerpopper.js"></script>
-<script src="../js/for_tabs.js"></script>
-<script src="../js/new-age.js"></script>
-<script src="../js/new-age.min.js"></script>
-<script>
-    $('#activityPage').click(()=>{
-        window.location.href='/HTMLfiles/card_exp.html';
-    });
-    $('#logout').click(()=>{
-        window.location.href='/auth/logout';
-    });
-</script>
-</body>
+    </body>
 </html>

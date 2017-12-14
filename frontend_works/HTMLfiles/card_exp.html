@@ -1,220 +1,718 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="../css/images/letterB.png" type="image/x-icon">
-    <title>Categories</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
-    <link rel="stylesheet" href="../css/bootstrap.css">
-    <link rel="stylesheet" href="../css/card_expp.css">
-    <link rel="stylesheet" href="../css/profcss.css">
-    <link rel="stylesheet" href="../css/main_css.css">
-    <link rel="stylesheet" href="../css/wSHomeBelow.css">
-    <link rel="stylesheet" href="../css/workSpaceTabs.css">
-    <link rel="stylesheet" href="../css/toDo.css">
-    <link rel="stylesheet" href="../css/workSpaceMainCss.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>BUMBA | Your Web Assistant</title>
+    <!-- Favicon-->
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../css/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="../css/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../css/styleCard.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../css/themes/all-themes.css" rel="stylesheet" />
 </head>
-<body>
-<div class="d-flex container-fluid beta" align="center" style=" width: 100%;position: relative">
-    <div style="width: 100%" class="d-flex justify-content-between">
-        <div class="align-self-center">
-            <a href="/"><img style="width:30%;height: 100%;" src="../css/images/bmba.png"></a>
-        </div>
-        <div id="dashboard"></div>
-        <div class="d-flex justify-content-around align-self-center">
-            <span id="clk-btn" data-toggle="popover" data-placement="bottom" class="align-self-center fa fa-clock-o p-4 headerDesign"></span>
-            <span id='activityPage' class="align-self-center fa fa-bar-chart headerDesign">
-            </span>
-            <div class="dropdown align-self-center" >
-                <span class="fa p-4 align-self-center headerDesign" data-toggle="dropdown" aria-label="dropdownMenuButton"><i id="userIMG">
-                </i>
-                </span>
-                <span class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a id="userNAME" class="fa dropdown-item" href="#"></a>
-                    <a class="fa fa-cog dropdown-item" href="#"> Settings</a>
-                </span>
+
+<body class="theme-red ">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
             </div>
-            <span id="signIn" class="fa fa-sign-in p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"> <b>login</b></span>
-
-            <span id="signUp" class="align-self-center fa p-4 headerDesign " data-toggle="modal" data-target="#myModal2"><b>register</b>
-            </span>
-
-            <span id="logout" class="fa fa-sign-out p-4 align-self-center headerDesign "> <b>logout</b></span>
+            <p>Please wait...</p>
         </div>
-
     </div>
-</div>
-<section class="intro">
-    <div class="content">
-        <div class="tabs">
-
-            <ul class="tab-links col-12 row align-items-start">
-                <li class="col-3 active"><a style="border:0;border-radius: 0" href="#tab1"><i class="fa hideName">BookMarks &nbsp; &nbsp;</i><i class="fa fa-bookmark" aria-hidden="true"> </i></a></li>
-                <li class="col-3"><a style="border:0;border-radius: 0" href="#tab2"><i class="fa hideName">Todo List  &nbsp; &nbsp;</i><i class="fa fa-list" aria-hidden="true"></i></a></li>
-                <li class="col-3"><a style="border:0;border-radius: 0" href="#tab3"><i class="fa hideName">GMail  &nbsp; &nbsp;</i><i class="fa fa-bell" aria-hidden="true"></i></a></li>
-                <li class="col-3"><a style="border:0;border-radius: 0" href="#tab4"><i class="fa hideName">Doodle &nbsp; &nbsp;</i><i class="fa fa-paint-brush" aria-hidden="true"></i></a></li>
-            </ul>
-
-            <div class="tab-content ">
-
-                <div id="tab1" align="center" class=" tab active bgTab1">
-
-                    <h1 class="text-center">
-                        Bookmarks
-                    </h1>
-                    <div class="card add_card float-left m-3" id="newCategoryBox" >
-                        <div class="btn btn-warning addMore p-0" data-toggle="modal" data-target="#myModalPlus">
-                            <h1>Add More </h1>
-                            <img class="card-img-top"  alt="Card image cap">
-                        </div>
-                        <div class="modal fade mt-3" id="myModalPlus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel" align="center"> Enter Category Name :) </h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">x</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form class="form">
-                                            <div class="form-group">
-                                                <label for="categoryName"><h4 align="center">Category Name</h4></label><br>
-                                                <input id="categoryName" type="text">
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="card_exp.html">BUMBA - YOUR WEB ASSISTANT</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    <li><a href="javascript:void(0);" class="js-search" data-close="true"><i class="material-icons">search</i></a></li>
+                    <!-- #END# Call Search -->
+                    <!-- Notifications -->
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            <i class="material-icons">notifications</i>
+                            <span class="label-count">7</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">NOTIFICATIONS</li>
+                            <li class="body">
+                                <ul class="menu">
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">person_add</i>
                                             </div>
-                                        </form>
-                                        <div class="modal-footer">
-                                            <button type="button" id="addCategory" class="btn btn-primary">ADD THIS</button>
-                                        </div>
+                                            <div class="menu-info">
+                                                <h4>12 new members joined</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 14 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-cyan">
+                                                <i class="material-icons">add_shopping_cart</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>4 sales made</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 22 mins ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-red">
+                                                <i class="material-icons">delete_forever</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy Doe</b> deleted account</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-orange">
+                                                <i class="material-icons">mode_edit</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>Nancy</b> changed name</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 2 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-blue-grey">
+                                                <i class="material-icons">comment</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> commented your post</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 4 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-light-green">
+                                                <i class="material-icons">cached</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4><b>John</b> updated status</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> 3 hours ago
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">
+                                            <div class="icon-circle bg-purple">
+                                                <i class="material-icons">settings</i>
+                                            </div>
+                                            <div class="menu-info">
+                                                <h4>Settings updated</h4>
+                                                <p>
+                                                    <i class="material-icons">access_time</i> Yesterday
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer">
+                                <a href="javascript:void(0);">View All Notifications</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+
+                    <!-- #END# Tasks -->
+                    <li class="pull-right"><a href="javascript:void(0);" class="js-right-sidebar" data-close="true"><i class="material-icons">more_vert</i></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <i id="userIMG" width="48" height="48" alt="User" ></i>
+                </div>
+                <div class="info-container">
+                    <div class="name" id="userNAME" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></div>
+                    <div class="email">user@email.com</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" id="logout"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">arrow_forward</i>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li class="active">
+                        <a href="#">
+                            <i class="material-icons">home</i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="bookmarks.html">
+                            <i class="material-icons">collections_bookmark</i>
+                            <span> Bookmarks</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="todo.html">
+                            <i class="material-icons">playlist_add_check</i>
+                            <span>TODO List</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="gmail.html">
+                            <i class="material-icons">notifications_active</i>
+                            <span>Gmail Updates </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="doodle.html">
+                            <i class="material-icons">brush</i>
+                            <span>Doodle</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; Bumba <a href="javascript:void(0);">All rights reserved</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.0
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        <aside id="rightsidebar" class="right-sidebar">
+            <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                <li role="presentation" class="active"><a href="#skins" data-toggle="tab">SKINS</a></li>
+                <!--<li role="presentation"><a href="#settings" data-toggle="tab">SETTINGS</a></li>-->
+            </ul>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade in active in active" id="skins">
+                    <ul class="demo-choose-skin">
+                        <li data-theme="red" class="active">
+                            <div class="red"></div>
+                            <span>Red</span>
+                        </li>
+                        <li data-theme="pink">
+                            <div class="pink"></div>
+                            <span>Pink</span>
+                        </li>
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>
+                        <li data-theme="deep-purple">
+                            <div class="deep-purple"></div>
+                            <span>Deep Purple</span>
+                        </li>
+                        <li data-theme="indigo">
+                            <div class="indigo"></div>
+                            <span>Indigo</span>
+                        </li>
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="light-blue">
+                            <div class="light-blue"></div>
+                            <span>Light Blue</span>
+                        </li>
+                        <li data-theme="cyan">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="teal">
+                            <div class="teal"></div>
+                            <span>Teal</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="light-green">
+                            <div class="light-green"></div>
+                            <span>Light Green</span>
+                        </li>
+                        <li data-theme="lime">
+                            <div class="lime"></div>
+                            <span>Lime</span>
+                        </li>
+                        <li data-theme="yellow">
+                            <div class="yellow"></div>
+                            <span>Yellow</span>
+                        </li>
+                        <li data-theme="amber">
+                            <div class="amber"></div>
+                            <span>Amber</span>
+                        </li>
+                        <li data-theme="orange">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="deep-orange">
+                            <div class="deep-orange"></div>
+                            <span>Deep Orange</span>
+                        </li>
+                        <li data-theme="brown">
+                            <div class="brown"></div>
+                            <span>Brown</span>
+                        </li>
+                        <li data-theme="grey">
+                            <div class="grey"></div>
+                            <span>Grey</span>
+                        </li>
+                        <li data-theme="blue-grey">
+                            <div class="blue-grey"></div>
+                            <span>Blue Grey</span>
+                        </li>
+                        <li data-theme="black">
+                            <div class="black"></div>
+                            <span>Black</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+        <!-- #END# Right Sidebar -->
+    </section>
+
+    <section class="content">
+        <div class="container-fluid">
+            <div class="block-header">
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <!-- Widgets -->
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-pink hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">collections_bookmark</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">BOOKMARKS</div>
+                            <div class="number count-to" data-from="0" data-to="125" data-speed="15" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-cyan hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">playlist_add_check</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">TODOS</div>
+                            <div class="number count-to" data-from="0" data-to="257" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-light-green hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">notifications_active</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">MAILS</div>
+                            <div class="number count-to" data-from="0" data-to="243" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-orange hover-expand-effect">
+                        <div class="icon">
+                            <i class="material-icons">brush</i>
+                        </div>
+                        <div class="content">
+                            <div class="text">CANVAS</div>
+                            <div class="number count-to" data-from="0" data-to="1225" data-speed="1000" data-fresh-interval="20"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Widgets -->
+            <!-- CPU Usage -->
+            <div class="row clearfix">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-6">
+                                    <h2>CPU USAGE (%)</h2>
+                                </div>
+                                <div class="col-xs-12 col-sm-6 align-right">
+                                    <div class="switch panel-switch-btn">
+                                        <span class="m-r-10 font-12">REAL TIME</span>
+                                        <label>OFF<input type="checkbox" id="realtime" checked><span class="lever switch-col-cyan"></span>ON</label>
                                     </div>
                                 </div>
                             </div>
-
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>
-
-                    </div>
-                    <div class="container">
-                        <div class="container" id="categoryList">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div style="background-attachment:fixed;background-image: url('../css/images/forTODO.jpg')" id="tab2" align="center" class="tab bgTab2">
-
-                    <div id="stage">
-                        <div class="container p-4">
-                            <div class="row">
-                                <div class="col-sm-12 ">
-                                    <h1 class=" yo text-center">
-                                        To Do List
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="  col-sm-12 mr-auto ml-auto">
-                                    <input title="hello" class="form-control" placeholder="Enter Your Task Here" id="add-new-todo">
-                                </div>
-                                <div class="d-flex mt-3 ml-auto mr-auto">
-                                    <button type="button" class=" mr-3 btn btn-primary" id="add-btn">
-                                        <i class="fa fa-plus-circle"></i>
-                                    </button>
-                                    <button type="button" class="mr-3 btn btn-danger" id="del-btn">
-                                        <i class="fa fa-trash"></i>
-                                    </button>
-                                    <button type="button" class="mr-3 btn btn-success" id="selall-btn">
-                                        <i class="fa fa-check"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="row mt-3">
-                                <div class="col-sm-10 ml-auto mr-auto">
-                                    <ul class="list-group" id="list"> </ul>
-                                </div>
-                            </div>
+                        <div class="body">
+                            <div id="real_time_chart" class="dashboard-flot-chart"></div>
                         </div>
                     </div>
                 </div>
-
-                <div id="tab3" align="center" class="tab">
-                    <div class="container tab33">
-                        <br>
-                        <div class="row"  id="gmailHeader">
-                            <div class="col-2" id="gmailimage">
-                                <img src="https://cdn.makeuseof.com/wp-content/uploads/2012/03/gmail-icon-300.png" style="height: 5rem; width:5rem;" alt="">
+            </div>
+            <!-- #END# CPU Usage -->
+            <div class="row clearfix">
+                <!-- Visitors -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-pink">
+                            <div class="sparkline" data-type="line" data-spot-Radius="4" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#fff"
+                                 data-min-Spot-Color="rgb(255,255,255)" data-max-Spot-Color="rgb(255,255,255)" data-spot-Color="rgb(255,255,255)"
+                                 data-offset="90" data-width="100%" data-height="92px" data-line-Width="2" data-line-Color="rgba(255,255,255,0.7)"
+                                 data-fill-Color="rgba(0, 188, 212, 0)">
+                                12,10,9,6,5,6,10,5,7,5,12,13,7,12,11
                             </div>
-                            <div class="col gmailHeading">
-                                Latest GMail Notifications
-                            </div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    TODAY
+                                    <span class="pull-right"><b>1 200</b> <small>USERS</small></span>
+                                </li>
+                                <li>
+                                    YESTERDAY
+                                    <span class="pull-right"><b>3 872</b> <small>USERS</small></span>
+                                </li>
+                                <li>
+                                    LAST WEEK
+                                    <span class="pull-right"><b>26 582</b> <small>USERS</small></span>
+                                </li>
+                            </ul>
                         </div>
-                        <br>
-
-                    <div style="border: 1px solid black">
-                        <b align="left">KEY ||</b>
-                       UNREAD <i class="fa fa-circle-thin"></i>&nbsp;&nbsp;&nbsp;
-                       IMPORTANT <i class="fa fa-circle" style="color: blue"></i>&nbsp;&nbsp;&nbsp;
-                        PRIMARY <i class="fa fa-circle" style="color: red"></i>&nbsp;&nbsp;&nbsp;
-                        PERSONAL <i class="fa fa-circle" style="color: #FE4B74"></i>&nbsp;&nbsp;&nbsp;
-                        SENT <i class="fa fa-circle" style="color: lightgreen"></i>&nbsp;&nbsp;&nbsp;
-                       UPDATES <i class="fa fa-circle" style="color: yellow"></i>&nbsp;&nbsp;&nbsp;
-                       PROMOTION <i class="fa fa-circle" style="color: green"></i>&nbsp;&nbsp;&nbsp;
-                       SOCIAL <i class="fa fa-circle" style="color: lightblue"></i> &nbsp;&nbsp;&nbsp;
-                       FORUMS <i class="fa fa-circle" style="color: purple"></i>&nbsp;&nbsp;&nbsp;
-                       INBOX <i class="fa fa-circle" style="color: black"></i>&nbsp;
-                    </div>
-                        <br>
-                        <div class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">
-                            <div class="ml-auto mr-auto col-10" id='preLoaderForMails' style="text-align: center;position:relative;top: 25vh;">
-                                <div style="background-color:transparent;">please wait loading ...</div>
-                                <div class="progress">
-                                    <div id="percentComplete" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:0">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="emailList" align="left" class="col-12 mb-2">
-                            </div>
-                        </div>
-
-                        <!--<div id="emailList" class="row" style="overflow: scroll;overflow-x: hidden;height:400px;">-->
-
-                        <!--</div>-->
-
-                    </div>
-                    <br><br>
-                </div>
-
-                <div id="tab4" align="center" class="tab">
-                    <div style="margin: 0;padding: 0">
-                        <canvas id="can" height="500" width="600" style=";border:2px solid;"></canvas>
-                    </div>
-                    <input type="button" value="save" id="saveBtn" size="30" style="top:55%;left:10%;">
-                    <input type="button" value="clear" id="clrBtn" size="23" style="top:55%;left:15%;">
-                    <div id="imgList">
                     </div>
                 </div>
+                <!-- #END# Visitors -->
+                <!-- Latest Social Trends -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-cyan">
+                            <div class="m-b--35 font-bold">LATEST SOCIAL TRENDS</div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    #socialtrends
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                                <li>
+                                    #materialdesign
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                                <li>#adminbsb</li>
+                                <li>#freeadmintemplate</li>
+                                <li>#bootstraptemplate</li>
+                                <li>
+                                    #freehtmltemplate
+                                    <span class="pull-right">
+                                        <i class="material-icons">trending_up</i>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Latest Social Trends -->
+                <!-- Answered Tickets -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="body bg-teal">
+                            <div class="font-bold m-b--35">ANSWERED TICKETS</div>
+                            <ul class="dashboard-stat-list">
+                                <li>
+                                    TODAY
+                                    <span class="pull-right"><b>12</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    YESTERDAY
+                                    <span class="pull-right"><b>15</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST WEEK
+                                    <span class="pull-right"><b>90</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST MONTH
+                                    <span class="pull-right"><b>342</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    LAST YEAR
+                                    <span class="pull-right"><b>4 225</b> <small>TICKETS</small></span>
+                                </li>
+                                <li>
+                                    ALL
+                                    <span class="pull-right"><b>8 752</b> <small>TICKETS</small></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Answered Tickets -->
+            </div>
+
+            <div class="row clearfix">
+                <!-- Task Info -->
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                    <div class="card">
+                        <div class="header">
+                            <h2>TASK INFOS</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-hover dashboard-task-infos">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Task</th>
+                                            <th>Status</th>
+                                            <th>Manager</th>
+                                            <th>Progress</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Task A</td>
+                                            <td><span class="label bg-green">Doing</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-green" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Task B</td>
+                                            <td><span class="label bg-blue">To Do</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-blue" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Task C</td>
+                                            <td><span class="label bg-light-blue">On Hold</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-light-blue" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width: 72%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Task D</td>
+                                            <td><span class="label bg-orange">Wait Approvel</span></td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-orange" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 95%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td>Task E</td>
+                                            <td>
+                                                <span class="label bg-red">Suspended</span>
+                                            </td>
+                                            <td>John Doe</td>
+                                            <td>
+                                                <div class="progress">
+                                                    <div class="progress-bar bg-red" role="progressbar" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100" style="width: 87%"></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Task Info -->
+                <!-- Browser Usage -->
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="header">
+                            <h2>BROWSER USAGE</h2>
+                            <ul class="header-dropdown m-r--5">
+                                <li class="dropdown">
+                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">more_vert</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="javascript:void(0);">Action</a></li>
+                                        <li><a href="javascript:void(0);">Another action</a></li>
+                                        <li><a href="javascript:void(0);">Something else here</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="body">
+                            <div id="donut_chart" class="dashboard-donut-chart"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #END# Browser Usage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Jquery Core Js -->
+    <script src="../js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="../js/bootstrap-select.js"></script>
 
             </div>
         </div>
     </div>
 </section>
-<script src="../js/jquery-3.2.1.js"></script>
-<script src="../js/popper.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script>
-    $('#activityPage').click(()=>{
-        window.location.href='/HTMLfiles/card_exp.html';
-    });
-    $('#logout').click(()=>{
-        window.location.href='/auth/logout';
-    });
-</script>
-<script src="../js/proftodolist.js"></script>
-<script src="../js/categories_frontend.js"></script>
-<script src="../js/timerkajs.js"></script>
-<script src="../js/timerpopper.js"></script>
-<script src="../js/wSMainTabs.js"></script>
-<script src="../js/gmailView.js"></script>
-<script src="../js/canvasManipultor.js"></script>
+    <!-- Slimscroll Plugin Js -->
+    <script src="../js/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../js/waves.js"></script>
+
+    <!-- Jquery CountTo Plugin Js -->
+    <script src="../js/jquery.countTo.js"></script>
+
+    <!-- Morris Plugin Js -->
+    <script src="../js/raphael.min.js"></script>
+    <script src="../js/morris.js"></script>
+
+    <!-- ChartJs -->
+    <script src="../plugins/chartjs/Chart.bundle.js"></script>
+
+    <!-- Flot Charts Plugin Js -->
+    <script src="../js/flot-charts/jquery.flot.js"></script>
+    <script src="../js/flot-charts/jquery.flot.resize.js"></script>
+    <script src="../js/flot-charts/jquery.flot.pie.js"></script>
+    <script src="../js/flot-charts/jquery.flot.categories.js"></script>
+    <script src="../js/flot-charts/jquery.flot.time.js"></script>
+
+    <!-- Sparkline Chart Plugin Js -->
+    <script src="../js/jquery.sparkline.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../js/admin.js"></script>
+
+
+    <script src="../js/pages/index.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../js/demo.js"></script>
+
+    <script src="../js/timerkajs.js"></script>
 </body>
+
 </html>
