@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="../css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrapOld.css" rel="stylesheet">
 
     <!-- Waves Effect Css -->
     <link href="../css/waves.css" rel="stylesheet" />
@@ -484,13 +484,51 @@
     <section class="content">
         <div class="container-fluid">
             <div class="block-header">
-                <h2>BLANK PAGE</h2>
+                <h1 class="text-center">
+                    Bookmarks
+                </h1>
+                <div class="card add_card float-left m-3" id="newCategoryBox" >
+                    <div class="card-header">Create New Category</div>
+                    <img class="card-img-top"  alt="Card image cap">
+                    <div class="modal-footer btn btn-warning addMore p-0" data-toggle="modal" data-target="#myModalPlus">
+                        <div class="card-footer"><i class="material-icons">add</i></div>
+                    </div>
+                    <div class="modal fade mt-3" id="myModalPlus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel" align="center"> Enter Category Name :) </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">x</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form class="form">
+                                        <div class="form-group">
+                                            <label for="categoryName"><h4 align="center">Category Name</h4></label><br>
+                                            <input id="categoryName" type="text">
+                                        </div>
+                                    </form>
+                                    <div class="modal-footer">
+                                        <button type="button" id="addCategory" class="btn btn-primary">ADD THIS</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+            </div>
+                <div class="container">
+                <div class="container" id="categoryList">
+                </div>
+            </div>
             </div>
         </div>
     </section>
 
     <!-- Jquery Core Js -->
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="../js/bootstrap.js"></script>
@@ -511,6 +549,7 @@
     <script src="../js/demo.js"></script>
 
     <script src="../js/timerkajs.js"></script>
+    <script src="../js/categories_frontend.js"></script>
 
 </body>
 

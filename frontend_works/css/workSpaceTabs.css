@@ -151,9 +151,6 @@ li.active a, li.active a:hover {
 
 #divCanvas{
     border: black 2px solid;
-    height: 60vh;
-    width: 150vh;
-    overflow: scroll;
 }
 
 #gmailHeader{
