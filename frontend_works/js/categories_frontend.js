@@ -56,15 +56,15 @@ $(function () {
                                 <!--list of urls under this category-->
                                 <div style="display: none" id="loadingMSG${typeofcategory.categoryName.split(" ").join("")}">
                                
-<div class="card" style="width: 20%;">
-  <!--<div class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>-->
-  <img class="card-img-top" alt="Loading">
-  <div class="card-footer">
-  loading
-  </div>
-</div>  
+                                <div class="card" style="width: 20%;">
+                                  <!--<div class="card-header"><i id="urlID${i}" class="fa fa-times"></i></div>-->
+                                  <img class="card-img-top" alt="Loading">
+                                  <div class="card-footer">
+                                  loading
+                                  </div>
+                                </div>  
                                 </div>
-                                <div id="${typeofcategory.categoryName.split(' ').join('')}">
+                                <div id="${typeofcategory.categoryName.split(' ').join('')}" style="display:-webkit-box;-webkit-box-flex:1;float:left;">
                                </div>
                             </div>
                 
@@ -114,11 +114,12 @@ $(function () {
                 if (imgData) {
                     loadingMSG.css('display', 'none');
                     element.prepend(`<div>
-<div class="card" style="height: 60%;width: 70vw; max-width: 300px">
-  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
+<div class="card m-2" style="height: 60%;width: 70vw;display: inline-block; max-width: 300px">
   <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${imgData}" alt="Card image cap">
   <div style="height: 20%" class="card-footer">
   <a href="${url.urlName}" target="_blank">${url.urlName}</a>
+  <div style="height: 20%" class="card-header" align="right"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
+
   </div>
 </div>
 </div>`);
@@ -128,11 +129,12 @@ $(function () {
                         localStorage.setItem(url.urlName, specificData);
                         loadingMSG.hide();
                         element.prepend(`<div>
-<div class="card" style="height: 60%;width: 70vw; max-width: 300px">
-  <div style="height: 20%" class="card-header"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
+<div class="card m-2" style="height: 60%;width: 60vw; max-width: 300px;display: inline-block; -webkit-box-flex: 1;">
   <img style="height: 60%" class="card-img-top" src="data:image/png;base64,${specificData}" alt="Card image cap">
   <div style="height: 20%" class="card-footer">
   <a href="${url.urlName}" target="_blank">${url.urlName}</a>
+  <div style="height: 20%" class="card-header" align="right"><i id="urlID${i}" class="btn btn-danger material-icons">close</i></div>
+
   </div>
 </div>
 </div>`);
