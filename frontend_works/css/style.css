@@ -649,7 +649,7 @@ input::-ms-input-placeholder {
 
 /*home section*/
 .home{
-    background: url(../assets/images/homebg.jpg) no-repeat 100% 100%;
+    background: url('../css/images/night-city-street-wallpaper.jpg') no-repeat 100% 100%;
     background-size: cover;
 }
 

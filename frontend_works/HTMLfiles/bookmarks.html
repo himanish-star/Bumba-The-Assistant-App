@@ -487,17 +487,17 @@
                 <h1 class="text-center">
                     Bookmarks
                 </h1>
-                <div class="card add_card float-left m-3" id="newCategoryBox" >
-                    <div class="card-header">Create New Category</div>
-                    <img class="card-img-top"  alt="Card image cap">
-                    <div class="modal-footer btn btn-warning addMore p-0" data-toggle="modal" data-target="#myModalPlus">
-                        <div class="card-footer"><i class="material-icons">add</i></div>
+                <div class="card add_card float-left m-3" style="height: 40vh;width: 20vw" id="newCategoryBox" >
+                    <div style="text-align:center;vertical-align: middle;font-size:2.5vh;height:10vh;width:20vw" class="card-header">Create New Category</div>
+                    <img class="align-self-center card-img-top" style="height:25vh;width:15vw" src="../css/images/book-bookmark-icon.png" alt="Card image cap">
+                    <div style="margin:0;padding:0;height:5vh;width:20vw" class="card-footer btn btn-warning align-self-center addMore p-0" data-toggle="modal" data-target="#myModalPlus">
+                        <i style="margin:0;padding:0;vertical-align:middle;" class="mr-auto ml-auto material-icons">add</i>
                     </div>
                     <div class="modal fade mt-3" id="myModalPlus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel" align="center"> Enter Category Name :) </h5>
+                                    <h5 class="modal-title" id="exampleModalLabel" align="center"> Create New Category </h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">x</span>
                                     </button>
@@ -506,7 +506,7 @@
                                     <form class="form">
                                         <div class="form-group">
                                             <label for="categoryName"><h4 align="center">Category Name</h4></label><br>
-                                            <input id="categoryName" type="text">
+                                            <input id="categoryName" style="width:100%;" type="text">
                                         </div>
                                     </form>
                                     <div class="modal-footer">
@@ -519,7 +519,7 @@
                     </div>
             </div>
                 <div class="container">
-                <div class="container" id="categoryList">
+                <div class="margin-0 padding-0" id="categoryList">
                 </div>
             </div>
             </div>
