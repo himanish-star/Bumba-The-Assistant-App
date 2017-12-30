@@ -1,5 +1,5 @@
 # BUMBA #
-### your personal web assisstant to make your time on the web more productive :) ###
+### your personal web assistant to make your time on the web more productive :) ###
 
 * ### Manage all your bookmarks under one place ###
   * Add a new category

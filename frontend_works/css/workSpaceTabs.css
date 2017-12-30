@@ -155,6 +155,7 @@ li.active a, li.active a:hover {
 
 #gmailHeader{
     border: 2px solid white;
+    width: 75%;
 }
 
 #emailList :nth-of-type(2n-1){
