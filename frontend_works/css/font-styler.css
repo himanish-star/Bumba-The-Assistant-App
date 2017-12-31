@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "BerkshireSwash";
+    src: url("../font-family/BerkshireSwash-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Boogaloo";
+    src: url("../font-family/Boogaloo-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Courgette";
+    src: url("../font-family/Courgette-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Miama";
+    src: url("../font-family/miama.regular.otf");
+}
+
+@font-face {
+    font-family: "PermanentMarker";
+    src: url("../font-family/PermanentMarker-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Sevillana";
+    src: url("../font-family/Sevillana-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Rochester";
+    src: url("../font-family/Rochester-Regular.ttf");
+}
+
+@font-face {
+    font-family: "MouseMemoirs";
+    src: url("../font-family/MouseMemoirs-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Devonshire";
+    src: url("../font-family/Devonshire-Regular.ttf");
+}
+
+@font-face {
+    font-family: "CevicheOne";
+    src: url("../font-family/CevicheOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Amarante";
+    src: url("../font-family/Amarante-Regular.ttf");
+}
+
+body,html {
+    font-family: Courgette;
+}
