@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: "CaveatBrush";
+    src: url("../font-family/CaveatBrush-Regular.ttf");
+}
+
+@font-face {
     font-family: "Boogaloo";
     src: url("../font-family/Boogaloo-Regular.ttf");
 }
