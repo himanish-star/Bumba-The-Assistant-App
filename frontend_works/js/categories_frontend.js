@@ -37,12 +37,10 @@ $(function () {
         let i=0;
 
         for(let typeofcategory of categories) {
-            let newCategory = $(`<div style="height: 40vh;width: 20vw" class="card float-left m-3 cardSize">
-                <div style="padding:0;margin:0;height: 20vh;" class="d-flex justify-content-between card-img-top"><img style="align-self:center;height:20vh;width: 15vw;" src="../css/images/imageICON.png">
-                <i class="text-info  material-icons">edit</i>
-                <i class="text-danger material-icons">delete</i></div>
-                <div style="vertical-align:middle;text-align:center;color:white;font-size:2vh;margin:0;padding: 0;height: 15vh" class="bg-success card-body" data-toggle="modal" data-target="#myModalCategories${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}
-                </div>
+            console.log("appending new category");
+            let newCategory = $(`<div class="card float-left m-3 cardSize">
+                <div><i class="fa fa-5x fa-star"></i></div>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModalCategories${i}"><i class="fa fa-folder"></i> ${typeofcategory.categoryName}</button>
                 <div class="modal fade" id="myModalCategories${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
                     <div style="position:absolute;left: 10vw;" class="modal-dialog modal-lg" role="document">
                         <div style="height: 80vh;width: 80vw;" class="modal-content ">
@@ -81,8 +79,8 @@ $(function () {
                         </div>
                     </div>
                 </div>
-                <div style="margin:0;padding: 0;height: 5vh" class="card-footer">
-                    <button style="height: 5vh" class="align-self-center btn btn-danger" id="delBtn${i}"> Delete </button>
+                <div class="card-body">
+                    <p class="card-text" align="center"><button class="btn btn-danger" id="delBtn${i}"> Delete </button></p>
                 </div>
             </div>`);
             categoryList.append(newCategory);
