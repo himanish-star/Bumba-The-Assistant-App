@@ -11,7 +11,7 @@ MongoClient.connect(DataBase.mlabURI, function (err,db) {
 
 
 =======*/
-MongoClient.connect(DataBase.mlabURI, function (err,db) {
+MongoClient.connect(DataBase.URI, function (err,db) {
 // >>>>>>> 3d3d24a6db3689b7b4b95943f08db9eb60ffd383
     if(err) throw err;
     console.log("connected");
