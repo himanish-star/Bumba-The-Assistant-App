@@ -28,7 +28,7 @@
 
         <!--Theme Responsive css-->
         <link rel="stylesheet" href="../css/responsive.css" />
-
+        <link rel="stylesheet" href="../css/font-styler.css">
         <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="200">
@@ -56,7 +56,7 @@
                                                 <span class="icon-bar"></span>
                                             </button>
                                             <a class="navbar-brand" href="#home">
-                                                <img src="../assets/images/bmba.png" style="height: 50px;width: 50px">
+                                                <img src="../assets/images/bmba.png" style="background-color:whitesmoke;height: 60px;width: 100px;position: relative;bottom: 8px">
                                             </a>
                                         </div>
 
@@ -66,29 +66,27 @@
 
                                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-                                            <ul class="nav navbar-nav navbar-right">
-                                                <li><a href="#home">HOME</a></li>
-                                                <li><a href="#service">Service</a></li>
-                                                <li><a href="#team">TEAMS</a></li>
-                                                <!--<li><a href="#portfolio">WORKS</a></li>-->
-                                                <li><a href="#testimonial">Testimonial</a></li>
-                                                <li><a href="#contact">CONTACT</a></li>
+                                            <ul class="text-info nav navbar-nav navbar-right">
+                                                <li><a style="font: 20px CevicheOne" href="#home">HOME</a></li>
+                                                <li><a style="font: 20px CevicheOne" href="#service">Service</a></li>
+                                                <li><a style="font: 20px CevicheOne" href="#team">TEAMS</a></li>
+                                                <li><a style="font: 20px CevicheOne" href="#testimonial">Testimonial</a></li>
+                                                <li><a style="font: 20px CevicheOne" href="#contact">CONTACT</a></li>
 
-                                                <!--<li>-->
-                                                <li id="signIn" class="fa p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"><a>LOGIN</a></li>
+                                                <li id="signIn" class="fa p-4 align-self-center headerDesign " data-toggle="modal" data-target="#myModal1"><a style="cursor:pointer;font: 20px CevicheOne">LOGIN</a></li>
                                                     <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                                                        <div style="position: absolute;top:5vh;left: 30vw" class="modal-dialog" role="document">
-                                                            <div style="height: 20vh;width: 40vw" class="modal-content">
+                                                        <div style="position: absolute;top:200px;left: 450px" class="modal-dialog" role="document">
+                                                            <div style="height: 200px;width: 400px" class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title" id="exampleModalLabel1">login to Bumba</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true"> Close </span>
+                                                                    <h5 style="font: 20px MouseMemoirs" class="modal-title" id="exampleModalLabel1">login to Bumba</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" style="font: 20px MouseMemoirs;position: relative;bottom: 20px" aria-label="Close">
+                                                                       CLOSE
                                                                     </button>
                                                                 </div>
                                                                 <div class="modal-body d-flex flex-column justify-content-around">
                                                                     <div style="width: 100%;height: 20vh" class="d-flex flex-column justify-content-around">
                                                                         <form class="d-flex justify-content-center" style="height: 5vh  ;" action="/auth/google/">
-                                                                            <button style="width: 30%; height: 5vh;" class="btn btn-danger"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Google
+                                                                            <button style="width: 30%; height: 5vh;font: 25px MouseMemoirs;padding-bottom: 35px;position: relative;left:100px;" class="btn btn-danger"><i class="fa fa-google-plus-official" aria-hidden="true"></i> Google
                                                                             </button>
                                                                         </form>
                                                                     </div>
@@ -116,39 +114,40 @@
 
 
 
-            <section id="home" class="home">
-                <div class="overlay">
+            <section style="height: 100vh" id="home" class="home">
+                <div style="height: 100vh" class="overlay">
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12 ">
                                 <div class="main_home_slider text-center">
                                     <div class="single_home_slider">
                                         <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                            <h1>WELCOME TO BUMBA</h1>
-                                            <p style="font-size: 30px;">Your Web assistant to make your time on the web productive</p>
-                                            <div class="home_btn">
-                                                <a href="#service" class="btn btn-primary">BEGIN</a>
+                                            <div style="font-family: Amarante;height: 40vh">
+                                                <h1 style="font-family: Amarante;height: 10vh">WELCOME TO BUMBA</h1>
+                                                <p style="font-size: 30px;">Your Web Assisstant to make your time on the web productive</p>
+                                                <div class="home_btn">
+                                                    <a style="font-family: Amarante;font-size: 15px" href="#service" class="btn btn-primary">BEGIN</a>
+                                                </div>
                                             </div>
-
                                         </div>
                                     </div>
                                     <div class="single_home_slider">
-                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                            <h1>CRAFTED WITH <i class="fa fa-heart"> </i></h1>
+                                        <div style="font-family: Amarante" class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1 style="font-family: Amarante    ">CRAFTED WITH <i class="fa fa-heart"> </i></h1>
                                             <p style="font-size: 30px;">Once you start, there's no looking back</p>
                                             <div class="home_btn">
-                                                <a href="#service" class="btn btn-primary">BEGIN</a>
+                                                <a style="font-family: Amarante;font-size: 15px" href="#service" class="btn btn-primary">BEGIN</a>
                                             </div>
 
                                         </div>
                                     </div>
                                     <div class="single_home_slider">
-                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                            <h1>CRAFTED FOR <i class="fa fa-smile-o"> </i><br>Yes It's You  </h1>
+                                        <div style="font-family: Amarante" class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h1 style="font-family: Amarante">CRAFTED FOR <i class="fa fa-smile-o"> </i><br>Yes It's You  </h1>
                                             <p style="font-size: 30px;">It runs on NodeJS</p>
 
                                             <div class="home_btn">
-                                                <a href="#service" class="btn btn-primary">LETS START</a>
+                                                <a style="font-family: Amarante;font-size: 15px" href="#service" class="btn btn-primary">LETS START</a>
                                             </div>
 
                                         </div>
@@ -171,10 +170,10 @@
                                     <div class="service_tabe">
                                         <!-- Nav tabs -->
                                         <ul class="service_tabe_menu nav nav-tabs" role="tablist">
-                                            <li role="presentation" class="active"><a href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bookmark"></i> <br />BOOK MARKS</a></li>
-                                            <li role="presentation"><a href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-list"></i> <br />TODO LIST</a></li>
-                                            <li role="presentation"><a href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bell"></i> <br />GMAIL NOTIFS</a></li>
-                                            <li role="presentation"><a href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-paint-brush"></i> <br />DOODLE</a></li>
+                                            <li role="presentation" class="active"><a style="font: 25px Devonshire" href="#webdesign" aria-controls="webdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bookmark"></i> <br />Bookmarks</a></li>
+                                            <li role="presentation"><a style="font: 25px Devonshire" href="#appdesign" aria-controls="appdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-list"></i> <br />Todo-List</a></li>
+                                            <li role="presentation"><a style="font: 25px Devonshire" href="#graphicdesign" aria-controls="graphicdesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-bell"></i> <br />Gmail Notifications</a></li>
+                                            <li role="presentation"><a style="font: 25px Devonshire" href="#gamedesign" aria-controls="gamedesign" role="tab" data-toggle="tab"><i class="fa fa-2x fa-paint-brush"></i> <br />Doodle</a></li>
                                         </ul>
 
                                         <!-- Tab panes -->
@@ -185,10 +184,10 @@
                                                         <div class="col-sm-6">
                                                             <div class="single_tab_content">
                                                                 <div class="head_title">
-                                                                    <h3>BOOK MARKS MANAGER</h3>
+                                                                    <h3 style="color: red;font-family: PermanentMarker">BOOKMARKS MANAGER</h3>
                                                                     <div class="separator"></div>
                                                                 </div>
-                                                                <p>Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
+                                                                <p style="font: 35px Devonshire;color: mediumspringgreen">Sort all your bookmarks under several categories, storing them in an efficient way. <br> Add new categories &
                                                                     Drag and Drop bookmarks related to those categories. Its as simple as that.  </p>
 
                                                                 <a href="" class="btn btn-primary">LEARN MORE</a>
@@ -209,10 +208,10 @@
                                                         <div class="col-sm-6">
                                                             <div class="single_tab_content">
                                                                 <div class="head_title">
-                                                                    <h3>Todo List</h3>
+                                                                    <h3 style="color: red;font-family: PermanentMarker">Todo List</h3>
                                                                     <div class="separator"></div>
                                                                 </div>
-                                                                <p>Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
+                                                                <p style="font: 35px Devonshire;color: mediumspringgreen">Add any task you need to do <br> Change priorities of certain tasks, move them up or bring them down
                                                                     <br>Mark tasks as done and delete them if wanted. The user friendly UI is self-explanatory though.</p>
 
                                                                 <a href="" class="btn btn-primary">LEARN MORE</a>
@@ -233,10 +232,10 @@
                                                         <div class="col-sm-6">
                                                             <div class="single_tab_content">
                                                                 <div class="head_title">
-                                                                    <h3>Track Your Gmail Notifications</h3>
+                                                                    <h3 style="color: red;font-family: PermanentMarker">Track Your Gmail Notifications</h3>
                                                                     <div class="separator"></div>
                                                                 </div>
-                                                                <p>>Look out for new emails category wise here it self instead of visiting the website. <br>
+                                                                <p style="font: 35px Devonshire;color: mediumspringgreen">Look out for new emails category wise here it self instead of visiting the website. <br>
                                                                     A must have feature for any desktop application</p>
 
                                                                 <a href="" class="btn btn-primary">LEARN MORE</a>
@@ -257,10 +256,10 @@
                                                         <div class="col-sm-6">
                                                             <div class="single_tab_content">
                                                                 <div class="head_title">
-                                                                    <h3>DOODLE</h3>
+                                                                    <h3 style="color: red;font-family: PermanentMarker">DOODLE</h3>
                                                                     <div class="separator"></div>
                                                                 </div>
-                                                                <p>Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
+                                                                <p style="font: 35px Devonshire;color: mediumspringgreen">Draw them out using your stylus/mouse/Touch pad <br> and save them for any future reference</p>
 
                                                                 <a href="" class="btn btn-primary">LEARN MORE</a>
                                                             </div>
@@ -290,7 +289,7 @@
                         <div class="col-sm-12">
                             <div class="main_features_area sections">
                                 <div class="head_title">
-                                    <h3>GET STARTED</h3>
+                                    <h3 style="color:purple;font: 35px Devonshire">GET STARTED</h3>
                                     <div class="separator"></div>
                                 </div>
                                 <div class="row">
@@ -311,8 +310,8 @@
                                             </div>
                                         </div>
                                         <div class="col-sm-6">
-                                            <div class="single_features_text">
-                                                <h4 style="font-size: 40px">GET STARTED</h4>
+                                            <div style="color: #721c24" class="single_features_text">
+                                                <h4 style="font:40px MouseMemoirs">GET STARTED</h4>
                                                 <p style="font-size: 30px">Get Started Now. Its  Easy to Use and the UI itself is self explanatory.</p>
 
                                                <!-- <ul>
@@ -321,7 +320,7 @@
                                                     <li><span>Tags:</span> Hand, Watch, Black, Tree</li>
                                                 </ul>
 -->
-                                                <a href="" class="btn">LAUNCH NOW</a>
+                                                <a href="" style="padding-bottom: 50px;font: 26px MouseMemoirs;color: #721c24" class="btn">LAUNCH NOW</a>
                                             </div>
                                         </div>
                                     </div>
@@ -369,7 +368,7 @@
                                         <div class="col-sm-7 wow fadeInRight" data-wow-duration="700ms">
                                             <div class="single_about_right_content">
                                                 <div class="head_title">
-                                                    <h3>ABOUT BUMBA</h3>
+                                                    <h3 style="font: 35px MouseMemoirs;color: #0b2e13">ABOUT BUMBA</h3>
                                                     <div class="separator"></div>
                                                 </div>
 
@@ -380,7 +379,7 @@
                                                     </div>
                                                     <div class="single_ab_text">
                                                         <h3>RESPONSIVE DESIGN</h3>
-                                                        <p>The design of this website has been made keeping in mind that you would use it on different platforms.
+                                                        <p style="color: #0c5460;font: 20px CaveatBrush">The design of this website has been made keeping in mind that you would use it on different platforms.
                                                             <br>
                                                         th UI here is such that it automatically adapts to any new screen changes irrespective of your platform</p>
                                                     </div>
@@ -392,7 +391,7 @@
                                                     </div>
                                                     <div class="single_ab_text">
                                                         <h3>EASY TO USE</h3>
-                                                        <p>The sole purpose of this website is to help you manage your daily tasks and also lend a helpin ghand when you are in need.
+                                                        <p style="color: #0c5460;font: 20px CaveatBrush">The sole purpose of this website is to help you manage your daily tasks and also lend a helping hand when you are in need.
                                                         The UI is self explanatory and once you begin using it, there's no looking back.</p>
                                                     </div>
                                                 </div>
@@ -402,7 +401,7 @@
                                                     </div>
                                                     <div class="single_ab_text">
                                                         <h3>ITS FREE</h3>
-                                                        <p>No money charged. All you need is a gmail account to log in.
+                                                        <p style="color: #0c5460;font: 20px CaveatBrush">No money charged. All you need is a gmail account to log in.
                                                         </p>
                                                     </div>
                                                 </div>
