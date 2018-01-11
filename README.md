@@ -1,28 +1,67 @@
 # BUMBA #
-### your personal web assistant to make your time on the web more productive :) ###
+### Your personal web assistant to make your time on the web more productive :) ###
 
-* ### Manage all your bookmarks under one place ###
-  * Add a new category
-    * Drag and Drop bookmarks related to those categories. 
-    * Drag to the red area to remove.
-    * Give priority to your bookmarks.
-    * Maintain a DB (powered by MongoDB).
-    * A seperate list/category of your favourites  
-  * Give priority to categories
-  * Make a parent Category of a bunch of categories. Eg. Study folder has all the Subjects folder under it which further contain the relevant bookmarks
+## Pay us a visit
+
+Visit us [here](http://bumba-web-assistant.herokuapp.com/HTMLfiles/). Login and get started. All relevant details are present on the homepage.
+
+## Demo Screenshots
+
+![demo1](https://user-images.githubusercontent.com/25258877/34839957-6f64e9c4-f729-11e7-8fd7-b8c88bd242ec.png)
+![demo2](https://user-images.githubusercontent.com/25258877/34839962-742bb71c-f729-11e7-84d5-19dd64c38c58.png)
+![demo3](https://user-images.githubusercontent.com/25258877/34839965-76bfc6c6-f729-11e7-8fdc-26d6b228e273.png)
+![demo4](https://user-images.githubusercontent.com/25258877/34839979-81ea6934-f729-11e7-86f1-929a32eaba05.png)
+![demo5](https://user-images.githubusercontent.com/25258877/34839980-877548ba-f729-11e7-8830-74b9bcb6a45f.png)
+![demo6](https://user-images.githubusercontent.com/25258877/34839984-8af4d32a-f729-11e7-977e-75f995cec2fc.png)
+
+
+## Youtube Video Demo
+
+Here's a link to our full work flow. This pretty much covers the entire working (we have tried to) of our application.
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=U6CZPnaT91s
+" target="_blank"><img src="http://img.youtube.com/vi/U6CZPnaT91s/0.jpg" 
+alt="IMAGE ALT TEXT HERE" width="600" height="400" border="0" /></a>
+
+
+## SetUp for Development
+
+```
+  fork the github repository and run the following commands in a new directory on your PC
  
-* ##  Sample ##
-  * store list of your favourite youtube videos 
-  * Have another category for social media
-  * One for your academics  XD
-  * And many more there after ... 
  
-    
-    
-  ### An embedded todolist to keep things off your mind. ###
-  
-  ### A take-a-break reminder to make your web experience a bit less stressful. Sitting for more than an  hour in front of a desktop can have serious implications later on your body. ###
-  
-* #### Future goals in mind 
-   * Implement search options for categories.
-   * Make an Email/Social media notifications bar/widget.
+  git init .
+  git clone https://github.com/himanish-star/Bumba-The-Assistant-App
+  cd Bumba-The-Assistant-App
+  npm install
+  node server.js
+
+```
+
+The site would be available at http://localhost:3000
+
+Incase you wish to deploy a local mongoDB server, make a mongo_working directory in the root folder, change the path for mongoDBURI in mongo/models.js to suit your own collection and run the following command
+
+```
+ mongod --dbpath=./mongo_working
+```
+now run 
+```
+ node server.js
+```
+
+The site would be available at http://localhost:3000
+
+
+## Contribute 
+
+Big or small, contribute it all. Each and every contribution is priceless to us. So, let em come.
+
+
+Contribution guidelines are the same as the general standard maintained over github.
+ - Issues would be appreciaed with relevant screenshots
+ - PR's would be appreciated if filed foma seperate branch and includes a working gif demo or relevant screenshots.
+
+## Spread the word
+
+Share it with your friends,colleagues and family. 
