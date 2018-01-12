@@ -59,8 +59,8 @@ Big or small, contribute it all. Each and every contribution is priceless to us.
 
 
 Contribution guidelines are the same as the general standard maintained over github.
- - Issues would be appreciaed with relevant screenshots
- - PR's would be appreciated if filed foma seperate branch and includes a working gif demo or relevant screenshots.
+ - Issues would be appreciaed with relevant screenshots.  Lookout [this](https://github.com/himanish-star/Bumba-The-Assistant-App/issues/7) for an example issue format.
+ - PR's would be appreciated if filed from a seperate branch and includes a working gif demo or relevant screenshots. Lookout [this](https://github.com/himanish-star/Bumba-The-Assistant-App/pull/6) for an example PR format.
 
 ## Spread the word
 
