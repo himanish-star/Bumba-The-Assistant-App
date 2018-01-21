@@ -24,8 +24,6 @@
     "node-gmail-api": "^0.6.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
-    "quora-api": "^1.0.1",
-    "socket.io": "^2.0.4",
     "webshot": "^0.18.0"
   },
   "devDependencies": {}

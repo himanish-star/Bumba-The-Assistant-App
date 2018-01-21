@@ -1,4 +1,5 @@
 .idea/
+node_modules
 mongo_working/
 /frontend_works/HTMLfiles/test.html
 /frontend_works/js/github.js
