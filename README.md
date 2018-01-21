@@ -3,7 +3,7 @@
 ### Your personal web assistant to make your time on the web more productive :) ###
 
 
-[![Build Status](https://travis-ci.org/shikhar-scs/JS_project.svg?branch=master)](https://travis-ci.org/shikhar-scs/JS_project)      [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)     [![node](https://img.shields.io/node/v/passport.svg)]()
+[![Build Status](https://travis-ci.org/shikhar-scs/JS_project.svg?branch=master)](https://travis-ci.org/shikhar-scs/JS_project)      [![npm version](https://badge.fury.io/js/npm.svg)](https://badge.fury.io/js/npm)     [![node](https://img.shields.io/node/v/passport.svg)]()   [![bitHound Overall Score](https://www.bithound.io/github/shikhar-scs/JS_project/badges/score.svg)](https://www.bithound.io/github/shikhar-scs/JS_project)   [![bitHound Dependencies](https://www.bithound.io/github/shikhar-scs/JS_project/badges/dependencies.svg)](https://www.bithound.io/github/shikhar-scs/JS_project/master/dependencies/npm)   [![bitHound Dev Dependencies](https://www.bithound.io/github/shikhar-scs/JS_project/badges/devDependencies.svg)](https://www.bithound.io/github/shikhar-scs/JS_project/master/dependencies/npm)      [![bitHound Code](https://www.bithound.io/github/shikhar-scs/JS_project/badges/code.svg)](https://www.bithound.io/github/shikhar-scs/JS_project)
 
 ## Pay us a visit
 
