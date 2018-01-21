@@ -31,5 +31,4 @@ router.get('/',(req,res,next)=>{
     res.send(specificData);
 });
 
-
 module.exports.route=router;
