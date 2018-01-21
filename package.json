@@ -4,7 +4,6 @@
   "description": "* ### Manage all your bookmarks under one place ###   * Add a new category     * Drag and Drop bookmarks related to those categories.      * Drag to the red area to remove.     * Give priority to your bookmarks.     * Maintain a DB (powered by MongoDB).     * A seperate list/category of your favourites     * Give priority to categories   * Make a parent Category of a bunch of categories. Eg. Study folder has all the Subjects folder under it which further contain the relevant bookmarks",
   "main": "popper.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": {
