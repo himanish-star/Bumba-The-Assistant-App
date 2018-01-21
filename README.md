@@ -1,5 +1,10 @@
 # BUMBA #
+
 ### Your personal web assistant to make your time on the web more productive :) ###
+
+
+[![Build Status](https://travis-ci.org/shikhar-scs/JS_project.svg?branch=master)](https://travis-ci.org/shikhar-scs/JS_project)
+
 
 ## Pay us a visit
 
